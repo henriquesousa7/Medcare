@@ -27,4 +27,13 @@ public class Acolhimento {
     public String getCpf() {
         return cpf;
     }
+
+    @Override
+    public String toString() {
+        return "Acolhimento{" +
+                "prontuario='" + prontuario + '\'' +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
+    }
 }
