@@ -67,4 +67,17 @@ public class Usuario {
     public void setHistoricoMedico(String historicoMedico) {
         this.historicoMedico = historicoMedico;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "cpf='" + cpf + '\'' +
+                ", numeroCartaoSUS=" + numeroCartaoSUS +
+                ", nome='" + nome + '\'' +
+                ", sexo=" + sexo +
+                ", telefone='" + telefone + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", historicoMedico='" + historicoMedico + '\'' +
+                '}';
+    }
 }

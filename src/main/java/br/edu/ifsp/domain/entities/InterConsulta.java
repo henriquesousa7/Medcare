@@ -39,4 +39,13 @@ public class InterConsulta {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "InterConsulta{" +
+                "linhaAcao=" + linhaAcao +
+                ", usuario=" + usuario +
+                ", status=" + status +
+                '}';
+    }
 }

@@ -37,4 +37,14 @@ public class Docente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    @Override
+    public String toString() {
+        return "Docente{" +
+                "prontuario=" + prontuario +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", telefone='" + telefone + '\'' +
+                '}';
+    }
 }

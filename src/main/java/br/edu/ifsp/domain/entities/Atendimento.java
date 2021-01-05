@@ -47,4 +47,14 @@ public class Atendimento {
     public void setDiscenteResponsavel(Discente discenteResponsavel) {
         this.discenteResponsavel = discenteResponsavel;
     }
+
+    @Override
+    public String toString() {
+        return "Atendimento{" +
+                "usuarioLinhaAcao=" + usuarioLinhaAcao +
+                ", data=" + data +
+                ", status=" + status +
+                ", discenteResponsavel=" + discenteResponsavel +
+                '}';
+    }
 }
