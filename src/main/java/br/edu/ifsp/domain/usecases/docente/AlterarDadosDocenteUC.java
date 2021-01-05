@@ -3,10 +3,10 @@ package br.edu.ifsp.domain.usecases.docente;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
 
-public class AlterarDadosDocente {
+public class AlterarDadosDocenteUC {
     private DocenteDAO docenteDAO;
 
-    public AlterarDadosDocente(DocenteDAO docenteDAO) {
+    public AlterarDadosDocenteUC(DocenteDAO docenteDAO) {
         this.docenteDAO = docenteDAO;
     }
 

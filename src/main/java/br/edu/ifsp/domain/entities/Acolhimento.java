@@ -4,11 +4,15 @@ public class Acolhimento {
 
     private String prontuario;
     private String nome;
+    private String email;
+    private String telefone;
     private String cpf;
 
-    public Acolhimento(String prontuario, String nome, String cpf) {
+    public Acolhimento(String prontuario, String nome, String email, String telefone, String cpf) {
         this.prontuario = prontuario;
         this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
         this.cpf = cpf;
     }
 
@@ -20,12 +24,24 @@ public class Acolhimento {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getCpf() {
         return cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     @Override

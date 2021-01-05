@@ -1,15 +1,25 @@
 package br.edu.ifsp.application.main;
 
-import br.edu.ifsp.application.repository.InMemoryAcolhimentoDAO;
-import br.edu.ifsp.application.repository.InMemoryDocenteDAO;
-import br.edu.ifsp.domain.entities.Acolhimento;
-import br.edu.ifsp.domain.entities.Docente;
+import br.edu.ifsp.application.repository.*;
+import br.edu.ifsp.domain.entities.*;
 import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
 import br.edu.ifsp.domain.usecases.acolhimento.AlterarServidorAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.acolhimento.CadastrarServidorAcolhimentoUC;
-import br.edu.ifsp.domain.usecases.docente.AlterarDadosDocente;
+import br.edu.ifsp.domain.usecases.discente.AlterarDadosDiscenteUC;
+import br.edu.ifsp.domain.usecases.discente.CadastrarDiscenteUC;
+import br.edu.ifsp.domain.usecases.discente.DiscenteDAO;
+import br.edu.ifsp.domain.usecases.docente.AlterarDadosDocenteUC;
+import br.edu.ifsp.domain.usecases.docente.BuscarDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.CadastrarNovoDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.DocenteDAO;
+import br.edu.ifsp.domain.usecases.linhaAcao.AlterarLinhaAcaoUC;
+import br.edu.ifsp.domain.usecases.linhaAcao.BuscarLinhaAcaoUC;
+import br.edu.ifsp.domain.usecases.linhaAcao.CadastrarLinhaAcaoUC;
+import br.edu.ifsp.domain.usecases.linhaAcao.LinhaAcaoDAO;
+import br.edu.ifsp.domain.usecases.linhaCuidado.AlterarLinhaCuidadoUC;
+import br.edu.ifsp.domain.usecases.linhaCuidado.BuscarLinhaCuidadoUC;
+import br.edu.ifsp.domain.usecases.linhaCuidado.CadastrarLinhaCuidadoUC;
+import br.edu.ifsp.domain.usecases.linhaCuidado.LinhaCuidadoDAO;
 
 public class Main {
 
@@ -17,50 +27,110 @@ public class Main {
     private static AlterarServidorAcolhimentoUC alterarServidorAcolhimentoUC;
 
     private static CadastrarNovoDocenteUC cadastrarNovoDocenteUC;
-    private static AlterarDadosDocente alterarDadosDocente;
+    private static AlterarDadosDocenteUC alterarDadosDocenteUC;
+    private static BuscarDocenteUC buscarDocenteUC;
+
+    private static CadastrarDiscenteUC cadastrarDiscenteUC;
+    private static AlterarDadosDiscenteUC alterarDadosDiscenteUC;
+
+    private static CadastrarLinhaCuidadoUC cadastrarLinhaCuidadoUC;
+    private static AlterarLinhaCuidadoUC alterarLinhaCuidadoUC;
+    private static BuscarLinhaCuidadoUC buscarLinhaCuidadoUC;
+
+    private static CadastrarLinhaAcaoUC cadastrarLinhaAcaoUC;
+    private static AlterarLinhaAcaoUC alterarLinhaAcaoUC;
+    private static BuscarLinhaAcaoUC buscarLinhaAcaoUC;
 
     public static void main(String[] args) {
         configureInjection();
 
         /* Servidor acolhimento */
-        Acolhimento acolhimento1 = new Acolhimento("SC3009165", "Henrique de Sousa", "22222222222");
-        Acolhimento acolhimento2 = new Acolhimento("SC300902X", "Felipe de Sousa", "11111111111");
+        Acolhimento acolhimento1 = new Acolhimento("SC3009165", "Henrique de Sousa", "henrique@hotmail.com", "16992675413", "22222222222");
+        Acolhimento acolhimento2 = new Acolhimento("SC300902X", "Felipe de Sousa", "felipe@hotmail.com", "16993456713", "11111111111");
 
-        System.out.println("Cadastrando Acolhimento");
         cadastrarServidorAcolhimentoUC.cadastraServidor(acolhimento1);
         cadastrarServidorAcolhimentoUC.cadastraServidor(acolhimento2);
-        System.out.println("OK");
 
-        System.out.println("Atualizando acolhimento");
-
+        acolhimento1.setEmail("henrique@gmail.com");
+        acolhimento1.setTelefone("16981625543");
         alterarServidorAcolhimentoUC.alteraServidor(acolhimento1);
-        System.out.println("OK");
+
         /* --------------------------------------------------------------------------------------------------------------------*/
         /* Docente*/
-        Docente docente1 = new Docente(3008765, "Roberto Carlos");
-        Docente docente2 = new Docente(3005555, "Fabio Silva");
+        Docente docente1 = new Docente(3008765, "Roberto Carlos", "roberto@hotmail.com", "16997865413");
+        Docente docente2 = new Docente(3005555, "Fabio Silva", "fabio@yahoo.com.br", "11967852341");
 
-        System.out.println("Cadastrando Docente");
-        cadastrarNovoDocenteUC.salvarDocente(docente1);
-        cadastrarNovoDocenteUC.salvarDocente(docente2);
-        System.out.println("OK");
+        Integer doc1 = cadastrarNovoDocenteUC.salvarDocente(docente1);
+        Integer doc2 = cadastrarNovoDocenteUC.salvarDocente(docente2);
 
-        System.out.println("Alterando dados docente");
 
-        alterarDadosDocente.alterarDocente(docente1);
-        alterarDadosDocente.alterarDocente(docente2);
-        System.out.println("OK");
+        docente1.setEmail("roberto@yahoo.com.br");
+        docente2.setTelefone("16954876132");
+        alterarDadosDocenteUC.alterarDocente(docente1);
+        alterarDadosDocenteUC.alterarDocente(docente2);
+
         /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Linha cuidado*/
+        LinhaCuidado linhaCuidado1 = new LinhaCuidado(1, "Cárdio-Respiratória", "Doenças Cárdio-Respiratórias");
+        LinhaCuidado linhaCuidado2 = new LinhaCuidado(2, "e Doenças Metabólicas", "Relacionados a Doenças Metabólicas");
 
+        Integer lc1 = cadastrarLinhaCuidadoUC.cadastraLinhaCuidado(linhaCuidado1);
+        Integer lc2 = cadastrarLinhaCuidadoUC.cadastraLinhaCuidado(linhaCuidado2);
+
+        linhaCuidado2.setNome("Doenças Cerebrais");
+        linhaCuidado2.setDescricao("Doenças relacionado ao cerebro");
+        alterarLinhaCuidadoUC.alteraLinhaCuidado(linhaCuidado2);
+        /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Linha acao*/
+        Integer[] docentes = {doc1, doc2};
+        LinhaAcao linhaAcao1 = new LinhaAcao(1, "Fisioterapia CardioVascular", "Fisioterapia CardioVascular DESC");
+        LinhaAcao linhaAcao2 = new LinhaAcao(2, "Fisioterapia Respiratória", "Fisioterapia Respiratória DESC");
+
+        Integer linhaAcaoId1 = cadastrarLinhaAcaoUC.cadastraLinhaAcao(linhaAcao1, lc1, docentes);
+        Integer linhaAcaoId2 = cadastrarLinhaAcaoUC.cadastraLinhaAcao(linhaAcao2, lc2, docentes);
+
+        linhaAcao1.setDescricao("Fisioterapia CardioVascular DESCRICAO");
+        alterarLinhaAcaoUC.alteraLinhaAcao(linhaAcao1);
+        /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Discente*/
+        Discente discente1 = new Discente(3004213, "Alan Moreira", "alan@gmail.com", "16978342565");
+        Discente discente2 = new Discente(3005675, "Renato Moreira", "renato@gmail.com", "11987652314");
+
+        cadastrarDiscenteUC.cadastraDiscente(discente1, linhaAcaoId1);
+        cadastrarDiscenteUC.cadastraDiscente(discente2, linhaAcaoId2);
+
+        discente1.setEmail("alan.moreira@hotmail.com");
+        alterarDadosDiscenteUC.alterarDiscente(discente1, linhaAcaoId2);
+        /* --------------------------------------------------------------------------------------------------------------------*/
     }
 
     private static void configureInjection() {
+        // Acolhimento
         AcolhimentoDAO acolhimentoDAO = new InMemoryAcolhimentoDAO();
         cadastrarServidorAcolhimentoUC = new CadastrarServidorAcolhimentoUC(acolhimentoDAO);
         alterarServidorAcolhimentoUC = new AlterarServidorAcolhimentoUC(acolhimentoDAO);
 
+        // Docente
         DocenteDAO docenteDAO = new InMemoryDocenteDAO();
         cadastrarNovoDocenteUC = new CadastrarNovoDocenteUC(docenteDAO);
-        alterarDadosDocente = new AlterarDadosDocente(docenteDAO);
+        alterarDadosDocenteUC = new AlterarDadosDocenteUC(docenteDAO);
+        buscarDocenteUC = new BuscarDocenteUC(docenteDAO);
+
+        // Linha Cuidado
+        LinhaCuidadoDAO linhaCuidadoDAO = new InMemoryLinhaCuidadoDAO();
+        cadastrarLinhaCuidadoUC = new CadastrarLinhaCuidadoUC(linhaCuidadoDAO);
+        alterarLinhaCuidadoUC = new AlterarLinhaCuidadoUC(linhaCuidadoDAO);
+        buscarLinhaCuidadoUC = new BuscarLinhaCuidadoUC(linhaCuidadoDAO);
+
+        // Linha Acao
+        LinhaAcaoDAO linhaAcaoDAO = new InMemoryLinhaAcaoDAO();
+        cadastrarLinhaAcaoUC = new CadastrarLinhaAcaoUC(linhaAcaoDAO, buscarDocenteUC, buscarLinhaCuidadoUC);
+        alterarLinhaAcaoUC = new AlterarLinhaAcaoUC(linhaAcaoDAO);
+        buscarLinhaAcaoUC = new BuscarLinhaAcaoUC(linhaAcaoDAO);
+
+        // Discente
+        DiscenteDAO discenteDAO = new InMemoryDiscenteDAO();
+        cadastrarDiscenteUC = new CadastrarDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
+        alterarDadosDiscenteUC = new AlterarDadosDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
     }
 }
