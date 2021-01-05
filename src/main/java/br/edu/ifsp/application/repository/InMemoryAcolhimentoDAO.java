@@ -1,7 +1,7 @@
 package br.edu.ifsp.application.repository;
 
 import br.edu.ifsp.domain.entities.Acolhimento;
-import br.edu.ifsp.domain.usecases.Acolhimento.AcolhimentoDAO;
+import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
 
 import java.util.*;
 

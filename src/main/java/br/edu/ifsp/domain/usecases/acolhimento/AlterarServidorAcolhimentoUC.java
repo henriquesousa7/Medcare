@@ -1,7 +1,6 @@
-package br.edu.ifsp.domain.usecases.Acolhimento;
+package br.edu.ifsp.domain.usecases.acolhimento;
 
 import br.edu.ifsp.domain.entities.Acolhimento;
-import br.edu.ifsp.domain.usecases.utils.EntityAlreadyExistsException;
 import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
 
 public class AlterarServidorAcolhimentoUC {

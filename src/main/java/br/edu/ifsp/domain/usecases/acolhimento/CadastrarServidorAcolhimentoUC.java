@@ -1,4 +1,4 @@
-package br.edu.ifsp.domain.usecases.Acolhimento;
+package br.edu.ifsp.domain.usecases.acolhimento;
 
 import br.edu.ifsp.domain.entities.Acolhimento;
 import br.edu.ifsp.domain.usecases.utils.EntityAlreadyExistsException;
@@ -13,6 +13,7 @@ public class CadastrarServidorAcolhimentoUC {
 
     public String cadastraServidor(Acolhimento acolhimento){
         String prontuario = acolhimento.getProntuario();
+
         if (acolhimentoDAO.findOne(prontuario).isPresent())
             throw new EntityAlreadyExistsException("Esse acolhimento ja existe");
 
