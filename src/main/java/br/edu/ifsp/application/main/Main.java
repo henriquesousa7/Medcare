@@ -20,6 +20,9 @@ import br.edu.ifsp.domain.usecases.linhaCuidado.AlterarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.BuscarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.CadastrarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.LinhaCuidadoDAO;
+import br.edu.ifsp.domain.usecases.usuario.AlterarDadosUsuarioUC;
+import br.edu.ifsp.domain.usecases.usuario.CadastrarUsuarioUC;
+import br.edu.ifsp.domain.usecases.usuario.UsuarioDAO;
 
 public class Main {
 
@@ -40,6 +43,9 @@ public class Main {
     private static CadastrarLinhaAcaoUC cadastrarLinhaAcaoUC;
     private static AlterarLinhaAcaoUC alterarLinhaAcaoUC;
     private static BuscarLinhaAcaoUC buscarLinhaAcaoUC;
+
+    private static CadastrarUsuarioUC cadastrarUsuarioUC;
+    private static AlterarDadosUsuarioUC alterarDadosUsuarioUC;
 
     public static void main(String[] args) {
         configureInjection();
@@ -102,6 +108,20 @@ public class Main {
         discente1.setEmail("alan.moreira@hotmail.com");
         alterarDadosDiscenteUC.alterarDiscente(discente1, linhaAcaoId2);
         /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Usuario*/
+        Usuario usuario1 = new Usuario("12312312376", 1234, "Alfonso Oliveira", 'M', "1693456875",
+                                "Rua Sete", "Diabetes");
+        Usuario usuario2 = new Usuario("98798798776", 5678, "Lucas Oliveira", 'M', "1693458653",
+                                "Rua Oito", "Braço quebrado");
+
+        cadastrarUsuarioUC.cadastraUsuario(usuario1);
+        cadastrarUsuarioUC.cadastraUsuario(usuario2);
+
+        usuario2.setEndereco("Rua Dez");
+        usuario2.setHistoricoMedico("Pressao alta");
+        alterarDadosUsuarioUC.alteraUsuario(usuario2);
+        /* --------------------------------------------------------------------------------------------------------------------*/
+
     }
 
     private static void configureInjection() {
@@ -132,5 +152,10 @@ public class Main {
         DiscenteDAO discenteDAO = new InMemoryDiscenteDAO();
         cadastrarDiscenteUC = new CadastrarDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
         alterarDadosDiscenteUC = new AlterarDadosDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
+
+        // Usuario
+        UsuarioDAO usuarioDAO = new InMemoryUsuarioDAO();
+        cadastrarUsuarioUC = new CadastrarUsuarioUC(usuarioDAO);
+        alterarDadosUsuarioUC = new AlterarDadosUsuarioUC(usuarioDAO);
     }
 }
