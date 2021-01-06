@@ -2,10 +2,10 @@ package br.edu.ifsp.domain.entities;
 
 public class Mantenedor {
 
-    private int prontuario;
+    private Integer prontuario;
     private String nome;
 
-    public Mantenedor(int prontuario, String nome) {
+    public Mantenedor(Integer prontuario, String nome) {
         this.prontuario = prontuario;
         this.nome = nome;
     }

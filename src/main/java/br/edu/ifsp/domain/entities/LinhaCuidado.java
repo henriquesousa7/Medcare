@@ -4,17 +4,17 @@ import java.util.List;
 
 public class LinhaCuidado {
 
-    private int id;
+    private Integer id;
     private String nome;
     private String descricao;
 
-    public LinhaCuidado(int id, String nome, String descricao) {
+    public LinhaCuidado(Integer id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -5,13 +5,13 @@ import java.util.Objects;
 
 public class LinhaAcao {
 
-    private int id;
+    private Integer id;
     private String nome;
     private String descricao;
     private LinhaCuidado linhaCuidado;
     private List<Docente> responsaveis;
 
-    public LinhaAcao(int id, String nome, String descricao, LinhaCuidado linhaCuidado, List<Docente> responsaveis) {
+    public LinhaAcao(Integer id, String nome, String descricao, LinhaCuidado linhaCuidado, List<Docente> responsaveis) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -19,13 +19,13 @@ public class LinhaAcao {
         this.responsaveis = responsaveis;
     }
 
-    public LinhaAcao(int id, String nome, String descricao) {
+    public LinhaAcao(Integer id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

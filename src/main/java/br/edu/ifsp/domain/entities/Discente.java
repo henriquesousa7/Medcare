@@ -2,13 +2,13 @@ package br.edu.ifsp.domain.entities;
 
 public class Discente {
 
-    private int prontuario;
+    private Integer prontuario;
     private String nome;
     private String email;
     private String telefone;
     private LinhaAcao linhaAcao;
 
-    public Discente(int prontuario, String nome, String email, String telefone, LinhaAcao linhaAcao) {
+    public Discente(Integer prontuario, String nome, String email, String telefone, LinhaAcao linhaAcao) {
         this.prontuario = prontuario;
         this.nome = nome;
         this.email = email;
@@ -16,14 +16,14 @@ public class Discente {
         this.linhaAcao = linhaAcao;
     }
 
-    public Discente(int prontuario, String nome, String email, String telefone) {
+    public Discente(Integer prontuario, String nome, String email, String telefone) {
         this.prontuario = prontuario;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
     }
 
-    public int getProntuario() {
+    public Integer getProntuario() {
         return prontuario;
     }
 

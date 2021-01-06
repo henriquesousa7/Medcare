@@ -1,7 +1,7 @@
 package br.edu.ifsp.domain.entities;
 
 public class UsuarioLinhaAcao {
-    private int id;
+    private Integer id;
     private LinhaAcao linhaAcao;
     private Usuario usuario;
     private Status status;
@@ -15,7 +15,7 @@ public class UsuarioLinhaAcao {
         this.responsavelAcolhimento = responsavelAcolhimento;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

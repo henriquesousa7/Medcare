@@ -4,18 +4,18 @@ import java.time.LocalDateTime;
 
 public class Atendimento {
 
-    private int id;
+    private Integer id;
     private UsuarioLinhaAcao usuarioLinhaAcao;
     private LocalDateTime data;
     private Status status;
     private Discente discenteResponsavel;
 
-    public Atendimento(int id, LocalDateTime data){
+    public Atendimento(Integer id, LocalDateTime data){
         this.id = id;
         this.data = data;
     }
 
-    public Atendimento(int id, UsuarioLinhaAcao usuarioLinhaAcao, LocalDateTime data, Status status, Discente discenteResponsavel) {
+    public Atendimento(Integer id, UsuarioLinhaAcao usuarioLinhaAcao, LocalDateTime data, Status status, Discente discenteResponsavel) {
         this.id = id;
         this.usuarioLinhaAcao = usuarioLinhaAcao;
         this.data = data;
@@ -23,7 +23,7 @@ public class Atendimento {
         this.discenteResponsavel = discenteResponsavel;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

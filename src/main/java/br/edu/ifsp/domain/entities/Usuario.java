@@ -3,14 +3,14 @@ package br.edu.ifsp.domain.entities;
 public class Usuario {
 
     private String cpf;
-    private int numeroCartaoSUS;
+    private Integer numeroCartaoSUS;
     private String nome;
     private char sexo;
     private String telefone;
     private String endereco;
     private String historicoMedico;
 
-    public Usuario(String cpf, int numeroCartaoSUS, String nome, char sexo, String telefone, String endereco, String historicoMedico) {
+    public Usuario(String cpf, Integer numeroCartaoSUS, String nome, char sexo, String telefone, String endereco, String historicoMedico) {
         this.cpf = cpf;
         this.numeroCartaoSUS = numeroCartaoSUS;
         this.nome = nome;
@@ -24,7 +24,7 @@ public class Usuario {
         return cpf;
     }
 
-    public int getNumeroCartaoSUS() {
+    public Integer getNumeroCartaoSUS() {
         return numeroCartaoSUS;
     }
 

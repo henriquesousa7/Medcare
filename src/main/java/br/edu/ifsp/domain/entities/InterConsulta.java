@@ -2,13 +2,13 @@ package br.edu.ifsp.domain.entities;
 
 public class InterConsulta {
 
-    private int id;
+    private Integer id;
     private LinhaAcao linhaAcao;
     private Usuario usuario;
     private Status status;
     private Docente docenteResponsavel;
 
-    public InterConsulta(int id, LinhaAcao linhaAcao, Usuario usuario, Docente docenteResponsavel, Status status) {
+    public InterConsulta(Integer id, LinhaAcao linhaAcao, Usuario usuario, Docente docenteResponsavel, Status status) {
         this.id = id;
         this.linhaAcao = linhaAcao;
         this.usuario = usuario;
@@ -16,7 +16,7 @@ public class InterConsulta {
         this.docenteResponsavel = docenteResponsavel;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
