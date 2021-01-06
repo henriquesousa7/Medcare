@@ -2,22 +2,22 @@ package br.edu.ifsp.domain.entities;
 
 public class InterConsulta {
 
+    private int id;
     private LinhaAcao linhaAcao;
     private Usuario usuario;
     private Status status;
+    private Docente docenteResponsavel;
 
-    public InterConsulta(LinhaAcao linhaAcao, Usuario usuario, Status status) {
+    public InterConsulta(int id, LinhaAcao linhaAcao, Usuario usuario, Docente docenteResponsavel, Status status) {
+        this.id = id;
         this.linhaAcao = linhaAcao;
         this.usuario = usuario;
         this.status = status;
+        this.docenteResponsavel = docenteResponsavel;
     }
 
-    public void negarInterConsulta(InterConsulta interConsulta){
-        return;
-    }
-
-    public void aceitarInterConsulta(InterConsulta interConsulta){
-        return;
+    public int getId() {
+        return id;
     }
 
     public LinhaAcao getLinhaAcao() {
@@ -38,6 +38,14 @@ public class InterConsulta {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public Docente getDocenteResponsavel() {
+        return docenteResponsavel;
+    }
+
+    public void setDocenteResponsavel(Docente docenteResponsavel) {
+        this.docenteResponsavel = docenteResponsavel;
     }
 
     @Override

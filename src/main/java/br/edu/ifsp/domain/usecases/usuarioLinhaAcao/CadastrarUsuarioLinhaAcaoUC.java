@@ -22,7 +22,7 @@ public class CadastrarUsuarioLinhaAcaoUC {
 
     public Integer cadastraUsuarioLinhaAcao(Integer usuarioLinhaAcaoId, String acolhimentoPront, String usuarioCpf, Integer linhaAcaoID){
         if (usuarioLinhaAcaoId == null || acolhimentoPront == null || usuarioCpf == null || linhaAcaoID == null)
-            throw new IllegalArgumentException("Valores nao podem ser nulo");
+            throw new IllegalArgumentException("Valores para UsuarioLinhaAcao nao podem ser nulo");
 
         Acolhimento acolhimento = buscarAcolhimentoUC.findOne(acolhimentoPront).
                 orElseThrow(() -> new EntityNotFoundException("Acolhimento nao existe"));

@@ -6,6 +6,10 @@ import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
 import br.edu.ifsp.domain.usecases.acolhimento.AlterarServidorAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.acolhimento.BuscarAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.acolhimento.CadastrarServidorAcolhimentoUC;
+import br.edu.ifsp.domain.usecases.agendamento.ConsultarAgendamentoUC;
+import br.edu.ifsp.domain.usecases.atendimento.AgendarAtendimentoUC;
+import br.edu.ifsp.domain.usecases.atendimento.AtendimentoDAO;
+import br.edu.ifsp.domain.usecases.atendimento.BuscarAtendimentoUC;
 import br.edu.ifsp.domain.usecases.discente.AlterarDadosDiscenteUC;
 import br.edu.ifsp.domain.usecases.discente.BuscarDiscenteUC;
 import br.edu.ifsp.domain.usecases.discente.CadastrarDiscenteUC;
@@ -14,6 +18,9 @@ import br.edu.ifsp.domain.usecases.docente.AlterarDadosDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.BuscarDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.CadastrarNovoDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.DocenteDAO;
+import br.edu.ifsp.domain.usecases.interconsulta.GerenciarInterConsultaUC;
+import br.edu.ifsp.domain.usecases.interconsulta.InterConsultaDAO;
+import br.edu.ifsp.domain.usecases.interconsulta.SolicitarInterConsultaUC;
 import br.edu.ifsp.domain.usecases.linhaAcao.AlterarLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.linhaAcao.BuscarLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.linhaAcao.CadastrarLinhaAcaoUC;
@@ -22,6 +29,9 @@ import br.edu.ifsp.domain.usecases.linhaCuidado.AlterarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.BuscarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.CadastrarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.LinhaCuidadoDAO;
+import br.edu.ifsp.domain.usecases.listaEspera.VisualizarListaEsperaLinhaAcaoUC;
+import br.edu.ifsp.domain.usecases.relatorio.GerarRelatorioGeralUC;
+import br.edu.ifsp.domain.usecases.relatorio.GerarRelatorioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.usuario.AlterarDadosUsuarioUC;
 import br.edu.ifsp.domain.usecases.usuario.BuscarUsuarioUC;
 import br.edu.ifsp.domain.usecases.usuario.CadastrarUsuarioUC;
@@ -30,6 +40,9 @@ import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.BuscarUsuarioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.CadastrarUsuarioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.GerenciarUsuarioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.UsuarioLinhaAcaoDAO;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 public class Main {
 
@@ -60,6 +73,19 @@ public class Main {
     private static CadastrarUsuarioLinhaAcaoUC cadastrarUsuarioLinhaAcaoUC;
     private static GerenciarUsuarioLinhaAcaoUC gerenciarUsuarioLinhaAcaoUC;
     private static BuscarUsuarioLinhaAcaoUC buscarUsuarioLinhaAcaoUC;
+
+    private static AgendarAtendimentoUC agendarAtendimentoUC;
+    private static BuscarAtendimentoUC buscarAtendimentoUC;
+
+    private static SolicitarInterConsultaUC solicitarInterConsultaUC;
+    private static GerenciarInterConsultaUC gerenciarInterConsultaUC;
+
+    private static ConsultarAgendamentoUC consultarAgendamentoUC;
+
+    private static GerarRelatorioGeralUC gerarRelatorioGeralUC;
+    private static GerarRelatorioLinhaAcaoUC gerarRelatorioLinhaAcaoUC;
+
+    private static VisualizarListaEsperaLinhaAcaoUC visualizarListaEsperaLinhaAcaoUC;
 
     public static void main(String[] args) {
         configureInjection();
@@ -116,8 +142,8 @@ public class Main {
         Discente discente1 = new Discente(3004213, "Alan Moreira", "alan@gmail.com", "16978342565");
         Discente discente2 = new Discente(3005675, "Renato Moreira", "renato@gmail.com", "11987652314");
 
-        cadastrarDiscenteUC.cadastraDiscente(discente1, linhaAcaoId1);
-        cadastrarDiscenteUC.cadastraDiscente(discente2, linhaAcaoId2);
+        Integer discentePront1 = cadastrarDiscenteUC.cadastraDiscente(discente1, linhaAcaoId1);
+        Integer discentePront2 = cadastrarDiscenteUC.cadastraDiscente(discente2, linhaAcaoId2);
 
         discente1.setEmail("alan.moreira@hotmail.com");
         alterarDadosDiscenteUC.alterarDiscente(discente1, linhaAcaoId2);
@@ -141,8 +167,51 @@ public class Main {
 
         gerenciarUsuarioLinhaAcaoUC.gerenciaUsuarioLinhaAcao(usuarioLA1, Status.CANCELADO);
         /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Atendimento*/
+        Atendimento atendimento1 = new Atendimento(1, LocalDateTime.of(2021,02,07,15,30));
+        Atendimento atendimento2 = new Atendimento(2, LocalDateTime.of(2021,03,20,13,30));
+        Atendimento atendimento3 = new Atendimento(3, LocalDateTime.of(2021,03,20,13,30));
 
-        /* Prints*/
+        agendarAtendimentoUC.agendaAtendimento(atendimento1, usuarioLA1, discentePront1);
+        agendarAtendimentoUC.agendaAtendimento(atendimento3, usuarioLA1, discentePront1);
+
+        agendarAtendimentoUC.agendaAtendimento(atendimento2, usuarioLA2, discentePront2);
+        /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Interconsulta*/
+        Integer idInterConsulta1 = solicitarInterConsultaUC.solicitaInterConsulta(1,linhaAcaoId1, cpfU1, doc1);
+        Integer idInterConsulta2 = solicitarInterConsultaUC.solicitaInterConsulta(2,linhaAcaoId2, cpfU2, doc2);
+
+        gerenciarInterConsultaUC.gerenciaInterConsulta(idInterConsulta1, Status.FINALIZADO);
+        gerenciarInterConsultaUC.gerenciaInterConsulta(idInterConsulta2, Status.CANCELADO);
+
+        /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Consultar Agendamentos*/
+        List<Atendimento> agendamentos = consultarAgendamentoUC.consultaAgendamento(discente1);
+        System.out.println("Agendamentos por discente");
+        for (Atendimento consulta : agendamentos) {
+            System.out.println(consulta);
+        }
+        /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Gerar relatorio geral*/
+        List<Atendimento> relatorioGeral = gerarRelatorioGeralUC.geraRelatorioGeral();
+        System.out.println("\nRelatorio geral");
+        for (Atendimento consulta : relatorioGeral) {
+            System.out.println(consulta);
+        }
+        /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Gerar relatorio geral por linha de acao*/
+        List<Atendimento> relatorioLinhaAcao = gerarRelatorioLinhaAcaoUC.geraRelatorioLinhaAcao(linhaAcao2);
+        System.out.println("\nRelatorio geral por linha de acao");
+        for (Atendimento consulta : relatorioLinhaAcao) {
+            System.out.println(consulta);
+        }
+        /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Visualizar usuarios em lista de espera*/
+        List<Usuario> listaEspera = visualizarListaEsperaLinhaAcaoUC.geraListaEspera(linhaAcao2);
+        System.out.println("\nUsuarios na lista de espera");
+        for (Usuario usuario : listaEspera) {
+            System.out.println(usuario);
+        }
     }
 
     private static void configureInjection() {
@@ -188,5 +257,24 @@ public class Main {
         cadastrarUsuarioLinhaAcaoUC = new CadastrarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarLinhaAcaoUC, buscarUsuarioUC, buscarAcolhimentoUC);
         gerenciarUsuarioLinhaAcaoUC = new GerenciarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarUsuarioLinhaAcaoUC);
 
+        // Atendimento
+        AtendimentoDAO atendimentoDAO = new InMemoryAtendimentoDAO();
+        agendarAtendimentoUC = new AgendarAtendimentoUC(atendimentoDAO, buscarUsuarioLinhaAcaoUC, buscarDiscenteUC);
+        buscarAtendimentoUC = new BuscarAtendimentoUC(atendimentoDAO);
+
+        // Interconsulta
+        InterConsultaDAO interConsultaDAO = new InMemoryInterConsultaDAO();
+        solicitarInterConsultaUC = new SolicitarInterConsultaUC(interConsultaDAO, buscarLinhaAcaoUC, buscarUsuarioUC, buscarDocenteUC);
+        gerenciarInterConsultaUC = new GerenciarInterConsultaUC(interConsultaDAO);
+
+        // Consultar agendamento
+        consultarAgendamentoUC = new ConsultarAgendamentoUC(atendimentoDAO);
+
+        // Gerar relatorio geral
+        gerarRelatorioGeralUC = new GerarRelatorioGeralUC(atendimentoDAO);
+        gerarRelatorioLinhaAcaoUC = new GerarRelatorioLinhaAcaoUC(atendimentoDAO);
+
+        // Visualizar usuarios na lista de Espera
+        visualizarListaEsperaLinhaAcaoUC = new VisualizarListaEsperaLinhaAcaoUC(atendimentoDAO);
     }
 }

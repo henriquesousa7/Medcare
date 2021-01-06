@@ -1,6 +1,7 @@
 package br.edu.ifsp.domain.entities;
 
 import java.util.List;
+import java.util.Objects;
 
 public class LinhaAcao {
 
@@ -69,5 +70,22 @@ public class LinhaAcao {
                 ", linhaCuidado=" + linhaCuidado +
                 ", responsaveis=" + responsaveis +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LinhaAcao linhaAcao = (LinhaAcao) o;
+        return id == linhaAcao.id &&
+                Objects.equals(nome, linhaAcao.nome) &&
+                Objects.equals(descricao, linhaAcao.descricao) &&
+                Objects.equals(linhaCuidado, linhaAcao.linhaCuidado) &&
+                Objects.equals(responsaveis, linhaAcao.responsaveis);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome, descricao, linhaCuidado, responsaveis);
     }
 }

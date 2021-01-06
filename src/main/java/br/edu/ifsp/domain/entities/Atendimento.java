@@ -4,16 +4,27 @@ import java.time.LocalDateTime;
 
 public class Atendimento {
 
+    private int id;
     private UsuarioLinhaAcao usuarioLinhaAcao;
     private LocalDateTime data;
     private Status status;
     private Discente discenteResponsavel;
 
-    public Atendimento(UsuarioLinhaAcao usuarioLinhaAcao, LocalDateTime data, Status status, Discente discenteResponsavel) {
+    public Atendimento(int id, LocalDateTime data){
+        this.id = id;
+        this.data = data;
+    }
+
+    public Atendimento(int id, UsuarioLinhaAcao usuarioLinhaAcao, LocalDateTime data, Status status, Discente discenteResponsavel) {
+        this.id = id;
         this.usuarioLinhaAcao = usuarioLinhaAcao;
         this.data = data;
         this.status = status;
         this.discenteResponsavel = discenteResponsavel;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public UsuarioLinhaAcao getUsuarioLinhaAcao() {
@@ -51,7 +62,8 @@ public class Atendimento {
     @Override
     public String toString() {
         return "Atendimento{" +
-                "usuarioLinhaAcao=" + usuarioLinhaAcao +
+                "id=" + id +
+                ", usuarioLinhaAcao=" + usuarioLinhaAcao +
                 ", data=" + data +
                 ", status=" + status +
                 ", discenteResponsavel=" + discenteResponsavel +
