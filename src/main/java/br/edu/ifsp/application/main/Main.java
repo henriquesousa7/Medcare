@@ -4,8 +4,10 @@ import br.edu.ifsp.application.repository.*;
 import br.edu.ifsp.domain.entities.*;
 import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
 import br.edu.ifsp.domain.usecases.acolhimento.AlterarServidorAcolhimentoUC;
+import br.edu.ifsp.domain.usecases.acolhimento.BuscarAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.acolhimento.CadastrarServidorAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.discente.AlterarDadosDiscenteUC;
+import br.edu.ifsp.domain.usecases.discente.BuscarDiscenteUC;
 import br.edu.ifsp.domain.usecases.discente.CadastrarDiscenteUC;
 import br.edu.ifsp.domain.usecases.discente.DiscenteDAO;
 import br.edu.ifsp.domain.usecases.docente.AlterarDadosDocenteUC;
@@ -21,13 +23,19 @@ import br.edu.ifsp.domain.usecases.linhaCuidado.BuscarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.CadastrarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.LinhaCuidadoDAO;
 import br.edu.ifsp.domain.usecases.usuario.AlterarDadosUsuarioUC;
+import br.edu.ifsp.domain.usecases.usuario.BuscarUsuarioUC;
 import br.edu.ifsp.domain.usecases.usuario.CadastrarUsuarioUC;
 import br.edu.ifsp.domain.usecases.usuario.UsuarioDAO;
+import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.BuscarUsuarioLinhaAcaoUC;
+import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.CadastrarUsuarioLinhaAcaoUC;
+import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.GerenciarUsuarioLinhaAcaoUC;
+import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.UsuarioLinhaAcaoDAO;
 
 public class Main {
 
     private static CadastrarServidorAcolhimentoUC cadastrarServidorAcolhimentoUC;
     private static AlterarServidorAcolhimentoUC alterarServidorAcolhimentoUC;
+    private static BuscarAcolhimentoUC buscarAcolhimentoUC;
 
     private static CadastrarNovoDocenteUC cadastrarNovoDocenteUC;
     private static AlterarDadosDocenteUC alterarDadosDocenteUC;
@@ -35,6 +43,7 @@ public class Main {
 
     private static CadastrarDiscenteUC cadastrarDiscenteUC;
     private static AlterarDadosDiscenteUC alterarDadosDiscenteUC;
+    private static BuscarDiscenteUC buscarDiscenteUC;
 
     private static CadastrarLinhaCuidadoUC cadastrarLinhaCuidadoUC;
     private static AlterarLinhaCuidadoUC alterarLinhaCuidadoUC;
@@ -46,6 +55,11 @@ public class Main {
 
     private static CadastrarUsuarioUC cadastrarUsuarioUC;
     private static AlterarDadosUsuarioUC alterarDadosUsuarioUC;
+    private static BuscarUsuarioUC buscarUsuarioUC;
+
+    private static CadastrarUsuarioLinhaAcaoUC cadastrarUsuarioLinhaAcaoUC;
+    private static GerenciarUsuarioLinhaAcaoUC gerenciarUsuarioLinhaAcaoUC;
+    private static BuscarUsuarioLinhaAcaoUC buscarUsuarioLinhaAcaoUC;
 
     public static void main(String[] args) {
         configureInjection();
@@ -54,8 +68,8 @@ public class Main {
         Acolhimento acolhimento1 = new Acolhimento("SC3009165", "Henrique de Sousa", "henrique@hotmail.com", "16992675413", "22222222222");
         Acolhimento acolhimento2 = new Acolhimento("SC300902X", "Felipe de Sousa", "felipe@hotmail.com", "16993456713", "11111111111");
 
-        cadastrarServidorAcolhimentoUC.cadastraServidor(acolhimento1);
-        cadastrarServidorAcolhimentoUC.cadastraServidor(acolhimento2);
+        String aclh1 = cadastrarServidorAcolhimentoUC.cadastraServidor(acolhimento1);
+        String aclh2 = cadastrarServidorAcolhimentoUC.cadastraServidor(acolhimento2);
 
         acolhimento1.setEmail("henrique@gmail.com");
         acolhimento1.setTelefone("16981625543");
@@ -114,14 +128,21 @@ public class Main {
         Usuario usuario2 = new Usuario("98798798776", 5678, "Lucas Oliveira", 'M', "1693458653",
                                 "Rua Oito", "Braço quebrado");
 
-        cadastrarUsuarioUC.cadastraUsuario(usuario1);
-        cadastrarUsuarioUC.cadastraUsuario(usuario2);
+        String cpfU1 = cadastrarUsuarioUC.cadastraUsuario(usuario1);
+        String cpfU2 = cadastrarUsuarioUC.cadastraUsuario(usuario2);
 
         usuario2.setEndereco("Rua Dez");
         usuario2.setHistoricoMedico("Pressao alta");
         alterarDadosUsuarioUC.alteraUsuario(usuario2);
         /* --------------------------------------------------------------------------------------------------------------------*/
+        /* Usuario a uma linha de acao*/
+        Integer usuarioLA1 = cadastrarUsuarioLinhaAcaoUC.cadastraUsuarioLinhaAcao(1, aclh1, cpfU1, linhaAcaoId1);
+        Integer usuarioLA2 = cadastrarUsuarioLinhaAcaoUC.cadastraUsuarioLinhaAcao(2, aclh2, cpfU2, linhaAcaoId2);
 
+        gerenciarUsuarioLinhaAcaoUC.gerenciaUsuarioLinhaAcao(usuarioLA1, Status.CANCELADO);
+        /* --------------------------------------------------------------------------------------------------------------------*/
+
+        /* Prints*/
     }
 
     private static void configureInjection() {
@@ -129,6 +150,7 @@ public class Main {
         AcolhimentoDAO acolhimentoDAO = new InMemoryAcolhimentoDAO();
         cadastrarServidorAcolhimentoUC = new CadastrarServidorAcolhimentoUC(acolhimentoDAO);
         alterarServidorAcolhimentoUC = new AlterarServidorAcolhimentoUC(acolhimentoDAO);
+        buscarAcolhimentoUC = new BuscarAcolhimentoUC(acolhimentoDAO);
 
         // Docente
         DocenteDAO docenteDAO = new InMemoryDocenteDAO();
@@ -152,10 +174,19 @@ public class Main {
         DiscenteDAO discenteDAO = new InMemoryDiscenteDAO();
         cadastrarDiscenteUC = new CadastrarDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
         alterarDadosDiscenteUC = new AlterarDadosDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
+        buscarDiscenteUC = new BuscarDiscenteUC(discenteDAO);
 
         // Usuario
         UsuarioDAO usuarioDAO = new InMemoryUsuarioDAO();
         cadastrarUsuarioUC = new CadastrarUsuarioUC(usuarioDAO);
         alterarDadosUsuarioUC = new AlterarDadosUsuarioUC(usuarioDAO);
+        buscarUsuarioUC = new BuscarUsuarioUC(usuarioDAO);
+
+        // Usuario a Linha de Acao
+        UsuarioLinhaAcaoDAO usuarioLinhaAcaoDAO = new InMemoryUsuarioLinhaAcaoDAO();
+        buscarUsuarioLinhaAcaoUC = new BuscarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO);
+        cadastrarUsuarioLinhaAcaoUC = new CadastrarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarLinhaAcaoUC, buscarUsuarioUC, buscarAcolhimentoUC);
+        gerenciarUsuarioLinhaAcaoUC = new GerenciarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarUsuarioLinhaAcaoUC);
+
     }
 }

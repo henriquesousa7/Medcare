@@ -1,16 +1,22 @@
 package br.edu.ifsp.domain.entities;
 
 public class UsuarioLinhaAcao {
+    private int id;
     private LinhaAcao linhaAcao;
     private Usuario usuario;
     private Status status;
     private Acolhimento responsavelAcolhimento;
 
-    public UsuarioLinhaAcao(LinhaAcao linhaAcao, Usuario usuario, Status status, Acolhimento responsavelAcolhimento) {
+    public UsuarioLinhaAcao(Integer id, LinhaAcao linhaAcao, Usuario usuario, Status status, Acolhimento responsavelAcolhimento) {
+        this.id = id;
         this.linhaAcao = linhaAcao;
         this.usuario = usuario;
         this.status = status;
         this.responsavelAcolhimento = responsavelAcolhimento;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public LinhaAcao getLinhaAcao() {
@@ -39,5 +45,16 @@ public class UsuarioLinhaAcao {
 
     public void setResponsavelAcolhimento(Acolhimento responsavelAcolhimento) {
         this.responsavelAcolhimento = responsavelAcolhimento;
+    }
+
+    @Override
+    public String toString() {
+        return "UsuarioLinhaAcao{" +
+                "id=" + id +
+                ", linhaAcao=" + linhaAcao +
+                ", usuario=" + usuario +
+                ", status=" + status +
+                ", responsavelAcolhimento=" + responsavelAcolhimento +
+                '}';
     }
 }
