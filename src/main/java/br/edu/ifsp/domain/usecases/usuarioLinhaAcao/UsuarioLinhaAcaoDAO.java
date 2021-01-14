@@ -6,6 +6,5 @@ import br.edu.ifsp.domain.usecases.utils.DAO;
 import java.util.Optional;
 
 public interface UsuarioLinhaAcaoDAO extends DAO<UsuarioLinhaAcao, Integer> {
-    @Override
-    Optional<UsuarioLinhaAcao> findOne(Integer key);
+
 }

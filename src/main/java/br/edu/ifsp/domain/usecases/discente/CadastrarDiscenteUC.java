@@ -5,6 +5,8 @@ import br.edu.ifsp.domain.entities.LinhaAcao;
 import br.edu.ifsp.domain.entities.LinhaCuidado;
 import br.edu.ifsp.domain.usecases.linhaAcao.BuscarLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
+import br.edu.ifsp.domain.usecases.utils.Notification;
+import br.edu.ifsp.domain.usecases.utils.Validator;
 
 public class CadastrarDiscenteUC {
     private DiscenteDAO discenteDAO;
@@ -16,6 +18,12 @@ public class CadastrarDiscenteUC {
     }
 
     public Integer cadastraDiscente(Discente discente, Integer linhaAcaoID){
+        Validator<Discente> validator = new DiscenteInputValidator();
+        Notification notification = validator.validate(discente);
+
+        if(notification.hasErros())
+            throw new IllegalArgumentException(notification.errorMessage());
+
         if(linhaAcaoID == null)
             throw new IllegalArgumentException("Id da linha de acao nao pode ser nulo");
 

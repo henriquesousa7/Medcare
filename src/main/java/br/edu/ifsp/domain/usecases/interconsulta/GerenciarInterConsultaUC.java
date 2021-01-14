@@ -13,7 +13,7 @@ public class GerenciarInterConsultaUC {
     }
 
     public boolean gerenciaInterConsulta(Integer idInterConsulta, Status status) {
-        if(idInterConsulta == null)
+        if(idInterConsulta == null || status == null)
             throw new IllegalArgumentException("Id da InterConsulta nao pode ser nulo");
 
         Optional<InterConsulta> interConsultaOP = interConsultaDAO.findOne(idInterConsulta);

@@ -7,6 +7,8 @@ import br.edu.ifsp.domain.entities.UsuarioLinhaAcao;
 import br.edu.ifsp.domain.usecases.discente.BuscarDiscenteUC;
 import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.BuscarUsuarioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
+import br.edu.ifsp.domain.usecases.utils.Notification;
+import br.edu.ifsp.domain.usecases.utils.Validator;
 
 import java.time.LocalDateTime;
 
@@ -22,6 +24,12 @@ public class AgendarAtendimentoUC {
     }
 
     public Integer agendaAtendimento(Atendimento atendimento, Integer idUsuarioLinhaAcao, Integer prontuarioDiscente){
+        Validator<Atendimento> validator = new AtendimentoInputValidator();
+        Notification notification = validator.validate(atendimento);
+
+        if(notification.hasErros())
+            throw new IllegalArgumentException(notification.errorMessage());
+
         if(idUsuarioLinhaAcao == null || prontuarioDiscente == null)
             throw new IllegalArgumentException("Valores para atendimento nao podem ser nulos");
 

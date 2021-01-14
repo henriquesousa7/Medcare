@@ -6,6 +6,5 @@ import br.edu.ifsp.domain.usecases.utils.DAO;
 import java.util.Optional;
 
 public interface InterConsultaDAO extends DAO<InterConsulta, Integer> {
-    @Override
-    Optional<InterConsulta> findOne(Integer key);
+
 }

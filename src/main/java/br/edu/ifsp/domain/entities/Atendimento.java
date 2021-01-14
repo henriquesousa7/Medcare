@@ -67,6 +67,6 @@ public class Atendimento {
                 ", data=" + data +
                 ", status=" + status +
                 ", discenteResponsavel=" + discenteResponsavel +
-                '}';
+                "}";
     }
 }
