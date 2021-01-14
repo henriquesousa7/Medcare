@@ -1,6 +1,6 @@
 package br.edu.ifsp.application.main;
 
-import br.edu.ifsp.application.repository.*;
+import br.edu.ifsp.application.repository.inmemory.*;
 import br.edu.ifsp.domain.entities.*;
 import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
 import br.edu.ifsp.domain.usecases.acolhimento.AlterarServidorAcolhimentoUC;

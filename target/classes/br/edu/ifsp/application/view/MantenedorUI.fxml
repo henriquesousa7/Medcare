@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.MantenedorUIController">
+   <children>
+      <Label layoutX="296.0" layoutY="14.0" text="Mantenedor" AnchorPane.leftAnchor="296.0" AnchorPane.rightAnchor="295.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Pane layoutX="187.0" layoutY="117.0" prefHeight="405.0" prefWidth="409.0" AnchorPane.bottomAnchor="78.0" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="186.0" AnchorPane.topAnchor="117.0">
+         <children>
+            <Label fx:id="lbLogin" layoutX="165.0" layoutY="24.0" prefHeight="36.0" prefWidth="80.0" text="Cadastrar" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnDiscente" layoutX="21.0" layoutY="288.0" mnemonicParsing="false" onAction="#openDiscente" prefHeight="67.0" prefWidth="368.0" text="Discente" />
+            <Button fx:id="btnDocente" layoutX="21.0" layoutY="79.0" mnemonicParsing="false" onAction="#openDocente" prefHeight="67.0" prefWidth="368.0" text="Docente" />
+            <Button fx:id="btnAcolhimento" layoutX="21.0" layoutY="184.0" mnemonicParsing="false" onAction="#openAcolhimento" prefHeight="67.0" prefWidth="368.0" text="Acolhimento" />
+         </children>
+      </Pane>
+      <Button layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#backToPreviousScene" text="Voltar" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+   </children>
+</AnchorPane>
