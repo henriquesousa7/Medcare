@@ -44,7 +44,7 @@ public class DatabaseBuilder {
         builder.append("nome TEXT NOT NULL, \n");
         builder.append("email TEXT NOT NULL UNIQUE, \n");
         builder.append("telefone TEXT NOT NULL, \n");
-        builder.append("cpf TEXT NOT NULL UNIQUE, \n");
+        builder.append("cpf TEXT NOT NULL UNIQUE \n");
         builder.append("); \n");
 
         System.out.println(builder.toString());
