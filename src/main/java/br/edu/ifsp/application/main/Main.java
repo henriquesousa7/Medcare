@@ -1,6 +1,8 @@
 package br.edu.ifsp.application.main;
 
 import br.edu.ifsp.application.repository.inmemory.*;
+import br.edu.ifsp.application.repository.sqlite.DatabaseBuilder;
+import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.*;
 import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
 import br.edu.ifsp.domain.usecases.acolhimento.AlterarServidorAcolhimentoUC;
@@ -89,129 +91,13 @@ public class Main {
 
     public static void main(String[] args) {
         configureInjection();
+        setupDatabase();
+        App.main(args);
+    }
 
-        /* Servidor acolhimento */
-        Acolhimento acolhimento1 = new Acolhimento("SC3009165", "Henrique de Sousa", "henrique@hotmail.com", "16992675413", "22222222222");
-        Acolhimento acolhimento2 = new Acolhimento("SC300902X", "Felipe de Sousa", "felipe@hotmail.com", "16993456713", "11111111111");
-
-        String aclh1 = cadastrarServidorAcolhimentoUC.cadastraServidor(acolhimento1);
-        String aclh2 = cadastrarServidorAcolhimentoUC.cadastraServidor(acolhimento2);
-
-        acolhimento1.setEmail("henrique@gmail.com");
-        acolhimento1.setTelefone("16981625543");
-        alterarServidorAcolhimentoUC.alteraServidor(acolhimento1);
-
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Docente*/
-        Docente docente1 = new Docente(3008765, "Roberto Carlos", "roberto@hotmail.com", "16997865413");
-        Docente docente2 = new Docente(3005555, "Fabio Silva", "fabio@yahoo.com.br", "11967852341");
-
-        Integer doc1 = cadastrarNovoDocenteUC.salvarDocente(docente1);
-        Integer doc2 = cadastrarNovoDocenteUC.salvarDocente(docente2);
-
-
-        docente1.setEmail("roberto@yahoo.com.br");
-        docente2.setTelefone("16954876132");
-        alterarDadosDocenteUC.alterarDocente(docente1);
-        alterarDadosDocenteUC.alterarDocente(docente2);
-
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Linha cuidado*/
-        LinhaCuidado linhaCuidado1 = new LinhaCuidado(1, "Cárdio-Respiratória", "Doenças Cárdio-Respiratórias");
-        LinhaCuidado linhaCuidado2 = new LinhaCuidado(2, "e Doenças Metabólicas", "Relacionados a Doenças Metabólicas");
-
-        Integer lc1 = cadastrarLinhaCuidadoUC.cadastraLinhaCuidado(linhaCuidado1);
-        Integer lc2 = cadastrarLinhaCuidadoUC.cadastraLinhaCuidado(linhaCuidado2);
-
-        linhaCuidado2.setNome("Doenças Cerebrais");
-        linhaCuidado2.setDescricao("Doenças relacionado ao cerebro");
-        alterarLinhaCuidadoUC.alteraLinhaCuidado(linhaCuidado2);
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Linha acao*/
-        Integer[] docentes = {doc1, doc2};
-        LinhaAcao linhaAcao1 = new LinhaAcao(1, "Fisioterapia CardioVascular", "Fisioterapia CardioVascular DESC");
-        LinhaAcao linhaAcao2 = new LinhaAcao(2, "Fisioterapia Respiratória", "Fisioterapia Respiratória DESC");
-
-        Integer linhaAcaoId1 = cadastrarLinhaAcaoUC.cadastraLinhaAcao(linhaAcao1, lc1, docentes);
-        Integer linhaAcaoId2 = cadastrarLinhaAcaoUC.cadastraLinhaAcao(linhaAcao2, lc2, docentes);
-
-        linhaAcao1.setDescricao("Fisioterapia CardioVascular DESCRICAO");
-        alterarLinhaAcaoUC.alteraLinhaAcao(linhaAcao1);
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Discente*/
-        Discente discente1 = new Discente(3004213, "Alan Moreira", "alan@gmail.com", "16978342565");
-        Discente discente2 = new Discente(3005675, "Renato Moreira", "renato@gmail.com", "11987652314");
-
-        Integer discentePront1 = cadastrarDiscenteUC.cadastraDiscente(discente1, linhaAcaoId1);
-        Integer discentePront2 = cadastrarDiscenteUC.cadastraDiscente(discente2, linhaAcaoId2);
-
-        discente1.setEmail("alan.moreira@hotmail.com");
-        alterarDadosDiscenteUC.alterarDiscente(discente1, linhaAcaoId2);
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Usuario*/
-        Usuario usuario1 = new Usuario("12312312376", 1234, "Alfonso Oliveira", 'M', "1693456875",
-                                "Rua Sete", "Diabetes");
-        Usuario usuario2 = new Usuario("98798798776", 5678, "Lucas Oliveira", 'M', "1693458653",
-                                "Rua Oito", "Braço quebrado");
-
-        String cpfU1 = cadastrarUsuarioUC.cadastraUsuario(usuario1);
-        String cpfU2 = cadastrarUsuarioUC.cadastraUsuario(usuario2);
-
-        usuario2.setEndereco("Rua Dez");
-        usuario2.setHistoricoMedico("Pressao alta");
-        alterarDadosUsuarioUC.alteraUsuario(usuario2);
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Usuario a uma linha de acao*/
-        Integer usuarioLA1 = cadastrarUsuarioLinhaAcaoUC.cadastraUsuarioLinhaAcao(1, aclh1, cpfU1, linhaAcaoId1);
-        Integer usuarioLA2 = cadastrarUsuarioLinhaAcaoUC.cadastraUsuarioLinhaAcao(2, aclh2, cpfU2, linhaAcaoId2);
-
-        gerenciarUsuarioLinhaAcaoUC.gerenciaUsuarioLinhaAcao(usuarioLA1, Status.CANCELADO);
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Atendimento*/
-        Atendimento atendimento1 = new Atendimento(1, LocalDateTime.of(2021,02,07,15,30));
-        Atendimento atendimento2 = new Atendimento(2, LocalDateTime.of(2021,03,20,13,30));
-        Atendimento atendimento3 = new Atendimento(3, LocalDateTime.of(2021,03,20,13,30));
-
-        agendarAtendimentoUC.agendaAtendimento(atendimento1, usuarioLA1, discentePront1);
-        agendarAtendimentoUC.agendaAtendimento(atendimento3, usuarioLA1, discentePront1);
-
-        agendarAtendimentoUC.agendaAtendimento(atendimento2, usuarioLA2, discentePront2);
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Interconsulta*/
-        Integer idInterConsulta1 = solicitarInterConsultaUC.solicitaInterConsulta(1,linhaAcaoId1, cpfU1, doc1);
-        Integer idInterConsulta2 = solicitarInterConsultaUC.solicitaInterConsulta(2,linhaAcaoId2, cpfU2, doc2);
-
-        gerenciarInterConsultaUC.gerenciaInterConsulta(idInterConsulta1, Status.FINALIZADO);
-        gerenciarInterConsultaUC.gerenciaInterConsulta(idInterConsulta2, Status.CANCELADO);
-
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Consultar Agendamentos*/
-        List<Atendimento> agendamentos = consultarAgendamentoUC.consultaAgendamento(discente1);
-        System.out.println("Agendamentos por discente");
-        for (Atendimento consulta : agendamentos) {
-            System.out.println(consulta);
-        }
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Gerar relatorio geral*/
-        List<Atendimento> relatorioGeral = gerarRelatorioGeralUC.geraRelatorioGeral();
-        System.out.println("\nRelatorio geral");
-        for (Atendimento consulta : relatorioGeral) {
-            System.out.println(consulta);
-        }
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Gerar relatorio geral por linha de acao*/
-        List<Atendimento> relatorioLinhaAcao = gerarRelatorioLinhaAcaoUC.geraRelatorioLinhaAcao(linhaAcao2);
-        System.out.println("\nRelatorio geral por linha de acao");
-        for (Atendimento consulta : relatorioLinhaAcao) {
-            System.out.println(consulta);
-        }
-        /* --------------------------------------------------------------------------------------------------------------------*/
-        /* Visualizar usuarios em lista de espera*/
-        List<Usuario> listaEspera = visualizarListaEsperaLinhaAcaoUC.geraListaEspera(linhaAcao2);
-        System.out.println("\nUsuarios na lista de espera");
-        for (Usuario usuario : listaEspera) {
-            System.out.println(usuario);
-        }
+    private static void setupDatabase() {
+        DatabaseBuilder dbBuilder = new DatabaseBuilder();
+        dbBuilder.buildDatabaseIfMissing();
     }
 
     private static void configureInjection() {
