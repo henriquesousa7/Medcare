@@ -9,14 +9,14 @@ public class LinhaAcao {
     private String nome;
     private String descricao;
     private LinhaCuidado linhaCuidado;
-    private List<Docente> responsaveis;
+    private Docente responsavel;
 
-    public LinhaAcao(Integer id, String nome, String descricao, LinhaCuidado linhaCuidado, List<Docente> responsaveis) {
+    public LinhaAcao(Integer id, String nome, String descricao, LinhaCuidado linhaCuidado, Docente responsaveis) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.linhaCuidado = linhaCuidado;
-        this.responsaveis = responsaveis;
+        this.responsavel = responsavel;
     }
 
     public LinhaAcao(Integer id, String nome, String descricao) {
@@ -53,12 +53,12 @@ public class LinhaAcao {
         this.linhaCuidado = linhaCuidado;
     }
 
-    public List<Docente> getResponsaveis() {
-        return responsaveis;
+    public Docente getResponsavel() {
+        return responsavel;
     }
 
-    public void setResponsaveis(List<Docente> responsaveis) {
-        this.responsaveis = responsaveis;
+    public void setResponsavel(Docente responsavel) {
+        this.responsavel = responsavel;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class LinhaAcao {
                 ", nome='" + nome + '\'' +
                 ", descricao='" + descricao + '\'' +
                 ", linhaCuidado=" + linhaCuidado +
-                ", responsaveis=" + responsaveis +
+                ", responsavel=" + responsavel +
                 '}';
     }
 
@@ -77,15 +77,15 @@ public class LinhaAcao {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LinhaAcao linhaAcao = (LinhaAcao) o;
-        return id == linhaAcao.id &&
+        return Objects.equals(id, linhaAcao.id) &&
                 Objects.equals(nome, linhaAcao.nome) &&
                 Objects.equals(descricao, linhaAcao.descricao) &&
                 Objects.equals(linhaCuidado, linhaAcao.linhaCuidado) &&
-                Objects.equals(responsaveis, linhaAcao.responsaveis);
+                Objects.equals(responsavel, linhaAcao.responsavel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, descricao, linhaCuidado, responsaveis);
+        return Objects.hash(id, nome, descricao, linhaCuidado, responsavel);
     }
 }

@@ -23,8 +23,8 @@ public class AcolhimentoInputValidator extends Validator<Acolhimento> {
         if(nullOrEmpty(acolhimento.getNome())){
             notification.addError("Nome is null or empty");
         }
-        if(nullOrEmpty(acolhimento.getProntuario())){
-            notification.addError("Prontuario is null or empty");
+        if(acolhimento.getProntuario() <= 0){
+            notification.addError("Prontuario cannot be <= 0");
         }
         if(nullOrEmpty(acolhimento.getTelefone())){
             notification.addError("Telefone is null or empty");

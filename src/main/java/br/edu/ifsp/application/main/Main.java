@@ -2,6 +2,7 @@ package br.edu.ifsp.application.main;
 
 import br.edu.ifsp.application.repository.inmemory.*;
 import br.edu.ifsp.application.repository.sqlite.DatabaseBuilder;
+import br.edu.ifsp.application.repository.sqlite.SqliteAcolhimentoDAO;
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.*;
 import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
@@ -48,46 +49,46 @@ import java.util.List;
 
 public class Main {
 
-    private static CadastrarServidorAcolhimentoUC cadastrarServidorAcolhimentoUC;
-    private static AlterarServidorAcolhimentoUC alterarServidorAcolhimentoUC;
-    private static BuscarAcolhimentoUC buscarAcolhimentoUC;
+    public static CadastrarServidorAcolhimentoUC cadastrarServidorAcolhimentoUC;
+    public static AlterarServidorAcolhimentoUC alterarServidorAcolhimentoUC;
+    public static BuscarAcolhimentoUC buscarAcolhimentoUC;
 
-    private static CadastrarNovoDocenteUC cadastrarNovoDocenteUC;
-    private static AlterarDadosDocenteUC alterarDadosDocenteUC;
-    private static BuscarDocenteUC buscarDocenteUC;
+    public static CadastrarNovoDocenteUC cadastrarNovoDocenteUC;
+    public static AlterarDadosDocenteUC alterarDadosDocenteUC;
+    public static BuscarDocenteUC buscarDocenteUC;
 
-    private static CadastrarDiscenteUC cadastrarDiscenteUC;
-    private static AlterarDadosDiscenteUC alterarDadosDiscenteUC;
-    private static BuscarDiscenteUC buscarDiscenteUC;
+    public static CadastrarDiscenteUC cadastrarDiscenteUC;
+    public static AlterarDadosDiscenteUC alterarDadosDiscenteUC;
+    public static BuscarDiscenteUC buscarDiscenteUC;
 
-    private static CadastrarLinhaCuidadoUC cadastrarLinhaCuidadoUC;
-    private static AlterarLinhaCuidadoUC alterarLinhaCuidadoUC;
-    private static BuscarLinhaCuidadoUC buscarLinhaCuidadoUC;
+    public static CadastrarLinhaCuidadoUC cadastrarLinhaCuidadoUC;
+    public static AlterarLinhaCuidadoUC alterarLinhaCuidadoUC;
+    public static BuscarLinhaCuidadoUC buscarLinhaCuidadoUC;
 
-    private static CadastrarLinhaAcaoUC cadastrarLinhaAcaoUC;
-    private static AlterarLinhaAcaoUC alterarLinhaAcaoUC;
-    private static BuscarLinhaAcaoUC buscarLinhaAcaoUC;
+    public static CadastrarLinhaAcaoUC cadastrarLinhaAcaoUC;
+    public static AlterarLinhaAcaoUC alterarLinhaAcaoUC;
+    public static BuscarLinhaAcaoUC buscarLinhaAcaoUC;
 
-    private static CadastrarUsuarioUC cadastrarUsuarioUC;
-    private static AlterarDadosUsuarioUC alterarDadosUsuarioUC;
-    private static BuscarUsuarioUC buscarUsuarioUC;
+    public static CadastrarUsuarioUC cadastrarUsuarioUC;
+    public static AlterarDadosUsuarioUC alterarDadosUsuarioUC;
+    public static BuscarUsuarioUC buscarUsuarioUC;
 
-    private static CadastrarUsuarioLinhaAcaoUC cadastrarUsuarioLinhaAcaoUC;
-    private static GerenciarUsuarioLinhaAcaoUC gerenciarUsuarioLinhaAcaoUC;
-    private static BuscarUsuarioLinhaAcaoUC buscarUsuarioLinhaAcaoUC;
+    public static CadastrarUsuarioLinhaAcaoUC cadastrarUsuarioLinhaAcaoUC;
+    public static GerenciarUsuarioLinhaAcaoUC gerenciarUsuarioLinhaAcaoUC;
+    public static BuscarUsuarioLinhaAcaoUC buscarUsuarioLinhaAcaoUC;
 
-    private static AgendarAtendimentoUC agendarAtendimentoUC;
-    private static BuscarAtendimentoUC buscarAtendimentoUC;
+    public static AgendarAtendimentoUC agendarAtendimentoUC;
+    public static BuscarAtendimentoUC buscarAtendimentoUC;
 
-    private static SolicitarInterConsultaUC solicitarInterConsultaUC;
-    private static GerenciarInterConsultaUC gerenciarInterConsultaUC;
+    public static SolicitarInterConsultaUC solicitarInterConsultaUC;
+    public static GerenciarInterConsultaUC gerenciarInterConsultaUC;
 
-    private static ConsultarAgendamentoUC consultarAgendamentoUC;
+    public static ConsultarAgendamentoUC consultarAgendamentoUC;
 
-    private static GerarRelatorioGeralUC gerarRelatorioGeralUC;
-    private static GerarRelatorioLinhaAcaoUC gerarRelatorioLinhaAcaoUC;
+    public static GerarRelatorioGeralUC gerarRelatorioGeralUC;
+    public static GerarRelatorioLinhaAcaoUC gerarRelatorioLinhaAcaoUC;
 
-    private static VisualizarListaEsperaLinhaAcaoUC visualizarListaEsperaLinhaAcaoUC;
+    public static VisualizarListaEsperaLinhaAcaoUC visualizarListaEsperaLinhaAcaoUC;
 
     public static void main(String[] args) {
         configureInjection();
@@ -102,7 +103,7 @@ public class Main {
 
     private static void configureInjection() {
         // Acolhimento
-        AcolhimentoDAO acolhimentoDAO = new InMemoryAcolhimentoDAO();
+        AcolhimentoDAO acolhimentoDAO = new SqliteAcolhimentoDAO();
         cadastrarServidorAcolhimentoUC = new CadastrarServidorAcolhimentoUC(acolhimentoDAO);
         alterarServidorAcolhimentoUC = new AlterarServidorAcolhimentoUC(acolhimentoDAO);
         buscarAcolhimentoUC = new BuscarAcolhimentoUC(acolhimentoDAO);
@@ -150,7 +151,7 @@ public class Main {
 
         // Interconsulta
         InterConsultaDAO interConsultaDAO = new InMemoryInterConsultaDAO();
-        solicitarInterConsultaUC = new SolicitarInterConsultaUC(interConsultaDAO, buscarLinhaAcaoUC, buscarUsuarioUC, buscarDocenteUC);
+        solicitarInterConsultaUC = new SolicitarInterConsultaUC(interConsultaDAO, buscarAtendimentoUC, buscarUsuarioUC, buscarDocenteUC);
         gerenciarInterConsultaUC = new GerenciarInterConsultaUC(interConsultaDAO);
 
         // Consultar agendamento

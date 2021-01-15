@@ -1,6 +1,7 @@
 package br.edu.ifsp.domain.usecases.interconsulta;
 
 import br.edu.ifsp.domain.entities.*;
+import br.edu.ifsp.domain.usecases.atendimento.BuscarAtendimentoUC;
 import br.edu.ifsp.domain.usecases.docente.BuscarDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.DocenteDAO;
 import br.edu.ifsp.domain.usecases.linhaAcao.BuscarLinhaAcaoUC;
@@ -11,23 +12,23 @@ import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
 
 public class SolicitarInterConsultaUC {
     private InterConsultaDAO interConsultaDAO;
-    private BuscarLinhaAcaoUC buscarLinhaAcaoUC;
+    private BuscarAtendimentoUC buscarAtendimentoUC;
     private BuscarUsuarioUC buscarUsuarioUC;
     private BuscarDocenteUC buscarDocenteUC;
 
-    public SolicitarInterConsultaUC(InterConsultaDAO interConsultaDAO, BuscarLinhaAcaoUC buscarLinhaAcaoUC, BuscarUsuarioUC buscarUsuarioUC, BuscarDocenteUC buscarDocenteUC) {
+    public SolicitarInterConsultaUC(InterConsultaDAO interConsultaDAO, BuscarAtendimentoUC buscarAtendimentoUC, BuscarUsuarioUC buscarUsuarioUC, BuscarDocenteUC buscarDocenteUC) {
         this.interConsultaDAO = interConsultaDAO;
-        this.buscarLinhaAcaoUC = buscarLinhaAcaoUC;
+        this.buscarAtendimentoUC = buscarAtendimentoUC;
         this.buscarUsuarioUC = buscarUsuarioUC;
         this.buscarDocenteUC = buscarDocenteUC;
     }
 
-    public Integer solicitaInterConsulta(Integer idInterConsulta, Integer idLinhaAcao, String cpfUsuario, Integer prontDocente){
-        if(idInterConsulta == null || idLinhaAcao == null || cpfUsuario == null || prontDocente == null)
+    public Integer solicitaInterConsulta(Integer idInterConsulta, Integer idAtendimento, String cpfUsuario, Integer prontDocente){
+        if(idInterConsulta == null || idAtendimento == null || cpfUsuario == null || prontDocente == null)
             throw new IllegalArgumentException("Valores para interconsulta nao podem ser nulos");
 
-        LinhaAcao linhaAcao = buscarLinhaAcaoUC.findOne(idLinhaAcao).
-                orElseThrow(() -> new EntityNotFoundException("Linha de acao nao existe"));
+        Atendimento atendimento = buscarAtendimentoUC.findOne(idAtendimento).
+                orElseThrow(() -> new EntityNotFoundException("Atendimento nao existe"));
 
         Usuario usuario = buscarUsuarioUC.findOne(cpfUsuario).
                 orElseThrow(() -> new EntityNotFoundException("Usuario nao existe"));
@@ -35,7 +36,7 @@ public class SolicitarInterConsultaUC {
         Docente docente = buscarDocenteUC.findOne(prontDocente).
                 orElseThrow(() -> new EntityNotFoundException("Docente nao existe"));
 
-        InterConsulta interConsulta = new InterConsulta(idInterConsulta, linhaAcao, usuario, docente, Status.AGUARDANDO);
+        InterConsulta interConsulta = new InterConsulta(idInterConsulta, atendimento, usuario, docente, Status.AGUARDANDO);
 
         return interConsultaDAO.create(interConsulta);
     }

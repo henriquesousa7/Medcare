@@ -7,16 +7,16 @@ import java.util.*;
 
 public class InMemoryAcolhimentoDAO implements AcolhimentoDAO {
 
-    private static final Map<String, Acolhimento> db = new LinkedHashMap<>();
+    private static final Map<Integer, Acolhimento> db = new LinkedHashMap<>();
 
     @Override
-    public String create(Acolhimento acolhimento) {
+    public Integer create(Acolhimento acolhimento) {
         db.put(acolhimento.getProntuario(), acolhimento);
         return acolhimento.getProntuario();
     }
 
     @Override
-    public Optional<Acolhimento> findOne(String key) {
+    public Optional<Acolhimento> findOne(Integer key) {
         if(db.containsKey(key))
             return Optional.of(db.get(key));
         return Optional.empty();
@@ -29,7 +29,7 @@ public class InMemoryAcolhimentoDAO implements AcolhimentoDAO {
 
     @Override
     public boolean update(Acolhimento acolhimento) {
-        String prontuario = acolhimento.getProntuario();
+        Integer prontuario = acolhimento.getProntuario();
         if(db.containsKey(prontuario)) {
             db.replace(prontuario, acolhimento);
             return true;
@@ -38,7 +38,7 @@ public class InMemoryAcolhimentoDAO implements AcolhimentoDAO {
     }
 
     @Override
-    public boolean deleteByKey(String key) {
+    public boolean deleteByKey(Integer key) {
         if (db.containsKey(key)) {
             db.remove(key);
             return true;

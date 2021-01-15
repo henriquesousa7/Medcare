@@ -20,7 +20,7 @@ public class CadastrarUsuarioLinhaAcaoUC {
         this.buscarAcolhimentoUC = buscarAcolhimentoUC;
     }
 
-    public Integer cadastraUsuarioLinhaAcao(Integer usuarioLinhaAcaoId, String acolhimentoPront, String usuarioCpf, Integer linhaAcaoID){
+    public Integer cadastraUsuarioLinhaAcao(Integer usuarioLinhaAcaoId, Integer acolhimentoPront, String usuarioCpf, Integer linhaAcaoID){
         if (usuarioLinhaAcaoId == null || acolhimentoPront == null || usuarioCpf == null || linhaAcaoID == null)
             throw new IllegalArgumentException("Valores para UsuarioLinhaAcao nao podem ser nulo");
 

@@ -3,14 +3,14 @@ package br.edu.ifsp.domain.entities;
 public class InterConsulta {
 
     private Integer id;
-    private LinhaAcao linhaAcao;
+    private Atendimento atendimento;
     private Usuario usuario;
     private Status status;
     private Docente docenteResponsavel;
 
-    public InterConsulta(Integer id, LinhaAcao linhaAcao, Usuario usuario, Docente docenteResponsavel, Status status) {
+    public InterConsulta(Integer id, Atendimento atendimento, Usuario usuario, Docente docenteResponsavel, Status status) {
         this.id = id;
-        this.linhaAcao = linhaAcao;
+        this.atendimento = atendimento;
         this.usuario = usuario;
         this.status = status;
         this.docenteResponsavel = docenteResponsavel;
@@ -20,12 +20,12 @@ public class InterConsulta {
         return id;
     }
 
-    public LinhaAcao getLinhaAcao() {
-        return linhaAcao;
+    public Atendimento getAtendimento() {
+        return atendimento;
     }
 
-    public void setLinhaAcao(LinhaAcao linhaAcao) {
-        this.linhaAcao = linhaAcao;
+    public void setAtendimento(Atendimento atendimento) {
+        this.atendimento = atendimento;
     }
 
     public Usuario getUsuario() {
@@ -51,9 +51,11 @@ public class InterConsulta {
     @Override
     public String toString() {
         return "InterConsulta{" +
-                "linhaAcao=" + linhaAcao +
+                "id=" + id +
+                ", atendimento=" + atendimento +
                 ", usuario=" + usuario +
                 ", status=" + status +
+                ", docenteResponsavel=" + docenteResponsavel +
                 '}';
     }
 }

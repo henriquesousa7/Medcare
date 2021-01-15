@@ -13,7 +13,7 @@ public class BuscarAcolhimentoUC {
         this.acolhimentoDAO = acolhimentoDAO;
     }
 
-    public Optional<Acolhimento> findOne(String prontuario){
+    public Optional<Acolhimento> findOne(Integer prontuario){
         if (prontuario == null)
             throw new IllegalArgumentException("Prontuario can not be null.");
         return acolhimentoDAO.findOne(prontuario);

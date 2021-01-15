@@ -13,6 +13,7 @@ public class MantenedorUIController {
     }
 
     public void openAcolhimento(ActionEvent actionEvent) throws IOException {
+        App.setRoot("ViewAcolhimentoUI");
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {

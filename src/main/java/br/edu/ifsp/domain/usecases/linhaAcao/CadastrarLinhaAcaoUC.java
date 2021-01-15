@@ -23,28 +23,25 @@ public class CadastrarLinhaAcaoUC {
         this.buscarLinhaCuidadoUC = buscarLinhaCuidadoUC;
     }
 
-    public Integer cadastraLinhaAcao(LinhaAcao linhaAcao, Integer linhaCuidadoID, Integer[] prontuarioDocentes){
+    public Integer cadastraLinhaAcao(LinhaAcao linhaAcao, Integer linhaCuidadoID, Integer prontuarioDocente){
         Validator<LinhaAcao> validator = new LinhaAcaoInputValidator();
         Notification notification = validator.validate(linhaAcao);
-        List<Docente> docentesList = new ArrayList<>();
 
         if(notification.hasErros())
             throw new IllegalArgumentException(notification.errorMessage());
 
-        if (linhaCuidadoID == null || prontuarioDocentes == null)
+        if (linhaCuidadoID == null || prontuarioDocente == null)
             throw new IllegalArgumentException("Id da linha de cuidado e/ou prontuario do Docente nao pode ser nulo");
 
         LinhaCuidado linhaCuidado = buscarLinhaCuidadoUC.findOne(linhaCuidadoID).
                 orElseThrow(() -> new EntityNotFoundException("Linha cuidado nao existe"));
 
-        for (Integer prontuarioDocente : prontuarioDocentes) {
-            Docente docente = buscarDocenteUC.findOne(prontuarioDocente).
-                    orElseThrow(() -> new EntityNotFoundException("Docente nao existe"));
-            docentesList.add(docente);
-        }
+        Docente docente = buscarDocenteUC.findOne(prontuarioDocente).
+                orElseThrow(() -> new EntityNotFoundException("Docente nao existe"));
+
 
         linhaAcao.setLinhaCuidado(linhaCuidado);
-        linhaAcao.setResponsaveis(docentesList);
+        linhaAcao.setResponsavel(docente);
 
         return linhaAcaoDAO.create(linhaAcao);
     }

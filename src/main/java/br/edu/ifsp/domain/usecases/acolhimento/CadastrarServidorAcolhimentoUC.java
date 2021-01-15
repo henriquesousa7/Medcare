@@ -13,14 +13,14 @@ public class CadastrarServidorAcolhimentoUC {
         this.acolhimentoDAO = acolhimentoDAO;
     }
 
-    public String cadastraServidor(Acolhimento acolhimento){
+    public Integer cadastraServidor(Acolhimento acolhimento){
         Validator<Acolhimento> validator = new AcolhimentoInputValidator();
         Notification notification = validator.validate(acolhimento);
 
         if(notification.hasErros())
             throw new IllegalArgumentException(notification.errorMessage());
 
-        String prontuario = acolhimento.getProntuario();
+        Integer prontuario = acolhimento.getProntuario();
 
         if (acolhimentoDAO.findOne(prontuario).isPresent())
             throw new EntityAlreadyExistsException("Esse acolhimento ja existe");

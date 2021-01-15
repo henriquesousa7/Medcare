@@ -2,13 +2,13 @@ package br.edu.ifsp.domain.entities;
 
 public class Acolhimento {
 
-    private String prontuario;
+    private Integer prontuario;
     private String nome;
     private String email;
     private String telefone;
     private String cpf;
 
-    public Acolhimento(String prontuario, String nome, String email, String telefone, String cpf) {
+    public Acolhimento(Integer prontuario, String nome, String email, String telefone, String cpf) {
         this.prontuario = prontuario;
         this.nome = nome;
         this.email = email;
@@ -16,7 +16,7 @@ public class Acolhimento {
         this.cpf = cpf;
     }
 
-    public String getProntuario() {
+    public Integer getProntuario() {
         return prontuario;
     }
 

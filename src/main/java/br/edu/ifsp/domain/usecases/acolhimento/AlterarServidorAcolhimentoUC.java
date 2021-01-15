@@ -19,7 +19,7 @@ public class AlterarServidorAcolhimentoUC {
         if(notification.hasErros())
             throw new IllegalArgumentException(notification.errorMessage());
 
-        String prontuario = acolhimento.getProntuario();
+        Integer prontuario = acolhimento.getProntuario();
 
         if (acolhimentoDAO.findOne(prontuario).isEmpty())
             throw new EntityNotFoundException("Servidor acolhimento nao encontrado");
