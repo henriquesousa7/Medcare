@@ -7,9 +7,11 @@ import java.io.IOException;
 
 public class MantenedorUIController {
     public void openDiscente(ActionEvent actionEvent) throws IOException {
+
     }
 
     public void openDocente(ActionEvent actionEvent) throws IOException {
+        App.setRoot("ViewDocenteUI");
     }
 
     public void openAcolhimento(ActionEvent actionEvent) throws IOException {
@@ -18,5 +20,13 @@ public class MantenedorUIController {
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("MainUI");
+    }
+
+    public void openLinhaCuidado(ActionEvent actionEvent) throws IOException {
+        App.setRoot("ViewLinhaCuidadoUI");
+    }
+
+    public void openLinhaAcao(ActionEvent actionEvent) throws IOException {
+        App.setRoot("ViewLinhaAcaoUI");
     }
 }

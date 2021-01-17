@@ -49,4 +49,9 @@ public class InMemoryLinhaCuidadoDAO implements LinhaCuidadoDAO {
     public boolean delete(LinhaCuidado linhaCuidado) {
         return deleteByKey(linhaCuidado.getId());
     }
+
+    @Override
+    public Optional<LinhaCuidado> findByName(String name) {
+        return Optional.empty();
+    }
 }

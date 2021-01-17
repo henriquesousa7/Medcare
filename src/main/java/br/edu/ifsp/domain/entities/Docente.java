@@ -14,6 +14,16 @@ public class Docente {
         this.telefone = telefone;
     }
 
+    public Docente(){}
+
+    public void setProntuario(Integer prontuario) {
+        this.prontuario = prontuario;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public Integer getProntuario() {
         return prontuario;
     }
@@ -40,11 +50,6 @@ public class Docente {
 
     @Override
     public String toString() {
-        return "Docente{" +
-                "prontuario=" + prontuario +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
-                '}';
+        return nome;
     }
 }

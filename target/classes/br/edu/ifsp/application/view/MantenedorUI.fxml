@@ -20,9 +20,11 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnDiscente" layoutX="21.0" layoutY="288.0" mnemonicParsing="false" onAction="#openDiscente" prefHeight="67.0" prefWidth="368.0" text="Discente" />
-            <Button fx:id="btnDocente" layoutX="21.0" layoutY="79.0" mnemonicParsing="false" onAction="#openDocente" prefHeight="67.0" prefWidth="368.0" text="Docente" />
-            <Button fx:id="btnAcolhimento" layoutX="21.0" layoutY="184.0" mnemonicParsing="false" onAction="#openAcolhimento" prefHeight="67.0" prefWidth="368.0" text="Acolhimento" />
+            <Button fx:id="btnDiscente" layoutX="21.0" layoutY="194.0" mnemonicParsing="false" onAction="#openDiscente" prefHeight="36.0" prefWidth="368.0" text="Discente" />
+            <Button fx:id="btnDocente" layoutX="21.0" layoutY="79.0" mnemonicParsing="false" onAction="#openDocente" prefHeight="36.0" prefWidth="368.0" text="Docente" />
+            <Button fx:id="btnAcolhimento" layoutX="21.0" layoutY="141.0" mnemonicParsing="false" onAction="#openAcolhimento" prefHeight="36.0" prefWidth="368.0" text="Acolhimento" />
+            <Button fx:id="btnLinhaCuidado" layoutX="21.0" layoutY="249.0" mnemonicParsing="false" onAction="#openLinhaCuidado" prefHeight="36.0" prefWidth="368.0" text="Linha cuidado" />
+            <Button fx:id="btnDLinhaAcao" layoutX="21.0" layoutY="308.0" mnemonicParsing="false" onAction="#openLinhaAcao" prefHeight="36.0" prefWidth="368.0" text="Linha acao" />
          </children>
       </Pane>
       <Button layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#backToPreviousScene" text="Voltar" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />

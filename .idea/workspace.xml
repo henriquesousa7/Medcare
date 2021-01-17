@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6da81967-2df9-40da-aa47-7074ecc0b652" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/CadastroAcolhimentoUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/CadastroAcolhimentoUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/MantenedorUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/MantenedorUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/inmemory/InMemoryLinhaCuidadoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/inmemory/InMemoryLinhaCuidadoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Acolhimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Acolhimento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Docente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Docente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/LinhaAcao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/LinhaAcao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/LinhaCuidado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/LinhaCuidado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaCuidado/CadastrarLinhaCuidadoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaCuidado/CadastrarLinhaCuidadoUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaCuidado/LinhaCuidadoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaCuidado/LinhaCuidadoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/MantenedorUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/MantenedorUI.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.4\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1m0oxp3keysvkb1qbybQdigq4Di" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\henri\Desktop\fun\Medcare\src\main\resources\br\edu\ifsp\application\view" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.edu.ifsp.application.view.App" />
+      <module name="Medcare" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.edu.ifsp.application.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.edu.ifsp.application.main.Main" />
+      <module name="Medcare" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.edu.ifsp.application.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6da81967-2df9-40da-aa47-7074ecc0b652" name="Default Changelist" comment="" />
+      <created>1608640121902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608640121902</updated>
+      <workItem from="1608640124294" duration="465000" />
+      <workItem from="1609344228548" duration="1794000" />
+      <workItem from="1609354920549" duration="359000" />
+      <workItem from="1609620931545" duration="2300000" />
+      <workItem from="1609623579030" duration="78000" />
+      <workItem from="1609691975647" duration="898000" />
+      <workItem from="1609802675160" duration="2457000" />
+      <workItem from="1609843203081" duration="7474000" />
+      <workItem from="1609871533725" duration="150000" />
+      <workItem from="1609885784853" duration="6008000" />
+      <workItem from="1609893198915" duration="28000" />
+      <workItem from="1609948886227" duration="8576000" />
+      <workItem from="1609966472747" duration="411000" />
+      <workItem from="1610222126726" duration="544000" />
+      <workItem from="1610363495702" duration="9739000" />
+      <workItem from="1610554836171" duration="34000" />
+      <workItem from="1610643801773" duration="7807000" />
+      <workItem from="1610671929299" duration="1305000" />
+      <workItem from="1610673492416" duration="177000" />
+      <workItem from="1610708539184" duration="8885000" />
+      <workItem from="1610903720333" duration="8125000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610673126613">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610673126613" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1610910501471">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610910501471" />
+    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609848441701">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609848441701" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1610554865926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610554865926" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1610911856651">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610911856651" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1610911856650">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610911856650" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1610911856650">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610911856650" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1610911856650">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610911856650" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609851489487">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609851489487" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1609851489487">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609851489487" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1609851489486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609851489486" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1609851489487">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609851489487" />
+    <state x="690" y="281" key="extract.method.dialog" timestamp="1610645146436">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="281" key="extract.method.dialog/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610645146436" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609949222530">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609949222530" />
+  </component>
+</project>

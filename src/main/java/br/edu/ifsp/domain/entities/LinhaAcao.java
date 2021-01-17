@@ -11,7 +11,7 @@ public class LinhaAcao {
     private LinhaCuidado linhaCuidado;
     private Docente responsavel;
 
-    public LinhaAcao(Integer id, String nome, String descricao, LinhaCuidado linhaCuidado, Docente responsaveis) {
+    public LinhaAcao(Integer id, String nome, String descricao, LinhaCuidado linhaCuidado, Docente responsavel) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -23,6 +23,12 @@ public class LinhaAcao {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
+    }
+
+    public LinhaAcao(){}
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getId() {

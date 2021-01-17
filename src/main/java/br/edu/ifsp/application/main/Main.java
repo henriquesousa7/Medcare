@@ -1,8 +1,7 @@
 package br.edu.ifsp.application.main;
 
 import br.edu.ifsp.application.repository.inmemory.*;
-import br.edu.ifsp.application.repository.sqlite.DatabaseBuilder;
-import br.edu.ifsp.application.repository.sqlite.SqliteAcolhimentoDAO;
+import br.edu.ifsp.application.repository.sqlite.*;
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.*;
 import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
@@ -109,19 +108,19 @@ public class Main {
         buscarAcolhimentoUC = new BuscarAcolhimentoUC(acolhimentoDAO);
 
         // Docente
-        DocenteDAO docenteDAO = new InMemoryDocenteDAO();
+        DocenteDAO docenteDAO = new SqliteDocenteDAO();
         cadastrarNovoDocenteUC = new CadastrarNovoDocenteUC(docenteDAO);
         alterarDadosDocenteUC = new AlterarDadosDocenteUC(docenteDAO);
         buscarDocenteUC = new BuscarDocenteUC(docenteDAO);
 
         // Linha Cuidado
-        LinhaCuidadoDAO linhaCuidadoDAO = new InMemoryLinhaCuidadoDAO();
+        LinhaCuidadoDAO linhaCuidadoDAO = new SqliteLinhaCuidadoDAO();
         cadastrarLinhaCuidadoUC = new CadastrarLinhaCuidadoUC(linhaCuidadoDAO);
         alterarLinhaCuidadoUC = new AlterarLinhaCuidadoUC(linhaCuidadoDAO);
         buscarLinhaCuidadoUC = new BuscarLinhaCuidadoUC(linhaCuidadoDAO);
 
         // Linha Acao
-        LinhaAcaoDAO linhaAcaoDAO = new InMemoryLinhaAcaoDAO();
+        LinhaAcaoDAO linhaAcaoDAO = new SqliteLinhaAcaoDAO();
         cadastrarLinhaAcaoUC = new CadastrarLinhaAcaoUC(linhaAcaoDAO, buscarDocenteUC, buscarLinhaCuidadoUC);
         alterarLinhaAcaoUC = new AlterarLinhaAcaoUC(linhaAcaoDAO);
         buscarLinhaAcaoUC = new BuscarLinhaAcaoUC(linhaAcaoDAO);

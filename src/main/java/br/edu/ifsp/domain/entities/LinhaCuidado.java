@@ -8,6 +8,8 @@ public class LinhaCuidado {
     private String nome;
     private String descricao;
 
+    public LinhaCuidado(){}
+
     public LinhaCuidado(Integer id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
@@ -36,10 +38,6 @@ public class LinhaCuidado {
 
     @Override
     public String toString() {
-        return "LinhaCuidado{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", descricao='" + descricao + '\'' +
-                '}';
+        return nome;
     }
 }

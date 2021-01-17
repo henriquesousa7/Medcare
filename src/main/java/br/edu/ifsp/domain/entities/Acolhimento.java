@@ -16,6 +16,20 @@ public class Acolhimento {
         this.cpf = cpf;
     }
 
+    public Acolhimento(){}
+
+    public void setProntuario(Integer prontuario) {
+        this.prontuario = prontuario;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public Integer getProntuario() {
         return prontuario;
     }

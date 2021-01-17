@@ -30,7 +30,7 @@ public class CadastroAcolhimentoUIController {
     @FXML
     private Button btnSalvar;
 
-    private Acolhimento acolhimento = null;
+    private Acolhimento acolhimento;
 
     public void salvarOuAtualizar(ActionEvent actionEvent) throws IOException {
         getEntityFromView();
@@ -58,10 +58,13 @@ public class CadastroAcolhimentoUIController {
 
     private void getEntityFromView() {
         if (acolhimento == null) {
-            acolhimento = new Acolhimento(Integer.valueOf(txtProntuario.getText()), txtNome.getText(), txtEmail.getText(), txtTelefone.getText(), txtCPF.getText());
+            acolhimento = new Acolhimento();
         }
+        acolhimento.setProntuario(Integer.valueOf(txtProntuario.getText().trim()));
+        acolhimento.setNome(txtNome.getText());
         acolhimento.setTelefone(txtTelefone.getText());
         acolhimento.setEmail(txtEmail.getText());
+        acolhimento.setCpf(txtCPF.getText());
     }
 
     private void setEntityIntoView() {
