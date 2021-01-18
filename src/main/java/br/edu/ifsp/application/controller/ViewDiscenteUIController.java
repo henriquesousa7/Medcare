@@ -1,8 +1,9 @@
 package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.App;
-import br.edu.ifsp.domain.entities.Acolhimento;
+import br.edu.ifsp.domain.entities.Discente;
 import br.edu.ifsp.domain.entities.Docente;
+import br.edu.ifsp.domain.entities.LinhaAcao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,22 +15,24 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.util.List;
 
-import static br.edu.ifsp.application.main.Main.buscarAcolhimentoUC;
+import static br.edu.ifsp.application.main.Main.buscarDiscenteUC;
 import static br.edu.ifsp.application.main.Main.buscarDocenteUC;
 
-public class ViewDocenteUIController {
+public class ViewDiscenteUIController {
     @FXML
-    private TableView<Docente> tableView;
+    private TableView<Discente> tableView;
     @FXML
-    private TableColumn<Docente, Integer> cProntuario;
+    private TableColumn<Discente, Integer> cProntuario;
     @FXML
-    private TableColumn<Docente, String> cNome;
+    private TableColumn<Discente, String> cNome;
     @FXML
-    private TableColumn<Docente, String> cEmail;
+    private TableColumn<Discente, String> cEmail;
     @FXML
-    private TableColumn<Docente, String> cTelefone;
+    private TableColumn<Discente, String> cTelefone;
+    @FXML
+    private TableColumn<Discente, LinhaAcao> cLinhaAcao;
 
-    private ObservableList<Docente> tableData;
+    private ObservableList<Discente> tableData;
 
     @FXML
     private void initialize() {
@@ -48,25 +51,26 @@ public class ViewDocenteUIController {
         cNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         cEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         cTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+        cLinhaAcao.setCellValueFactory(new PropertyValueFactory<>("linhaAcao"));
     }
 
     private void loadDataAndShow() {
-        List<Docente> docentes = buscarDocenteUC.findAll();
+        List<Discente> discentes = buscarDiscenteUC.findAll();
         tableData.clear();
-        tableData.addAll(docentes);
+        tableData.addAll(discentes);
     }
 
-    public void cadastrarDocente(ActionEvent actionEvent) throws IOException {
-        App.setRoot("CadastroDocenteUI");
+    public void cadastrarDiscente(ActionEvent actionEvent) throws IOException {
+        App.setRoot("CadastroDiscenteUI");
     }
 
-    public void alterarDocente(ActionEvent actionEvent) throws IOException {
-        Docente docente = tableView.getSelectionModel().getSelectedItem();
+    public void alterarDiscente(ActionEvent actionEvent) throws IOException {
+        Discente discente = tableView.getSelectionModel().getSelectedItem();
 
-        if(docente != null){
-            App.setRoot("CadastroDocenteUI");
-            CadastroDocenteUIController controller = (CadastroDocenteUIController) App.getController();
-            controller.setDocente(docente);
+        if(discente != null){
+            App.setRoot("CadastroDiscenteUI");
+            CadastroDiscenteUIController controller = (CadastroDiscenteUIController) App.getController();
+            controller.setDiscente(discente);
         }
     }
 

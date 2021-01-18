@@ -51,10 +51,10 @@ public class CadastroDocenteUIController {
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
-        App.setRoot("ViewAcolhimentoUI");
+        App.setRoot("ViewDocenteUI");
     }
 
-    public void setDiscente(Docente docente) {
+    public void setDocente(Docente docente) {
         if (docente == null)
             throw new IllegalArgumentException("Docente can not be null.");
 

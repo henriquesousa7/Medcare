@@ -126,7 +126,7 @@ public class Main {
         buscarLinhaAcaoUC = new BuscarLinhaAcaoUC(linhaAcaoDAO);
 
         // Discente
-        DiscenteDAO discenteDAO = new InMemoryDiscenteDAO();
+        DiscenteDAO discenteDAO = new SQliteDiscenteDAO();
         cadastrarDiscenteUC = new CadastrarDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
         alterarDadosDiscenteUC = new AlterarDadosDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
         buscarDiscenteUC = new BuscarDiscenteUC(discenteDAO);

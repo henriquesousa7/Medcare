@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class MantenedorUIController {
     public void openDiscente(ActionEvent actionEvent) throws IOException {
-
+        App.setRoot("ViewDiscenteUI");
     }
 
     public void openDocente(ActionEvent actionEvent) throws IOException {

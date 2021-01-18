@@ -23,6 +23,16 @@ public class Discente {
         this.telefone = telefone;
     }
 
+    public Discente(){}
+
+    public void setProntuario(Integer prontuario) {
+        this.prontuario = prontuario;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public Integer getProntuario() {
         return prontuario;
     }

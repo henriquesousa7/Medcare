@@ -76,7 +76,7 @@ public class CadastroLinhaAcaoUIController {
     private void setEntityIntoView() {
         txtNome.setText(linhaAcao.getNome());
         txtDesc.setText(linhaAcao.getDescricao());
-        cbLinhaCuidado.getSelectionModel().select(linhaAcao.getLinhaCuidado().getId());
+        cbLinhaCuidado.getSelectionModel().select(linhaAcao.getLinhaCuidado());
         cbResponsavel.getSelectionModel().select(linhaAcao.getResponsavel());
     }
 }

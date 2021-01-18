@@ -69,13 +69,7 @@ public class LinhaAcao {
 
     @Override
     public String toString() {
-        return "LinhaAcao{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", linhaCuidado=" + linhaCuidado +
-                ", responsavel=" + responsavel +
-                '}';
+        return nome;
     }
 
     @Override
