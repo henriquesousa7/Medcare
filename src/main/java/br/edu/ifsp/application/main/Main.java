@@ -128,7 +128,7 @@ public class Main {
         buscarDiscenteUC = new BuscarDiscenteUC(discenteDAO);
 
         // Usuario
-        UsuarioDAO usuarioDAO = new InMemoryUsuarioDAO();
+        UsuarioDAO usuarioDAO = new SqliteUsuarioDAO();
         cadastrarUsuarioUC = new CadastrarUsuarioUC(usuarioDAO);
         alterarDadosUsuarioUC = new AlterarDadosUsuarioUC(usuarioDAO);
         buscarUsuarioUC = new BuscarUsuarioUC(usuarioDAO);

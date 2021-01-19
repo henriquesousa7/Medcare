@@ -27,9 +27,10 @@ public class AcolhimentoLoginUIController {
     public void login(ActionEvent actionEvent) throws IOException {
         Acolhimento acolhimento = buscarAcolhimentoUC.checkLogin(txtEmail.getText().trim(), Integer.valueOf(txtPront.getText().trim()));
 
-        if(acolhimento == null)
-            throw new EntityNotFoundException("Acolhimento nao existe");
-
-        System.out.println("Login efetuado com sucesso");
+        if(acolhimento != null) {
+            App.setRoot("AcolhimentoUI");
+            AcolhimentoUIController controller = (AcolhimentoUIController) App.getController();
+            controller.setSessionAcolhimento(acolhimento);
+        }
     }
 }

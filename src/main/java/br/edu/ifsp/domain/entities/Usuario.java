@@ -20,6 +20,20 @@ public class Usuario {
         this.historicoMedico = historicoMedico;
     }
 
+    public Usuario(){}
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setNumeroCartaoSUS(Integer numeroCartaoSUS) {
+        this.numeroCartaoSUS = numeroCartaoSUS;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public String getCpf() {
         return cpf;
     }

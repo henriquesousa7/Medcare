@@ -30,6 +30,9 @@ public class DatabaseBuilder {
         String sql9 = "INSERT INTO Discente(prontuario, nome, email, telefone, id_acao) VALUES (1009165, 'Amanda Santos', 'amanda@hotmail.com', '16993456718', 1);";
         String sql10 = "INSERT INTO Discente(prontuario, nome, email, telefone, id_acao) VALUES (1009166, 'Laura Torres', 'laura@hotmail.com', '16993456712', 2);";
 
+        String sql11 = "INSERT INTO Usuario(cpf, cartaoSus, nome, sexo, telefone, endereco, historicoMedico) VALUES ('47847847878', 1234, 'Gabriel Ramos', 'M', '16923145678', 'Rua Sete', 'Perna quebrada');";
+        String sql12 = "INSERT INTO Usuario(cpf, cartaoSus, nome, sexo, telefone, endereco, historicoMedico) VALUES ('98798798798', 5678, 'Luiza Ramos', 'F', '16923121678', 'Rua Oito', 'Neurologia cronica');";
+
         try (Statement statement = ConnectionFactory.createStatement()) {
             statement.addBatch(sql1);
             statement.addBatch(sql2);
@@ -41,6 +44,8 @@ public class DatabaseBuilder {
             statement.addBatch(sql8);
             statement.addBatch(sql9);
             statement.addBatch(sql10);
+            statement.addBatch(sql11);
+            statement.addBatch(sql12);
             statement.executeBatch();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
