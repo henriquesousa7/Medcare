@@ -50,4 +50,9 @@ public class InMemoryAcolhimentoDAO implements AcolhimentoDAO {
     public boolean delete(Acolhimento acolhimento) {
         return deleteByKey(acolhimento.getProntuario());
     }
+
+    @Override
+    public Acolhimento checkLogin(String email, Integer prontuario) {
+        return null;
+    }
 }

@@ -1,5 +1,6 @@
 package br.edu.ifsp.domain.usecases.discente;
 
+import br.edu.ifsp.domain.entities.Acolhimento;
 import br.edu.ifsp.domain.entities.Discente;
 import br.edu.ifsp.domain.entities.Docente;
 
@@ -21,5 +22,12 @@ public class BuscarDiscenteUC {
 
     public List<Discente> findAll(){
         return discenteDAO.findAll();
+    }
+
+    public Discente checkLogin(String email, Integer prontuario) {
+        if (prontuario == null || email == null)
+            throw new IllegalArgumentException("Prontuario or email can not be null.");
+
+        return discenteDAO.checkLogin(email, prontuario);
     }
 }

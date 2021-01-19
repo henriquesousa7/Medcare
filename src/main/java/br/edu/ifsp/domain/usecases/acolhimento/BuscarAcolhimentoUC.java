@@ -22,4 +22,11 @@ public class BuscarAcolhimentoUC {
     public List<Acolhimento> findAll(){
         return acolhimentoDAO.findAll();
     }
+
+    public Acolhimento checkLogin(String email, Integer prontuario){
+        if (prontuario == null || email == null)
+            throw new IllegalArgumentException("Prontuario or email can not be null.");
+
+        return acolhimentoDAO.checkLogin(email, prontuario);
+    }
 }

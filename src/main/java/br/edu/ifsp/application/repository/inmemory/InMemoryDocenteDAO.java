@@ -50,4 +50,9 @@ public class InMemoryDocenteDAO implements DocenteDAO {
     public boolean delete(Docente docente) {
         return deleteByKey(docente.getProntuario());
     }
+
+    @Override
+    public Docente checkLogin(String email, Integer prontuario) {
+        return null;
+    }
 }

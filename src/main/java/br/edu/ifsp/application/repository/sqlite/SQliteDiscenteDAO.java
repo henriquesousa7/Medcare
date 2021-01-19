@@ -1,5 +1,6 @@
 package br.edu.ifsp.application.repository.sqlite;
 
+import br.edu.ifsp.domain.entities.Acolhimento;
 import br.edu.ifsp.domain.entities.Discente;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.LinhaAcao;
@@ -42,6 +43,22 @@ public class SQliteDiscenteDAO implements DiscenteDAO {
 
         try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             stmt.setInt(1, key);
+            ResultSet resultSet = stmt.executeQuery();
+            if (resultSet.next()) {
+                discente = resultSetToEntity(resultSet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.ofNullable(discente);
+    }
+
+    public Optional<Discente> findOneByEmail(String email){
+        String sql = "SELECT * FROM Discente WHERE email = ?";
+        Discente discente = null;
+
+        try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1, email);
             ResultSet resultSet = stmt.executeQuery();
             if (resultSet.next()) {
                 discente = resultSetToEntity(resultSet);
@@ -107,5 +124,15 @@ public class SQliteDiscenteDAO implements DiscenteDAO {
     @Override
     public boolean delete(Discente type) {
         return false;
+    }
+
+    @Override
+    public Discente checkLogin(String email, Integer prontuario) {
+        Discente discente = findOneByEmail(email).orElse(null);
+
+        if(discente.getProntuario() == prontuario)
+            return discente;
+
+        return null;
     }
 }

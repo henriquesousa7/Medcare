@@ -47,6 +47,22 @@ public class SqliteAcolhimentoDAO implements AcolhimentoDAO {
         return Optional.ofNullable(acolhimento);
     }
 
+    public Optional<Acolhimento> findOneByEmail(String email){
+        String sql = "SELECT * FROM Acolhimento WHERE email = ?";
+        Acolhimento acolhimento = null;
+
+        try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1, email);
+            ResultSet resultSet = stmt.executeQuery();
+            if (resultSet.next()) {
+                acolhimento = resultSetToEntity(resultSet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.ofNullable(acolhimento);
+    }
+
     @Override
     public List<Acolhimento> findAll() {
         List<Acolhimento> servidores = new ArrayList<>();
@@ -99,5 +115,15 @@ public class SqliteAcolhimentoDAO implements AcolhimentoDAO {
     @Override
     public boolean delete(Acolhimento type) {
         return false;
+    }
+
+    @Override
+    public Acolhimento checkLogin(String email, Integer prontuario) {
+        Acolhimento acolhimento = findOneByEmail(email).orElse(null);
+
+        if(acolhimento.getProntuario() == prontuario)
+            return acolhimento;
+
+        return null;
     }
 }

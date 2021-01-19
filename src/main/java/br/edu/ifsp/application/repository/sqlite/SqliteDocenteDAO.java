@@ -47,6 +47,22 @@ public class SqliteDocenteDAO implements DocenteDAO {
         return Optional.ofNullable(docente);
     }
 
+    public Optional<Docente> findOneByEmail(String email){
+        String sql = "SELECT * FROM Docente WHERE email = ?";
+        Docente docente = null;
+
+        try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1, email);
+            ResultSet resultSet = stmt.executeQuery();
+            if (resultSet.next()) {
+                docente = resultSetToEntity(resultSet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.ofNullable(docente);
+    }
+
     private Docente resultSetToEntity(ResultSet rs) throws SQLException {
         Integer pront = rs.getInt("prontuario");
         String nome = rs.getString("nome");
@@ -98,5 +114,15 @@ public class SqliteDocenteDAO implements DocenteDAO {
     @Override
     public boolean delete(Docente docente) {
         return false;
+    }
+
+    @Override
+    public Docente checkLogin(String email, Integer prontuario) {
+        Docente docente = findOneByEmail(email).orElse(null);
+
+        if(docente.getProntuario() == prontuario)
+            return docente;
+
+        return null;
     }
 }

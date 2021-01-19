@@ -49,4 +49,9 @@ public class InMemoryDiscenteDAO implements DiscenteDAO {
     public boolean delete(Discente discente) {
         return deleteByKey(discente.getProntuario());
     }
+
+    @Override
+    public Discente checkLogin(String email, Integer prontuario) {
+        return null;
+    }
 }
