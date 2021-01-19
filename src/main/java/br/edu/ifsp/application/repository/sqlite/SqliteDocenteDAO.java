@@ -120,7 +120,7 @@ public class SqliteDocenteDAO implements DocenteDAO {
     public Docente checkLogin(String email, Integer prontuario) {
         Docente docente = findOneByEmail(email).orElse(null);
 
-        if(docente.getProntuario() == prontuario)
+        if(docente != null && docente.getProntuario().equals(prontuario))
             return docente;
 
         return null;

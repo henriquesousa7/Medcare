@@ -24,16 +24,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6da81967-2df9-40da-aa47-7074ecc0b652" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/inmemory/InMemoryAcolhimentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/inmemory/InMemoryAcolhimentoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/inmemory/InMemoryDocenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/inmemory/InMemoryDocenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SQliteDiscenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SQliteDiscenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AcolhimentoLoginUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AcolhimentoLoginUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DiscenteLoginUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DiscenteLoginUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DocenteLoginUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DocenteLoginUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteAcolhimentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteAcolhimentoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteDocenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteDocenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/acolhimento/AcolhimentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/acolhimento/AcolhimentoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/acolhimento/BuscarAcolhimentoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/acolhimento/BuscarAcolhimentoUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/discente/DiscenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/discente/DiscenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/docente/BuscarDocenteUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/docente/BuscarDocenteUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/docente/DocenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/docente/DocenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/AcolhimentoLoginUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/AcolhimentoLoginUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/DiscenteLoginUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/DiscenteLoginUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/DocenteLoginUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/DocenteLoginUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +148,8 @@
       <workItem from="1610903720333" duration="8373000" />
       <workItem from="1610980599421" duration="2906000" />
       <workItem from="1610988759773" duration="140000" />
-      <workItem from="1611064223614" duration="731000" />
+      <workItem from="1611064223614" duration="973000" />
+      <workItem from="1611066224336" duration="1265000" />
     </task>
     <servers />
   </component>
@@ -175,10 +173,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610673126613" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1611064935903">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1611065099421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611064935903" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611065099421" />
     <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609848441701">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -187,22 +185,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610554865926" />
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1610983535609">
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1611067475064">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610983535609" />
-    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1610983535609">
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611067475064" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1611067475063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610983535609" />
-    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1610983535609">
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611067475063" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1611067475063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610983535609" />
-    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1610983535609">
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611067475063" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1611067475064">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610983535609" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611067475064" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609851489487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

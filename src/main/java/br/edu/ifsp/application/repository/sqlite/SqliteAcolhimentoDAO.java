@@ -121,8 +121,9 @@ public class SqliteAcolhimentoDAO implements AcolhimentoDAO {
     public Acolhimento checkLogin(String email, Integer prontuario) {
         Acolhimento acolhimento = findOneByEmail(email).orElse(null);
 
-        if(acolhimento.getProntuario() == prontuario)
+        if(acolhimento != null && acolhimento.getProntuario().equals(prontuario)) {
             return acolhimento;
+        }
 
         return null;
     }

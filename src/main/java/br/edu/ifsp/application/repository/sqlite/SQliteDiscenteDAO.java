@@ -130,7 +130,7 @@ public class SQliteDiscenteDAO implements DiscenteDAO {
     public Discente checkLogin(String email, Integer prontuario) {
         Discente discente = findOneByEmail(email).orElse(null);
 
-        if(discente.getProntuario() == prontuario)
+        if(discente != null && discente.getProntuario().equals(prontuario))
             return discente;
 
         return null;
