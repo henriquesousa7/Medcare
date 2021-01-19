@@ -1,35 +1,35 @@
 package br.edu.ifsp.domain.usecases.discente;
 
 import br.edu.ifsp.domain.entities.Discente;
-import br.edu.ifsp.domain.entities.LinhaAcao;
-import br.edu.ifsp.domain.usecases.linhaAcao.BuscarLinhaAcaoUC;
+import br.edu.ifsp.domain.entities.Acao;
+import br.edu.ifsp.domain.usecases.linhaAcao.BuscarAcaoUC;
 import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
 import br.edu.ifsp.domain.usecases.utils.Notification;
 import br.edu.ifsp.domain.usecases.utils.Validator;
 
 public class AlterarDadosDiscenteUC {
     private DiscenteDAO discenteDAO;
-    private BuscarLinhaAcaoUC buscarLinhaAcaoUC;
+    private BuscarAcaoUC buscarAcaoUC;
 
-    public AlterarDadosDiscenteUC(DiscenteDAO discenteDAO, BuscarLinhaAcaoUC buscarLinhaAcaoUC) {
+    public AlterarDadosDiscenteUC(DiscenteDAO discenteDAO, BuscarAcaoUC buscarAcaoUC) {
         this.discenteDAO = discenteDAO;
-        this.buscarLinhaAcaoUC = buscarLinhaAcaoUC;
+        this.buscarAcaoUC = buscarAcaoUC;
     }
 
-    public boolean alterarDiscente(Discente discente, Integer linhaAcaoID) {
+    public boolean alterarDiscente(Discente discente, Integer acaoID) {
         Validator<Discente> validator = new DiscenteInputValidator();
         Notification notification = validator.validate(discente);
 
         if(notification.hasErros())
             throw new IllegalArgumentException(notification.errorMessage());
 
-        if(linhaAcaoID == null)
+        if(acaoID == null)
             throw new IllegalArgumentException("Id da linha de acao nao pode ser nulo");
 
-        LinhaAcao linhaAcao = buscarLinhaAcaoUC.findOne(linhaAcaoID).
+        Acao acao = buscarAcaoUC.findOne(acaoID).
                 orElseThrow(() -> new EntityNotFoundException("Linha acao nao existe"));
 
-        discente.setLinhaAcao(linhaAcao);
+        discente.setAcao(acao);
 
         return discenteDAO.update(discente);
     }

@@ -1,10 +1,10 @@
 package br.edu.ifsp.domain.usecases.linhaAcao;
 
-import br.edu.ifsp.domain.entities.LinhaAcao;
+import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.usecases.utils.DAO;
 
 import java.util.Optional;
 
-public interface LinhaAcaoDAO extends DAO<LinhaAcao, Integer> {
+public interface AcaoDAO extends DAO<Acao, Integer> {
 
 }

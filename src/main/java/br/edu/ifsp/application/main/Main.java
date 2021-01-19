@@ -3,7 +3,6 @@ package br.edu.ifsp.application.main;
 import br.edu.ifsp.application.repository.inmemory.*;
 import br.edu.ifsp.application.repository.sqlite.*;
 import br.edu.ifsp.application.view.App;
-import br.edu.ifsp.domain.entities.*;
 import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
 import br.edu.ifsp.domain.usecases.acolhimento.AlterarServidorAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.acolhimento.BuscarAcolhimentoUC;
@@ -23,10 +22,10 @@ import br.edu.ifsp.domain.usecases.docente.DocenteDAO;
 import br.edu.ifsp.domain.usecases.interconsulta.GerenciarInterConsultaUC;
 import br.edu.ifsp.domain.usecases.interconsulta.InterConsultaDAO;
 import br.edu.ifsp.domain.usecases.interconsulta.SolicitarInterConsultaUC;
-import br.edu.ifsp.domain.usecases.linhaAcao.AlterarLinhaAcaoUC;
-import br.edu.ifsp.domain.usecases.linhaAcao.BuscarLinhaAcaoUC;
-import br.edu.ifsp.domain.usecases.linhaAcao.CadastrarLinhaAcaoUC;
-import br.edu.ifsp.domain.usecases.linhaAcao.LinhaAcaoDAO;
+import br.edu.ifsp.domain.usecases.linhaAcao.AlterarAcaoUC;
+import br.edu.ifsp.domain.usecases.linhaAcao.BuscarAcaoUC;
+import br.edu.ifsp.domain.usecases.linhaAcao.CadastrarAcaoUC;
+import br.edu.ifsp.domain.usecases.linhaAcao.AcaoDAO;
 import br.edu.ifsp.domain.usecases.linhaCuidado.AlterarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.BuscarLinhaCuidadoUC;
 import br.edu.ifsp.domain.usecases.linhaCuidado.CadastrarLinhaCuidadoUC;
@@ -42,9 +41,6 @@ import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.BuscarUsuarioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.CadastrarUsuarioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.GerenciarUsuarioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.UsuarioLinhaAcaoDAO;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 public class Main {
 
@@ -64,9 +60,9 @@ public class Main {
     public static AlterarLinhaCuidadoUC alterarLinhaCuidadoUC;
     public static BuscarLinhaCuidadoUC buscarLinhaCuidadoUC;
 
-    public static CadastrarLinhaAcaoUC cadastrarLinhaAcaoUC;
-    public static AlterarLinhaAcaoUC alterarLinhaAcaoUC;
-    public static BuscarLinhaAcaoUC buscarLinhaAcaoUC;
+    public static CadastrarAcaoUC cadastrarAcaoUC;
+    public static AlterarAcaoUC alterarAcaoUC;
+    public static BuscarAcaoUC buscarAcaoUC;
 
     public static CadastrarUsuarioUC cadastrarUsuarioUC;
     public static AlterarDadosUsuarioUC alterarDadosUsuarioUC;
@@ -120,15 +116,15 @@ public class Main {
         buscarLinhaCuidadoUC = new BuscarLinhaCuidadoUC(linhaCuidadoDAO);
 
         // Linha Acao
-        LinhaAcaoDAO linhaAcaoDAO = new SqliteLinhaAcaoDAO();
-        cadastrarLinhaAcaoUC = new CadastrarLinhaAcaoUC(linhaAcaoDAO, buscarDocenteUC, buscarLinhaCuidadoUC);
-        alterarLinhaAcaoUC = new AlterarLinhaAcaoUC(linhaAcaoDAO);
-        buscarLinhaAcaoUC = new BuscarLinhaAcaoUC(linhaAcaoDAO);
+        AcaoDAO acaoDAO = new SqliteAcaoDAO();
+        cadastrarAcaoUC = new CadastrarAcaoUC(acaoDAO, buscarDocenteUC);
+        alterarAcaoUC = new AlterarAcaoUC(acaoDAO);
+        buscarAcaoUC = new BuscarAcaoUC(acaoDAO);
 
         // Discente
         DiscenteDAO discenteDAO = new SQliteDiscenteDAO();
-        cadastrarDiscenteUC = new CadastrarDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
-        alterarDadosDiscenteUC = new AlterarDadosDiscenteUC(discenteDAO, buscarLinhaAcaoUC);
+        cadastrarDiscenteUC = new CadastrarDiscenteUC(discenteDAO, buscarAcaoUC);
+        alterarDadosDiscenteUC = new AlterarDadosDiscenteUC(discenteDAO, buscarAcaoUC);
         buscarDiscenteUC = new BuscarDiscenteUC(discenteDAO);
 
         // Usuario
@@ -140,7 +136,7 @@ public class Main {
         // Usuario a Linha de Acao
         UsuarioLinhaAcaoDAO usuarioLinhaAcaoDAO = new InMemoryUsuarioLinhaAcaoDAO();
         buscarUsuarioLinhaAcaoUC = new BuscarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO);
-        cadastrarUsuarioLinhaAcaoUC = new CadastrarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarLinhaAcaoUC, buscarUsuarioUC, buscarAcolhimentoUC);
+        cadastrarUsuarioLinhaAcaoUC = new CadastrarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarAcaoUC, buscarUsuarioUC, buscarAcolhimentoUC);
         gerenciarUsuarioLinhaAcaoUC = new GerenciarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarUsuarioLinhaAcaoUC);
 
         // Atendimento

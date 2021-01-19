@@ -1,33 +1,33 @@
 package br.edu.ifsp.application.repository.inmemory;
 
-import br.edu.ifsp.domain.entities.LinhaAcao;
-import br.edu.ifsp.domain.usecases.linhaAcao.LinhaAcaoDAO;
+import br.edu.ifsp.domain.entities.Acao;
+import br.edu.ifsp.domain.usecases.linhaAcao.AcaoDAO;
 
 import java.util.*;
 
-public class InMemoryLinhaAcaoDAO implements LinhaAcaoDAO {
-    private static final Map<Integer, LinhaAcao> db = new LinkedHashMap<>();
+public class InMemoryAcaoDAO implements AcaoDAO {
+    private static final Map<Integer, Acao> db = new LinkedHashMap<>();
 
     @Override
-    public Integer create(LinhaAcao linhaAcao) {
+    public Integer create(Acao linhaAcao) {
         db.put(linhaAcao.getId(), linhaAcao);
         return linhaAcao.getId();
     }
 
     @Override
-    public Optional<LinhaAcao> findOne(Integer key) {
+    public Optional<Acao> findOne(Integer key) {
         if(db.containsKey(key))
             return Optional.of(db.get(key));
         return Optional.empty();
     }
 
     @Override
-    public List<LinhaAcao> findAll() {
+    public List<Acao> findAll() {
         return new ArrayList<>(db.values());
     }
 
     @Override
-    public boolean update(LinhaAcao linhaAcao) {
+    public boolean update(Acao linhaAcao) {
         Integer id = linhaAcao.getId();
         if(db.containsKey(id)){
             db.replace(id, linhaAcao);
@@ -46,7 +46,7 @@ public class InMemoryLinhaAcaoDAO implements LinhaAcaoDAO {
     }
 
     @Override
-    public boolean delete(LinhaAcao linhaAcao) {
+    public boolean delete(Acao linhaAcao) {
         return deleteByKey(linhaAcao.getId());
     }
 }

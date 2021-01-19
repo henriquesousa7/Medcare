@@ -2,8 +2,7 @@ package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Discente;
-import br.edu.ifsp.domain.entities.Docente;
-import br.edu.ifsp.domain.entities.LinhaAcao;
+import br.edu.ifsp.domain.entities.Acao;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +24,7 @@ public class CadastroDiscenteUIController {
     @FXML
     private TextField txtTelefone;
     @FXML
-    private ComboBox<LinhaAcao> cbLinhaAcao;
+    private ComboBox<Acao> cbAcao;
     @FXML
     private Button btnCancelar;
     @FXML
@@ -35,7 +34,7 @@ public class CadastroDiscenteUIController {
 
     @FXML
     private void initialize(){
-        cbLinhaAcao.setItems(FXCollections.observableArrayList(buscarLinhaAcaoUC.findAll()));
+        cbAcao.setItems(FXCollections.observableArrayList(buscarAcaoUC.findAll()));
     }
 
     public void salvarOuAtualizar(ActionEvent actionEvent) throws IOException {
@@ -43,9 +42,9 @@ public class CadastroDiscenteUIController {
         boolean newDiscente = buscarDiscenteUC.findOne(discente.getProntuario()).isEmpty();
 
         if(newDiscente){
-            cadastrarDiscenteUC.cadastraDiscente(discente, discente.getLinhaAcao().getId());
+            cadastrarDiscenteUC.cadastraDiscente(discente, discente.getAcao().getId());
         }else{
-            alterarDadosDiscenteUC.alterarDiscente(discente, discente.getLinhaAcao().getId());
+            alterarDadosDiscenteUC.alterarDiscente(discente, discente.getAcao().getId());
         }
         App.setRoot("ViewDiscenteUI");
     }
@@ -58,7 +57,7 @@ public class CadastroDiscenteUIController {
         discente.setNome(txtNome.getText());
         discente.setTelefone(txtTelefone.getText());
         discente.setEmail(txtEmail.getText());
-        discente.setLinhaAcao(cbLinhaAcao.getValue());
+        discente.setAcao(cbAcao.getValue());
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
@@ -81,6 +80,6 @@ public class CadastroDiscenteUIController {
         txtNome.setText(discente.getNome());
         txtEmail.setText(discente.getEmail());
         txtTelefone.setText(discente.getTelefone());
-        cbLinhaAcao.getSelectionModel().select(discente.getLinhaAcao());
+        cbAcao.getSelectionModel().select(discente.getAcao());
     }
 }

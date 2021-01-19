@@ -6,14 +6,14 @@ public class Discente {
     private String nome;
     private String email;
     private String telefone;
-    private LinhaAcao linhaAcao;
+    private Acao acao;
 
-    public Discente(Integer prontuario, String nome, String email, String telefone, LinhaAcao linhaAcao) {
+    public Discente(Integer prontuario, String nome, String email, String telefone, Acao acao) {
         this.prontuario = prontuario;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
-        this.linhaAcao = linhaAcao;
+        this.acao = acao;
     }
 
     public Discente(Integer prontuario, String nome, String email, String telefone) {
@@ -57,12 +57,12 @@ public class Discente {
         this.telefone = telefone;
     }
 
-    public LinhaAcao getLinhaAcao() {
-        return linhaAcao;
+    public Acao getAcao() {
+        return acao;
     }
 
-    public void setLinhaAcao(LinhaAcao linhaAcao) {
-        this.linhaAcao = linhaAcao;
+    public void setAcao(Acao acao) {
+        this.acao = acao;
     }
 
     @Override
@@ -70,7 +70,7 @@ public class Discente {
         return "Discente{" +
                 "prontuario=" + prontuario +
                 ", nome='" + nome + '\'' +
-                ", linhaAcao=" + linhaAcao +
+                ", linhaAcao=" + acao +
                 '}';
     }
 }

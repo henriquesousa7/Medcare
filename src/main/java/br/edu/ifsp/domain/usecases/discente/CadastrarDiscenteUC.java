@@ -1,36 +1,35 @@
 package br.edu.ifsp.domain.usecases.discente;
 
 import br.edu.ifsp.domain.entities.Discente;
-import br.edu.ifsp.domain.entities.LinhaAcao;
-import br.edu.ifsp.domain.entities.LinhaCuidado;
-import br.edu.ifsp.domain.usecases.linhaAcao.BuscarLinhaAcaoUC;
+import br.edu.ifsp.domain.entities.Acao;
+import br.edu.ifsp.domain.usecases.linhaAcao.BuscarAcaoUC;
 import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
 import br.edu.ifsp.domain.usecases.utils.Notification;
 import br.edu.ifsp.domain.usecases.utils.Validator;
 
 public class CadastrarDiscenteUC {
     private DiscenteDAO discenteDAO;
-    private BuscarLinhaAcaoUC buscarLinhaAcaoUC;
+    private BuscarAcaoUC buscarAcaoUC;
 
-    public CadastrarDiscenteUC(DiscenteDAO discenteDAO, BuscarLinhaAcaoUC buscarLinhaAcaoUC) {
+    public CadastrarDiscenteUC(DiscenteDAO discenteDAO, BuscarAcaoUC buscarAcaoUC) {
         this.discenteDAO = discenteDAO;
-        this.buscarLinhaAcaoUC = buscarLinhaAcaoUC;
+        this.buscarAcaoUC = buscarAcaoUC;
     }
 
-    public Integer cadastraDiscente(Discente discente, Integer linhaAcaoID){
+    public Integer cadastraDiscente(Discente discente, Integer acaoID){
         Validator<Discente> validator = new DiscenteInputValidator();
         Notification notification = validator.validate(discente);
 
         if(notification.hasErros())
             throw new IllegalArgumentException(notification.errorMessage());
 
-        if(linhaAcaoID == null)
-            throw new IllegalArgumentException("Id da linha de acao nao pode ser nulo");
+        if(acaoID == null)
+            throw new IllegalArgumentException("Id da acao nao pode ser nulo");
 
-        LinhaAcao linhaAcao = buscarLinhaAcaoUC.findOne(linhaAcaoID).
-                orElseThrow(() -> new EntityNotFoundException("Linha acao nao existe"));
+        Acao acao = buscarAcaoUC.findOne(acaoID).
+                orElseThrow(() -> new EntityNotFoundException("acao nao existe"));
 
-        discente.setLinhaAcao(linhaAcao);
+        discente.setAcao(acao);
 
         return discenteDAO.create(discente);
     }

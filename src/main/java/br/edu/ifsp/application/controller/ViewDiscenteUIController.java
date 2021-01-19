@@ -3,7 +3,7 @@ package br.edu.ifsp.application.controller;
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Discente;
 import br.edu.ifsp.domain.entities.Docente;
-import br.edu.ifsp.domain.entities.LinhaAcao;
+import br.edu.ifsp.domain.entities.Acao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,7 +30,7 @@ public class ViewDiscenteUIController {
     @FXML
     private TableColumn<Discente, String> cTelefone;
     @FXML
-    private TableColumn<Discente, LinhaAcao> cLinhaAcao;
+    private TableColumn<Discente, Acao> cAcao;
 
     private ObservableList<Discente> tableData;
 
@@ -51,7 +51,7 @@ public class ViewDiscenteUIController {
         cNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         cEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         cTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-        cLinhaAcao.setCellValueFactory(new PropertyValueFactory<>("linhaAcao"));
+        cAcao.setCellValueFactory(new PropertyValueFactory<>("acao"));
     }
 
     private void loadDataAndShow() {

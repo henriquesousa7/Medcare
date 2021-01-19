@@ -1,11 +1,14 @@
 package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.App;
+import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.LinhaCuidado;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -19,12 +22,18 @@ public class CadastroLinhaCuidadoUIController {
     @FXML
     private TextArea txtDesc;
     @FXML
+    private ComboBox<Acao> cbAcao;
+    @FXML
     private Button btnCancelar;
     @FXML
     private Button btnSalvar;
 
     private LinhaCuidado linhaCuidado;
 
+    @FXML
+    private void initialize(){
+        cbAcao.setItems(FXCollections.observableArrayList(buscarAcaoUC.findAll()));
+    }
 
     public void salvarOuAtualizar(ActionEvent actionEvent) throws IOException {
         getEntityFromView();
@@ -43,6 +52,7 @@ public class CadastroLinhaCuidadoUIController {
         }
         linhaCuidado.setNome(txtNome.getText());
         linhaCuidado.setDescricao(txtDesc.getText());
+        linhaCuidado.setAcao(cbAcao.getValue());
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
@@ -60,5 +70,6 @@ public class CadastroLinhaCuidadoUIController {
     private void setEntityIntoView() {
         txtNome.setText(linhaCuidado.getNome());
         txtDesc.setText(linhaCuidado.getDescricao());
+        cbAcao.getSelectionModel().select(linhaCuidado.getAcao());
     }
 }

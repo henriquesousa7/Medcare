@@ -13,7 +13,7 @@
             <TableColumn fx:id="cNome" prefWidth="165.0" text="Nome" />
           <TableColumn fx:id="cEmail" prefWidth="212.0" text="Email" />
           <TableColumn fx:id="cTelefone" prefWidth="153.0" text="Telefone" />
-            <TableColumn fx:id="cLinhaAcao" prefWidth="138.0" text="Linha de acao" />
+            <TableColumn fx:id="cAcao" prefWidth="138.0" text="Acao" />
         </columns>
       </TableView>
       <Button fx:id="btnAlterar" layoutX="636.0" layoutY="546.0" mnemonicParsing="false" onAction="#alterarDiscente" text="Alterar" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="94.0" />

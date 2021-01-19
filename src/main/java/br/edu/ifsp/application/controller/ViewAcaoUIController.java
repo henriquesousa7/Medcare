@@ -2,8 +2,7 @@ package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Docente;
-import br.edu.ifsp.domain.entities.LinhaAcao;
-import br.edu.ifsp.domain.entities.LinhaCuidado;
+import br.edu.ifsp.domain.entities.Acao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,25 +14,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.util.List;
 
-import static br.edu.ifsp.application.main.Main.buscarLinhaAcaoUC;
-import static br.edu.ifsp.application.main.Main.buscarLinhaCuidadoUC;
+import static br.edu.ifsp.application.main.Main.buscarAcaoUC;
 
-public class ViewLinhaAcaoUIController {
+public class ViewAcaoUIController {
 
     @FXML
-    private TableView<LinhaAcao> tableView;
+    private TableView<Acao> tableView;
     @FXML
-    private TableColumn<LinhaAcao, Integer> cID;
+    private TableColumn<Acao, Integer> cID;
     @FXML
-    private TableColumn<LinhaAcao, String> cNome;
+    private TableColumn<Acao, String> cNome;
     @FXML
-    private TableColumn<LinhaAcao, String> cDescricao;
+    private TableColumn<Acao, String> cDescricao;
     @FXML
-    private TableColumn<LinhaAcao, LinhaCuidado> cLinhaCuidado;
-    @FXML
-    private TableColumn<LinhaAcao, Docente> cDocente;
+    private TableColumn<Acao, Docente> cDocente;
 
-    private ObservableList<LinhaAcao> tableData;
+    private ObservableList<Acao> tableData;
 
     @FXML
     private void initialize() {
@@ -51,27 +47,26 @@ public class ViewLinhaAcaoUIController {
         cID.setCellValueFactory(new PropertyValueFactory<>("id"));
         cNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         cDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-        cLinhaCuidado.setCellValueFactory(new PropertyValueFactory<>("linhaCuidado"));
         cDocente.setCellValueFactory(new PropertyValueFactory<>("responsavel"));
     }
 
     private void loadDataAndShow() {
-        List<LinhaAcao> linhasAcao = buscarLinhaAcaoUC.findAll();
+        List<Acao> acoes = buscarAcaoUC.findAll();
         tableData.clear();
-        tableData.addAll(linhasAcao);
+        tableData.addAll(acoes);
     }
 
     public void cadastrarLinhaAcao(ActionEvent actionEvent) throws IOException {
-        App.setRoot("CadastroLinhaAcaoUI");
+        App.setRoot("CadastroAcaoUI");
     }
 
     public void alterarLinhaAcao(ActionEvent actionEvent) throws IOException {
-       LinhaAcao linhaAcao = tableView.getSelectionModel().getSelectedItem();
+       Acao acao = tableView.getSelectionModel().getSelectedItem();
 
-        if(linhaAcao != null){
-            App.setRoot("CadastroLinhaAcaoUI");
-            CadastroLinhaAcaoUIController controller = (CadastroLinhaAcaoUIController) App.getController();
-            controller.setLinhaAcao(linhaAcao);
+        if(acao != null){
+            App.setRoot("CadastroAcaoUI");
+            CadastroAcaoUIController controller = (CadastroAcaoUIController) App.getController();
+            controller.setAcao(acao);
         }
     }
 

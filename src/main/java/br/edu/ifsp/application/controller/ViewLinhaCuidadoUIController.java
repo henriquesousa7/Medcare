@@ -1,6 +1,7 @@
 package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.App;
+import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.LinhaCuidado;
 import javafx.collections.FXCollections;
@@ -26,6 +27,8 @@ public class ViewLinhaCuidadoUIController {
     private TableColumn<LinhaCuidado, String> cNome;
     @FXML
     private TableColumn<LinhaCuidado, String> cDescricao;
+    @FXML
+    private TableColumn<LinhaCuidado, Acao> cAcao;
 
     private ObservableList<LinhaCuidado> tableData;
 
@@ -45,6 +48,7 @@ public class ViewLinhaCuidadoUIController {
         cID.setCellValueFactory(new PropertyValueFactory<>("id"));
         cNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         cDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        cAcao.setCellValueFactory(new PropertyValueFactory<>("acao"));
     }
 
     private void loadDataAndShow() {

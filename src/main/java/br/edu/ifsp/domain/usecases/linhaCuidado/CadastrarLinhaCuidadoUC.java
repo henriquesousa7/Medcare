@@ -19,11 +19,6 @@ public class CadastrarLinhaCuidadoUC {
         if(notification.hasErros())
             throw new IllegalArgumentException(notification.errorMessage());
 
-        String nome = linhaCuidado.getNome();
-
-        if(linhaCuidadoDAO.findByName(nome).isPresent())
-            throw new EntityAlreadyExistsException("Linha de cuidado ja existe");
-
         return linhaCuidadoDAO.create(linhaCuidado);
     }
 }

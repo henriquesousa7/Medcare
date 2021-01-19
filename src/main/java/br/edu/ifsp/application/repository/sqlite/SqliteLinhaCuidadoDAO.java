@@ -1,8 +1,10 @@
 package br.edu.ifsp.application.repository.sqlite;
 
+import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.LinhaCuidado;
 import br.edu.ifsp.domain.usecases.linhaCuidado.LinhaCuidadoDAO;
+import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,14 +13,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static br.edu.ifsp.application.main.Main.buscarAcaoUC;
+
 public class SqliteLinhaCuidadoDAO implements LinhaCuidadoDAO {
     @Override
     public Integer create(LinhaCuidado linhaCuidado) {
-        String sql = "INSERT INTO Linhacuidado(nome, descricao) VALUES (?, ?)";
+        String sql = "INSERT INTO Linhacuidado(nome, descricao, id_acao) VALUES (?, ?, ?)";
 
         try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             stmt.setString(1, linhaCuidado.getNome());
             stmt.setString(2, linhaCuidado.getDescricao());
+            stmt.setInt(3, linhaCuidado.getAcao().getId());
 
             stmt.execute();
             return linhaCuidado.getId();
@@ -83,8 +88,12 @@ public class SqliteLinhaCuidadoDAO implements LinhaCuidadoDAO {
         Integer id = rs.getInt("id");
         String nome = rs.getString("nome");
         String descricao = rs.getString("descricao");
+        Integer id_acao = rs.getInt("id_acao");
 
-        return new LinhaCuidado(id,nome,descricao);
+        Acao acao = buscarAcaoUC.findOne(id_acao).
+                orElseThrow(() -> new EntityNotFoundException("Acao nao existe"));
+
+        return new LinhaCuidado(id,nome,descricao, acao);
     }
 
     @Override

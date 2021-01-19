@@ -1,9 +1,9 @@
 package br.edu.ifsp.application.repository.sqlite;
 
 import br.edu.ifsp.domain.entities.Docente;
-import br.edu.ifsp.domain.entities.LinhaAcao;
+import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.entities.LinhaCuidado;
-import br.edu.ifsp.domain.usecases.linhaAcao.LinhaAcaoDAO;
+import br.edu.ifsp.domain.usecases.linhaAcao.AcaoDAO;
 import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
 
 import java.sql.PreparedStatement;
@@ -16,16 +16,15 @@ import java.util.Optional;
 import static br.edu.ifsp.application.main.Main.buscarDocenteUC;
 import static br.edu.ifsp.application.main.Main.buscarLinhaCuidadoUC;
 
-public class SqliteLinhaAcaoDAO implements LinhaAcaoDAO {
+public class SqliteAcaoDAO implements AcaoDAO {
     @Override
-    public Integer create(LinhaAcao linhaAcao) {
-        String sql = "INSERT INTO Linhaacao(nome, descricao, id_linhaCuidado, pront_responsavel) VALUES (?, ?, ?, ?)";
+    public Integer create(Acao linhaAcao) {
+        String sql = "INSERT INTO Acao(nome, descricao, pront_responsavel) VALUES (?, ?, ?)";
 
         try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             stmt.setString(1, linhaAcao.getNome());
             stmt.setString(2, linhaAcao.getDescricao());
-            stmt.setInt(3, linhaAcao.getLinhaCuidado().getId());
-            stmt.setInt(4, linhaAcao.getResponsavel().getProntuario());
+            stmt.setInt(3, linhaAcao.getResponsavel().getProntuario());
 
             stmt.execute();
             return linhaAcao.getId();
@@ -36,9 +35,9 @@ public class SqliteLinhaAcaoDAO implements LinhaAcaoDAO {
     }
 
     @Override
-    public Optional<LinhaAcao> findOne(Integer key) {
-        String sql = "SELECT * FROM Linhaacao WHERE id = ?";
-        LinhaAcao linhaAcao = null;
+    public Optional<Acao> findOne(Integer key) {
+        String sql = "SELECT * FROM Acao WHERE id = ?";
+        Acao linhaAcao = null;
 
         try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             stmt.setInt(1, key);
@@ -53,14 +52,14 @@ public class SqliteLinhaAcaoDAO implements LinhaAcaoDAO {
     }
 
     @Override
-    public List<LinhaAcao> findAll() {
-        List<LinhaAcao> linhasAcao = new ArrayList<>();
-        String sql = "SELECT * FROM Linhaacao";
+    public List<Acao> findAll() {
+        List<Acao> linhasAcao = new ArrayList<>();
+        String sql = "SELECT * FROM Acao";
 
         try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             ResultSet resultSet = stmt.executeQuery();
             while (resultSet.next()) {
-                LinhaAcao linhaAcao = resultSetToEntity(resultSet);
+                Acao linhaAcao = resultSetToEntity(resultSet);
                 linhasAcao.add(linhaAcao);
             }
         } catch (SQLException e) {
@@ -69,32 +68,28 @@ public class SqliteLinhaAcaoDAO implements LinhaAcaoDAO {
         return linhasAcao;
     }
 
-    private LinhaAcao resultSetToEntity(ResultSet rs) throws SQLException {
+    private Acao resultSetToEntity(ResultSet rs) throws SQLException {
         Integer id = rs.getInt("id");
         String nome = rs.getString("nome");
         String descricao = rs.getString("descricao");
-        Integer linhaCuidadoID = rs.getInt("id_linhaCuidado");
         Integer prontuarioDocente = rs.getInt("pront_responsavel");
 
-        LinhaCuidado linhaCuidado = buscarLinhaCuidadoUC.findOne(linhaCuidadoID).
-                orElseThrow(() -> new EntityNotFoundException("Linha cuidado nao existe"));
 
         Docente docente = buscarDocenteUC.findOne(prontuarioDocente).
                 orElseThrow(() -> new EntityNotFoundException("Docente nao existe"));
 
-        return new LinhaAcao(id,nome,descricao,linhaCuidado, docente);
+        return new Acao(id,nome,descricao,docente);
     }
 
     @Override
-    public boolean update(LinhaAcao linhaAcao) {
-        String sql = "UPDATE Linhaacao SET nome = ?, descricao = ?, id_linhaCuidado = ?, pront_responsavel = ? WHERE id = ?";
+    public boolean update(Acao linhaAcao) {
+        String sql = "UPDATE Acao SET nome = ?, descricao = ?, pront_responsavel = ? WHERE id = ?";
 
         try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)){
             stmt.setString(1, linhaAcao.getNome());
             stmt.setString(2, linhaAcao.getDescricao());
-            stmt.setInt(3, linhaAcao.getLinhaCuidado().getId());
-            stmt.setInt(4, linhaAcao.getResponsavel().getProntuario());
-            stmt.setInt(5, linhaAcao.getId());
+            stmt.setInt(3, linhaAcao.getResponsavel().getProntuario());
+            stmt.setInt(4, linhaAcao.getId());
             stmt.execute();
 
             return true;
@@ -110,7 +105,7 @@ public class SqliteLinhaAcaoDAO implements LinhaAcaoDAO {
     }
 
     @Override
-    public boolean delete(LinhaAcao type) {
+    public boolean delete(Acao type) {
         return false;
     }
 }

@@ -24,13 +24,69 @@
   <component name="ChangeListManager">
     <list default="true" id="6da81967-2df9-40da-aa47-7074ecc0b652" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AcolhimentoLoginUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AcolhimentoLoginUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DiscenteLoginUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DiscenteLoginUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DocenteLoginUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DocenteLoginUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteAcolhimentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteAcolhimentoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/AcolhimentoLoginUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/AcolhimentoLoginUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/DiscenteLoginUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/DiscenteLoginUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/DocenteLoginUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/DocenteLoginUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/CadastroDiscenteUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/CadastroDiscenteUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/CadastroLinhaAcaoUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/CadastroAcaoUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/CadastroLinhaCuidadoUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/CadastroLinhaCuidadoUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/MantenedorUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/MantenedorUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewDiscenteUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewDiscenteUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewLinhaAcaoUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewAcaoUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewLinhaCuidadoUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewLinhaCuidadoUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/inmemory/InMemoryLinhaAcaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/inmemory/InMemoryAcaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/DatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/DatabaseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SQliteDiscenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SQliteDiscenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteLinhaAcaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteAcaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteLinhaCuidadoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteLinhaCuidadoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Discente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Discente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/LinhaAcao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Acao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/LinhaCuidado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/LinhaCuidado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/UsuarioLinhaAcao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/UsuarioLinhaAcao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/discente/AlterarDadosDiscenteUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/discente/AlterarDadosDiscenteUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/discente/CadastrarDiscenteUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/discente/CadastrarDiscenteUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/interconsulta/SolicitarInterConsultaUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/interconsulta/SolicitarInterConsultaUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/AlterarLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/AlterarAcaoUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/BuscarLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/BuscarAcaoUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/CadastrarLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/CadastrarAcaoUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/LinhaAcaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/AcaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/LinhaAcaoInputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linhaAcao/LinhaAcaoInputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/listaEspera/VisualizarListaEsperaLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/listaEspera/VisualizarListaEsperaLinhaAcaoUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioLinhaAcaoUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/usuarioLinhaAcao/CadastrarUsuarioLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/usuarioLinhaAcao/CadastrarUsuarioLinhaAcaoUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/CadastroDiscenteUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/CadastroDiscenteUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/CadastroLinhaAcaoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/CadastroAcaoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/CadastroLinhaCuidadoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/CadastroLinhaCuidadoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/ViewDiscenteUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/ViewDiscenteUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/ViewLinhaAcaoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/ViewAcaoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/ViewLinhaCuidadoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/ViewLinhaCuidadoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/CadastroDiscenteUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/CadastroDiscenteUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/CadastroLinhaAcaoUIController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/ViewDiscenteUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/ViewDiscenteUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/ViewLinhaAcaoUIController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/inmemory/InMemoryLinhaAcaoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/sqlite/DatabaseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/sqlite/DatabaseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/sqlite/SQliteDiscenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/sqlite/SQliteDiscenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/sqlite/SqliteLinhaAcaoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/sqlite/SqliteLinhaCuidadoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/sqlite/SqliteLinhaCuidadoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/CadastroLinhaAcaoUI.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/CadastroLinhaCuidadoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/CadastroLinhaCuidadoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/ViewLinhaAcaoUI.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/ViewLinhaCuidadoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/ViewLinhaCuidadoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/Discente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/Discente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/LinhaAcao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/LinhaCuidado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/LinhaCuidado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/UsuarioLinhaAcao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/UsuarioLinhaAcao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/discente/AlterarDadosDiscenteUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/discente/AlterarDadosDiscenteUC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/discente/CadastrarDiscenteUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/discente/CadastrarDiscenteUC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/interconsulta/SolicitarInterConsultaUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/interconsulta/SolicitarInterConsultaUC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/linhaAcao/AlterarLinhaAcaoUC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/linhaAcao/BuscarLinhaAcaoUC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/linhaAcao/CadastrarLinhaAcaoUC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/linhaAcao/LinhaAcaoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/linhaAcao/LinhaAcaoInputValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/linhaAcao/LinhaAcaoInputValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/listaEspera/VisualizarListaEsperaLinhaAcaoUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/listaEspera/VisualizarListaEsperaLinhaAcaoUC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioLinhaAcaoUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioLinhaAcaoUC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/usuarioLinhaAcao/CadastrarUsuarioLinhaAcaoUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/usuarioLinhaAcao/CadastrarUsuarioLinhaAcaoUC.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +166,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -149,7 +216,8 @@
       <workItem from="1610980599421" duration="2906000" />
       <workItem from="1610988759773" duration="140000" />
       <workItem from="1611064223614" duration="973000" />
-      <workItem from="1611066224336" duration="1265000" />
+      <workItem from="1611066224336" duration="1601000" />
+      <workItem from="1611074628843" duration="4844000" />
     </task>
     <servers />
   </component>
@@ -173,34 +241,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610673126613" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1611065099421">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1611078805236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611065099421" />
-    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609848441701">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611078805236" />
+    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611077275891">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609848441701" />
+    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611077275891" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1610554865926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610554865926" />
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1611067475064">
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1611079305068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611067475064" />
-    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1611067475063">
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611079305068" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1611079305067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611067475063" />
-    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1611067475063">
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611079305067" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1611079305067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611067475063" />
-    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1611067475064">
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611079305067" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1611079305067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611067475064" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611079305067" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609851489487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -221,9 +289,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="281" key="extract.method.dialog/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610645146436" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609949222530">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1611076629520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609949222530" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611076629520" />
   </component>
 </project>

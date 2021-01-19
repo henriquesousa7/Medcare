@@ -3,11 +3,7 @@ package br.edu.ifsp.domain.usecases.interconsulta;
 import br.edu.ifsp.domain.entities.*;
 import br.edu.ifsp.domain.usecases.atendimento.BuscarAtendimentoUC;
 import br.edu.ifsp.domain.usecases.docente.BuscarDocenteUC;
-import br.edu.ifsp.domain.usecases.docente.DocenteDAO;
-import br.edu.ifsp.domain.usecases.linhaAcao.BuscarLinhaAcaoUC;
-import br.edu.ifsp.domain.usecases.linhaAcao.LinhaAcaoDAO;
 import br.edu.ifsp.domain.usecases.usuario.BuscarUsuarioUC;
-import br.edu.ifsp.domain.usecases.usuario.UsuarioDAO;
 import br.edu.ifsp.domain.usecases.utils.EntityNotFoundException;
 
 public class SolicitarInterConsultaUC {

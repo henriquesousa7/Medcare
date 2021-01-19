@@ -1,7 +1,7 @@
 package br.edu.ifsp.domain.usecases.relatorio;
 
 import br.edu.ifsp.domain.entities.Atendimento;
-import br.edu.ifsp.domain.entities.LinhaAcao;
+import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.entities.Status;
 import br.edu.ifsp.domain.usecases.atendimento.AtendimentoDAO;
 
@@ -15,11 +15,11 @@ public class GerarRelatorioLinhaAcaoUC {
         this.atendimentoDAO = atendimentoDAO;
     }
 
-    public List<Atendimento> geraRelatorioLinhaAcao(LinhaAcao linhaAcao){
+    public List<Atendimento> geraRelatorioLinhaAcao(Acao acao){
         List<Atendimento> atendimentos = new ArrayList<>();
 
         for (Atendimento atendimento : atendimentoDAO.findAll()) {
-            if(atendimento.getUsuarioLinhaAcao().getLinhaAcao().equals(linhaAcao)){
+            if(atendimento.getUsuarioLinhaAcao().getAcao().equals(acao)){
                 atendimentos.add(atendimento);
             }
         }

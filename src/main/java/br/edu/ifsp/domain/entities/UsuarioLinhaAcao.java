@@ -2,14 +2,14 @@ package br.edu.ifsp.domain.entities;
 
 public class UsuarioLinhaAcao {
     private Integer id;
-    private LinhaAcao linhaAcao;
+    private Acao acao;
     private Usuario usuario;
     private Status status;
     private Acolhimento responsavelAcolhimento;
 
-    public UsuarioLinhaAcao(Integer id, LinhaAcao linhaAcao, Usuario usuario, Status status, Acolhimento responsavelAcolhimento) {
+    public UsuarioLinhaAcao(Integer id, Acao acao, Usuario usuario, Status status, Acolhimento responsavelAcolhimento) {
         this.id = id;
-        this.linhaAcao = linhaAcao;
+        this.acao = acao;
         this.usuario = usuario;
         this.status = status;
         this.responsavelAcolhimento = responsavelAcolhimento;
@@ -19,12 +19,12 @@ public class UsuarioLinhaAcao {
         return id;
     }
 
-    public LinhaAcao getLinhaAcao() {
-        return linhaAcao;
+    public Acao getAcao() {
+        return acao;
     }
 
-    public void setLinhaAcao(LinhaAcao linhaAcao) {
-        this.linhaAcao = linhaAcao;
+    public void setAcao(Acao acao) {
+        this.acao = acao;
     }
 
     public Usuario getUsuario() {
@@ -51,7 +51,7 @@ public class UsuarioLinhaAcao {
     public String toString() {
         return "UsuarioLinhaAcao{" +
                 "id=" + id +
-                ", linhaAcao=" + linhaAcao +
+                ", linhaAcao=" + acao +
                 ", usuario=" + usuario +
                 ", status=" + status +
                 ", responsavelAcolhimento=" + responsavelAcolhimento +

@@ -27,6 +27,6 @@ public class MantenedorUIController {
     }
 
     public void openLinhaAcao(ActionEvent actionEvent) throws IOException {
-        App.setRoot("ViewLinhaAcaoUI");
+        App.setRoot("ViewAcaoUI");
     }
 }
