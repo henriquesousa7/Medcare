@@ -134,7 +134,7 @@ public class Main {
         buscarUsuarioUC = new BuscarUsuarioUC(usuarioDAO);
 
         // Usuario a Linha de Acao
-        UsuarioLinhaAcaoDAO usuarioLinhaAcaoDAO = new InMemoryUsuarioLinhaAcaoDAO();
+        UsuarioLinhaAcaoDAO usuarioLinhaAcaoDAO = new SqliteUsuarioAcaoDAO();
         buscarUsuarioLinhaAcaoUC = new BuscarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO);
         cadastrarUsuarioLinhaAcaoUC = new CadastrarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarAcaoUC, buscarUsuarioUC, buscarAcolhimentoUC);
         gerenciarUsuarioLinhaAcaoUC = new GerenciarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarUsuarioLinhaAcaoUC);

@@ -13,6 +13,16 @@ public enum Status {
         this.label = label;
     }
 
+    public static Status valueOfLabel(String label) {
+        for (Status e : values()) {
+            if (e.label.equals(label)) {
+                return e;
+            }
+        }
+        return null;
+    }
+
+
     @Override
     public String toString() {
         return label;

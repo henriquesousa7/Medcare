@@ -15,6 +15,16 @@ public class UsuarioLinhaAcao {
         this.responsavelAcolhimento = responsavelAcolhimento;
     }
 
+    public UsuarioLinhaAcao(){}
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
     public Integer getId() {
         return id;
     }

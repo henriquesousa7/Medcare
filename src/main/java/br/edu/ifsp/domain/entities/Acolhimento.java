@@ -60,10 +60,6 @@ public class Acolhimento {
 
     @Override
     public String toString() {
-        return "Acolhimento{" +
-                "prontuario='" + prontuario + '\'' +
-                ", nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                '}';
+        return  prontuario + " - " + nome;
     }
 }

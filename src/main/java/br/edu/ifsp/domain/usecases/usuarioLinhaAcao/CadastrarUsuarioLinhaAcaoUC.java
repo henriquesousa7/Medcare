@@ -20,20 +20,7 @@ public class CadastrarUsuarioLinhaAcaoUC {
         this.buscarAcolhimentoUC = buscarAcolhimentoUC;
     }
 
-    public Integer cadastraUsuarioLinhaAcao(Integer usuarioLinhaAcaoId, Integer acolhimentoPront, String usuarioCpf, Integer acaoID){
-        if (usuarioLinhaAcaoId == null || acolhimentoPront == null || usuarioCpf == null || acaoID == null)
-            throw new IllegalArgumentException("Valores para UsuarioLinhaAcao nao podem ser nulo");
-
-        Acolhimento acolhimento = buscarAcolhimentoUC.findOne(acolhimentoPront).
-                orElseThrow(() -> new EntityNotFoundException("Acolhimento nao existe"));
-
-        Usuario usuario = buscarUsuarioUC.findOne(usuarioCpf).
-                orElseThrow(() -> new EntityNotFoundException("Usuario nao existe"));
-
-        Acao acao = buscarAcaoUC.findOne(acaoID).
-                orElseThrow(() -> new EntityNotFoundException("Linha açao nao existe"));
-
-        UsuarioLinhaAcao usuarioLinhaAcao = new UsuarioLinhaAcao(usuarioLinhaAcaoId, acao, usuario, Status.AGUARDANDO, acolhimento);
+    public Integer cadastraUsuarioLinhaAcao(UsuarioLinhaAcao usuarioLinhaAcao){
 
         return usuarioLinhaAcaoDAO.create(usuarioLinhaAcao);
     }

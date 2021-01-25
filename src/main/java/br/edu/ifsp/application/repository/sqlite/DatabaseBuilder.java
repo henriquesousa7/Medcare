@@ -177,7 +177,7 @@ public class DatabaseBuilder {
         builder.append("status TEXT NOT NULL, \n");
         builder.append("pront_acolhimento INTEGER NOT NULL, \n");
         builder.append("FOREIGN KEY(id_acao) REFERENCES Acao(id), \n");
-        builder.append("FOREIGN KEY(cpf_usuario) REFERENCES Usuario(prontuario), \n");
+        builder.append("FOREIGN KEY(cpf_usuario) REFERENCES Usuario(cpf), \n");
         builder.append("FOREIGN KEY(pront_acolhimento) REFERENCES Acolhimento(prontuario) \n");
         builder.append("); \n");
 

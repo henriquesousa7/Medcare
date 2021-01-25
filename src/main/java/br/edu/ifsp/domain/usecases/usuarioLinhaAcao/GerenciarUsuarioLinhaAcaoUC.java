@@ -13,15 +13,7 @@ public class GerenciarUsuarioLinhaAcaoUC {
         this.buscarUsuarioLinhaAcaoUC = buscarUsuarioLinhaAcaoUC;
     }
 
-    public boolean gerenciaUsuarioLinhaAcao(Integer usuarioLinhaAcaoId, Status status){
-        if(usuarioLinhaAcaoId == null)
-            throw new IllegalArgumentException("Id do usuario linha de acao nao pode ser nulo");
-
-        UsuarioLinhaAcao usuarioLinhaAcao = buscarUsuarioLinhaAcaoUC.findOne(usuarioLinhaAcaoId).
-                orElseThrow(() -> new EntityNotFoundException("Usuario linha de acao nao existe"));
-
-        usuarioLinhaAcao.setStatus(status);
-
+    public boolean gerenciaUsuarioLinhaAcao(UsuarioLinhaAcao usuarioLinhaAcao){
         return usuarioLinhaAcaoDAO.update(usuarioLinhaAcao);
     }
 }

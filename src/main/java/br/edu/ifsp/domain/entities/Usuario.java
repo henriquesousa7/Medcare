@@ -80,14 +80,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "cpf='" + cpf + '\'' +
-                ", numeroCartaoSUS=" + numeroCartaoSUS +
-                ", nome='" + nome + '\'' +
-                ", sexo=" + sexo +
-                ", telefone='" + telefone + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", historicoMedico='" + historicoMedico + '\'' +
-                '}';
+        return nome;
     }
 }
