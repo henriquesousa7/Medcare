@@ -23,16 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6da81967-2df9-40da-aa47-7074ecc0b652" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AcolhimentoUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AcolhimentoUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/DatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/DatabaseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Acolhimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Acolhimento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/UsuarioLinhaAcao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/UsuarioLinhaAcao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/usuarioLinhaAcao/CadastrarUsuarioLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/usuarioLinhaAcao/CadastrarUsuarioLinhaAcaoUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/usuarioLinhaAcao/GerenciarUsuarioLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/usuarioLinhaAcao/GerenciarUsuarioLinhaAcaoUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DocenteLoginUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/DocenteLoginUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/AcolhimentoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/AcolhimentoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/AcolhimentoUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/AcolhimentoUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/DocenteLoginUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/DocenteLoginUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/AcolhimentoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/AcolhimentoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +50,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.4\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1m0oxp3keysvkb1qbybQdigq4Di" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -68,6 +60,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -79,6 +72,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -108,17 +104,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -167,6 +152,7 @@
       <workItem from="1611094745353" duration="4412000" />
       <workItem from="1611413039613" duration="72000" />
       <workItem from="1611572588565" duration="6544000" />
+      <workItem from="1611667713458" duration="3260000" />
     </task>
     <servers />
   </component>
@@ -184,73 +170,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610673126613">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610673126613" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1611575386437">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611098025091" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/311.1080.1366.728@0.0.1920.1040" timestamp="1611575386437" />
-    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611077275891">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611077275891" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1611413112498">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610554865926" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/311.1080.1366.728@0.0.1920.1040" timestamp="1611413112498" />
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1611579166140">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611099198456" />
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/311.1080.1366.728@0.0.1920.1040" timestamp="1611579166140" />
-    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1611579166140">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611099198455" />
-    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/311.1080.1366.728@0.0.1920.1040" timestamp="1611579166140" />
-    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1611579166140">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611099198455" />
-    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/311.1080.1366.728@0.0.1920.1040" timestamp="1611579166140" />
-    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1611579166140">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611099198455" />
-    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/311.1080.1366.728@0.0.1920.1040" timestamp="1611579166140" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609851489487">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609851489487" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1609851489487">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609851489487" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1609851489486">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609851489486" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1609851489487">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1609851489487" />
-    <state x="690" y="281" key="extract.method.dialog" timestamp="1610645146436">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="281" key="extract.method.dialog/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1610645146436" />
-    <state x="342" y="181" key="new project wizard" timestamp="1611413113271">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="342" y="181" key="new project wizard/0.0.1920.1040/311.1080.1366.728@0.0.1920.1040" timestamp="1611413113271" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1611076629520">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.311.1366.768@0.0.1920.1040" timestamp="1611076629520" />
   </component>
 </project>
