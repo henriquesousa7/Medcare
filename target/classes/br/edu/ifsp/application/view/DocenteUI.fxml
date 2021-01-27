@@ -20,6 +20,6 @@
             <Button fx:id="btInterconsulta" layoutX="65.0" layoutY="302.0" mnemonicParsing="false" onAction="#cadastrarInterconsulta" prefHeight="51.0" prefWidth="292.0" text="Interconsulta" />
          </children>
       </Pane>
-      <Label fx:id="lbNome" layoutX="246.0" layoutY="565.0" prefHeight="17.0" prefWidth="292.0" textAlignment="CENTER" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="244.0" AnchorPane.topAnchor="565.0" />
+      <Label fx:id="lbNome" alignment="CENTER" layoutX="246.0" layoutY="565.0" prefHeight="17.0" prefWidth="292.0" textAlignment="CENTER" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="244.0" AnchorPane.topAnchor="565.0" />
    </children>
 </AnchorPane>

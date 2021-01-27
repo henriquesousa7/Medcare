@@ -212,7 +212,7 @@ public class DatabaseBuilder {
         builder.append("status TEXT NOT NULL, \n");
         builder.append("pront_responsavel INTEGER NOT NULL, \n");
         builder.append("FOREIGN KEY(id_atendimento) REFERENCES Atendimento(id), \n");
-        builder.append("FOREIGN KEY(cpf_usuario) REFERENCES Usuario(prontuario), \n");
+        builder.append("FOREIGN KEY(cpf_usuario) REFERENCES Usuario(cpf), \n");
         builder.append("FOREIGN KEY(pront_responsavel) REFERENCES Docente(prontuario) \n");
         builder.append("); \n");
 
