@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.DiscenteUIController">
+   <children>
+      <Button layoutX="22.0" layoutY="561.0" mnemonicParsing="false" onAction="#backToPreviousScene" text="Voltar" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="22.0" />
+      <Pane layoutX="177.0" layoutY="15.0" prefHeight="462.0" prefWidth="429.0" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="176.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Label layoutX="131.0" prefHeight="51.0" prefWidth="161.0" text="Discente">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Button fx:id="btAgendamento" layoutX="65.0" layoutY="146.0" mnemonicParsing="false" onAction="#consultarAgendamento" prefHeight="51.0" prefWidth="292.0" text="Consultar Agendamentos" />
+            <Button fx:id="btRelatorioGeral" layoutX="65.0" layoutY="220.0" mnemonicParsing="false" onAction="#relatorioGeral" prefHeight="51.0" prefWidth="292.0" text="Relatorio Geral" />
+            <Button fx:id="btRelatorioGeralAcao" layoutX="65.0" layoutY="284.0" mnemonicParsing="false" onAction="#relatorioGeralAcao" prefHeight="51.0" prefWidth="292.0" text="Relatorio Geral por Acao" />
+            <Button fx:id="btListaEspera" layoutX="65.0" layoutY="357.0" mnemonicParsing="false" onAction="#listaEspera" prefHeight="51.0" prefWidth="292.0" text="Lista de Espera" />
+         </children>
+      </Pane>
+      <Label fx:id="lbNome" alignment="CENTER" layoutX="246.0" layoutY="565.0" prefHeight="17.0" prefWidth="292.0" textAlignment="CENTER" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="244.0" AnchorPane.topAnchor="565.0" />
+   </children>
+</AnchorPane>

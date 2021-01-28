@@ -9,6 +9,7 @@ import br.edu.ifsp.domain.usecases.acolhimento.BuscarAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.acolhimento.CadastrarServidorAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.agendamento.ConsultarAgendamentoUC;
 import br.edu.ifsp.domain.usecases.atendimento.AgendarAtendimentoUC;
+import br.edu.ifsp.domain.usecases.atendimento.AlterarAtendimentoUC;
 import br.edu.ifsp.domain.usecases.atendimento.AtendimentoDAO;
 import br.edu.ifsp.domain.usecases.atendimento.BuscarAtendimentoUC;
 import br.edu.ifsp.domain.usecases.discente.AlterarDadosDiscenteUC;
@@ -74,6 +75,7 @@ public class Main {
 
     public static AgendarAtendimentoUC agendarAtendimentoUC;
     public static BuscarAtendimentoUC buscarAtendimentoUC;
+    public static AlterarAtendimentoUC alterarAtendimentoUC;
 
     public static SolicitarInterConsultaUC solicitarInterConsultaUC;
     public static GerenciarInterConsultaUC gerenciarInterConsultaUC;
@@ -140,8 +142,9 @@ public class Main {
         gerenciarUsuarioLinhaAcaoUC = new GerenciarUsuarioLinhaAcaoUC(usuarioLinhaAcaoDAO, buscarUsuarioLinhaAcaoUC);
 
         // Atendimento
-        AtendimentoDAO atendimentoDAO = new InMemoryAtendimentoDAO();
-        agendarAtendimentoUC = new AgendarAtendimentoUC(atendimentoDAO, buscarUsuarioLinhaAcaoUC, buscarDiscenteUC);
+        AtendimentoDAO atendimentoDAO = new SqliteAtendimentoDAO();
+        agendarAtendimentoUC = new AgendarAtendimentoUC(atendimentoDAO);
+        alterarAtendimentoUC = new AlterarAtendimentoUC(atendimentoDAO);
         buscarAtendimentoUC = new BuscarAtendimentoUC(atendimentoDAO);
 
         // Interconsulta

@@ -50,4 +50,14 @@ public class InMemoryUsuarioLinhaAcaoDAO implements UsuarioLinhaAcaoDAO {
     public boolean delete(UsuarioLinhaAcao usuarioLinhaAcao) {
         return deleteByKey(usuarioLinhaAcao.getId());
     }
+
+    @Override
+    public List<UsuarioLinhaAcao> findByAcolhimento(Integer Key) {
+        return null;
+    }
+
+    @Override
+    public List<UsuarioLinhaAcao> findByDocente(Integer Key) {
+        return null;
+    }
 }

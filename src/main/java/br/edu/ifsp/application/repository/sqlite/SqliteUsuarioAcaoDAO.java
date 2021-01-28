@@ -114,4 +114,61 @@ public class SqliteUsuarioAcaoDAO implements UsuarioLinhaAcaoDAO {
     public boolean delete(UsuarioLinhaAcao usuarioLinhaAcao) {
         return false;
     }
+
+    @Override
+    public List<UsuarioLinhaAcao> findByAcolhimento(Integer key) {
+        String sql = "SELECT * FROM UsuarioAcao WHERE pront_acolhimento = ?";
+        List<UsuarioLinhaAcao> usuariosLinhaAcao = new ArrayList<>();
+
+        try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1, key);
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()) {
+                UsuarioLinhaAcao usuarioLinhaAcao = resultSetToEntity(resultSet);
+                usuariosLinhaAcao.add(usuarioLinhaAcao);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return usuariosLinhaAcao;
+    }
+
+    @Override
+    public List<UsuarioLinhaAcao> findByDocente(Integer key) {
+        String sql = "SELECT ua.id, ua.id_acao, ua.cpf_usuario, ua.status, ua.pront_acolhimento FROM UsuarioAcao ua JOIN Acao ac ON ua.id_acao = ac.id WHERE ac.pront_responsavel = ?";
+        List<UsuarioLinhaAcao> usuariosLinhaAcao = new ArrayList<>();
+
+        try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1, key);
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()) {
+                UsuarioLinhaAcao usuarioLinhaAcao = resultSetToEntity2(resultSet);
+                usuariosLinhaAcao.add(usuarioLinhaAcao);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return usuariosLinhaAcao;
+    }
+
+    private UsuarioLinhaAcao resultSetToEntity2(ResultSet rs) throws SQLException {
+        Integer id = rs.getInt(1);
+        Integer id_acao = rs.getInt(2);
+        String cpf_usuario = rs.getString(3);
+        String status = rs.getString(4);
+        Integer pront_acolhimento = rs.getInt(5);
+
+        Acao acao = buscarAcaoUC.findOne(id_acao).
+                orElseThrow(() -> new EntityNotFoundException("Acao nao encontrada"));
+
+        Usuario usuario = buscarUsuarioUC.findOne(cpf_usuario).
+                orElseThrow(() -> new EntityNotFoundException("Usuario nao encontrado"));
+
+        Acolhimento acolhimento = buscarAcolhimentoUC.findOne(pront_acolhimento).
+                orElseThrow(() -> new EntityNotFoundException("Acolhimento nao encontrado"));
+
+        Status newStatus = Status.valueOfLabel(status);
+
+        return new UsuarioLinhaAcao(id, acao, usuario, newStatus, acolhimento);
+    }
 }

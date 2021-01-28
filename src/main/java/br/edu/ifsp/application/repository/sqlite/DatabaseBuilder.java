@@ -191,7 +191,7 @@ public class DatabaseBuilder {
         builder.append("CREATE TABLE Atendimento (\n");
         builder.append("id INTEGER PRIMARY KEY AUTOINCREMENT, \n");
         builder.append("id_usuarioLinhaAcao INTEGER NOT NULL, \n");
-        builder.append("data_atend DATETIME NOT NULL, \n");
+        builder.append("data_atend DATE NOT NULL, \n");
         builder.append("status TEXT NOT NULL, \n");
         builder.append("pront_responsavel INTEGER NOT NULL, \n");
         builder.append("FOREIGN KEY(id_usuarioLinhaAcao) REFERENCES UsuarioAcao(id), \n");

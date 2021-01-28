@@ -22,13 +22,6 @@ public class InMemoryAtendimentoDAO implements AtendimentoDAO {
     }
 
     @Override
-    public Optional<Atendimento> findByDiscente(Integer key) {
-        return db.values().stream()
-                .filter(atendimento -> atendimento.getDiscenteResponsavel().getProntuario() == key)
-                .findAny();
-    }
-
-    @Override
     public List<Atendimento> findAll() {
         return new ArrayList<>(db.values());
     }
@@ -55,5 +48,15 @@ public class InMemoryAtendimentoDAO implements AtendimentoDAO {
     @Override
     public boolean delete(Atendimento atendimento) {
         return deleteByKey(atendimento.getId());
+    }
+
+    @Override
+    public List<Atendimento> findByDocenteAcao(Integer key) {
+        return null;
+    }
+
+    @Override
+    public List<Atendimento> findByDiscente(Integer key) {
+        return null;
     }
 }

@@ -38,6 +38,7 @@ public class ViewUsuarioUIController {
     private TableColumn<Usuario, String> cHistorico;
 
     private ObservableList<Usuario> tableData;
+    private Acolhimento acolhimento;
 
     @FXML
     private void initialize() {
@@ -69,6 +70,8 @@ public class ViewUsuarioUIController {
 
     public void cadastrarUsuario(ActionEvent actionEvent) throws IOException {
         App.setRoot("CadastroUsuarioUI");
+        CadastroUsuarioUIController controller = (CadastroUsuarioUIController) App.getController();
+        controller.setUsuarioEAcolhimento(null, acolhimento);
     }
 
     public void alterarUsuario(ActionEvent actionEvent) throws IOException {
@@ -77,11 +80,20 @@ public class ViewUsuarioUIController {
         if(usuario != null){
             App.setRoot("CadastroUsuarioUI");
             CadastroUsuarioUIController controller = (CadastroUsuarioUIController) App.getController();
-            controller.setUsuario(usuario);
+            controller.setUsuarioEAcolhimento(usuario, acolhimento);
         }
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("AcolhimentoUI");
+        AcolhimentoUIController controller = (AcolhimentoUIController) App.getController();
+        controller.setSessionAcolhimento(acolhimento);
+    }
+
+    public void setAcolhimentoSession(Acolhimento acolhimento) {
+        if (acolhimento == null)
+            throw new IllegalArgumentException("Acolhimento can not be null.");
+
+        this.acolhimento = acolhimento;
     }
 }

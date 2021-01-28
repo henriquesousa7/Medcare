@@ -67,10 +67,6 @@ public class Discente {
 
     @Override
     public String toString() {
-        return "Discente{" +
-                "prontuario=" + prontuario +
-                ", nome='" + nome + '\'' +
-                ", linhaAcao=" + acao +
-                '}';
+        return nome;
     }
 }

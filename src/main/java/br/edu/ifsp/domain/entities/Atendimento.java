@@ -1,27 +1,31 @@
 package br.edu.ifsp.domain.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Atendimento {
 
     private Integer id;
     private UsuarioLinhaAcao usuarioLinhaAcao;
-    private LocalDateTime data;
+    private LocalDate data;
     private Status status;
     private Discente discenteResponsavel;
 
-    public Atendimento(Integer id, LocalDateTime data){
+    public Atendimento(Integer id, LocalDate data){
         this.id = id;
         this.data = data;
     }
 
-    public Atendimento(Integer id, UsuarioLinhaAcao usuarioLinhaAcao, LocalDateTime data, Status status, Discente discenteResponsavel) {
+    public Atendimento(Integer id, UsuarioLinhaAcao usuarioLinhaAcao, LocalDate data, Status status, Discente discenteResponsavel) {
         this.id = id;
         this.usuarioLinhaAcao = usuarioLinhaAcao;
         this.data = data;
         this.status = status;
         this.discenteResponsavel = discenteResponsavel;
     }
+
+    public Atendimento(){}
 
     public Integer getId() {
         return id;
@@ -35,11 +39,11 @@ public class Atendimento {
         this.usuarioLinhaAcao = usuarioLinhaAcao;
     }
 
-    public LocalDateTime getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(LocalDateTime data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
@@ -69,4 +73,5 @@ public class Atendimento {
                 ", discenteResponsavel=" + discenteResponsavel +
                 "}";
     }
+
 }

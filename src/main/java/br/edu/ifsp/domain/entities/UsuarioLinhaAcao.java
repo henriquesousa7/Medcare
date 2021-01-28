@@ -59,12 +59,6 @@ public class UsuarioLinhaAcao {
 
     @Override
     public String toString() {
-        return "UsuarioLinhaAcao{" +
-                "id=" + id +
-                ", linhaAcao=" + acao +
-                ", usuario=" + usuario +
-                ", status=" + status +
-                ", responsavelAcolhimento=" + responsavelAcolhimento +
-                '}';
+        return usuario + "-" + acao;
     }
 }

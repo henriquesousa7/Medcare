@@ -37,7 +37,6 @@ public class ViewUsuarioAcaoUIController {
     private void initialize() {
         bindTableViewToItemsList();
         bindColumnsToValueSources();
-        loadDataAndShow();
     }
 
     private void bindTableViewToItemsList() {
@@ -54,7 +53,7 @@ public class ViewUsuarioAcaoUIController {
     }
 
     private void loadDataAndShow() {
-        List<UsuarioLinhaAcao> usuariosAcao = buscarUsuarioLinhaAcaoUC.findAll();
+        List<UsuarioLinhaAcao> usuariosAcao = buscarUsuarioLinhaAcaoUC.findByAcolhimento(acolhimento.getProntuario());
         tableData.clear();
         tableData.addAll(usuariosAcao);
     }
@@ -80,6 +79,7 @@ public class ViewUsuarioAcaoUIController {
             throw new IllegalArgumentException("Acolhimento can not be null.");
 
         this.acolhimento = acolhimento;
+        loadDataAndShow();
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {

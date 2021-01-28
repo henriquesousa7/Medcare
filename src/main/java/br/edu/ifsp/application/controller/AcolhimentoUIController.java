@@ -16,6 +16,8 @@ public class AcolhimentoUIController {
 
     public void cadastrarUsuario(ActionEvent actionEvent) throws IOException {
         App.setRoot("ViewUsuarioUI");
+        ViewUsuarioUIController controller = (ViewUsuarioUIController) App.getController();
+        controller.setAcolhimentoSession(acolhimento);
     }
 
     public void cadastrarUsuarioAcao(ActionEvent actionEvent) throws IOException {

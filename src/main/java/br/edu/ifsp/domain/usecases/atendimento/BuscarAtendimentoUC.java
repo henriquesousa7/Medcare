@@ -21,4 +21,16 @@ public class BuscarAtendimentoUC {
     public List<Atendimento> findAll(){
         return atendimentoDAO.findAll();
     }
+
+    public List<Atendimento> findByDocenteAcao(Integer docentePront){
+        if (docentePront == null)
+            throw new IllegalArgumentException("Prontuario can not be null.");
+        return atendimentoDAO.findByDocenteAcao(docentePront);
+    }
+
+    public List<Atendimento> findByDiscente(Integer discentePront){
+        if (discentePront == null)
+            throw new IllegalArgumentException("Prontuario can not be null.");
+        return atendimentoDAO.findByDiscente(discentePront);
+    }
 }

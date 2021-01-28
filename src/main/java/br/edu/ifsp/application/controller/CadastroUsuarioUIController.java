@@ -2,6 +2,7 @@ package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Acao;
+import br.edu.ifsp.domain.entities.Acolhimento;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.Usuario;
 import javafx.collections.FXCollections;
@@ -37,6 +38,7 @@ public class CadastroUsuarioUIController {
     private Button btnSalvar;
 
     private Usuario usuario;
+    private Acolhimento acolhimento;
 
     @FXML
     private void initialize(){
@@ -53,6 +55,8 @@ public class CadastroUsuarioUIController {
             alterarDadosUsuarioUC.alteraUsuario(usuario);
         }
         App.setRoot("ViewUsuarioUI");
+        ViewUsuarioUIController controller = (ViewUsuarioUIController) App.getController();
+        controller.setAcolhimentoSession(acolhimento);
     }
 
     private void getEntityFromView() {
@@ -70,19 +74,21 @@ public class CadastroUsuarioUIController {
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("ViewUsuarioUI");
+        ViewUsuarioUIController controller = (ViewUsuarioUIController) App.getController();
+        controller.setAcolhimentoSession(acolhimento);
     }
 
-    public void setUsuario(Usuario usuario) {
-        if (usuario == null)
-            throw new IllegalArgumentException("Usuario can not be null.");
+    public void setUsuarioEAcolhimento(Usuario usuario, Acolhimento acolhimento) {
+        if (usuario != null) {
+            this.usuario = usuario;
+            setEntityIntoView();
 
-        this.usuario = usuario;
-        setEntityIntoView();
-
-        txtCPF.setDisable(true);
-        txtNome.setDisable(true);
-        txtSUS.setDisable(true);
-        cbSexo.setDisable(true);
+            txtCPF.setDisable(true);
+            txtNome.setDisable(true);
+            txtSUS.setDisable(true);
+            cbSexo.setDisable(true);
+        }
+        this.acolhimento = acolhimento;
     }
 
     private void setEntityIntoView() {
