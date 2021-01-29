@@ -26,7 +26,7 @@ public class VisualizarListaEsperaLinhaAcaoUC {
             throw new IllegalArgumentException(notification.errorMessage());
 
         for (Atendimento atendimento : atendimentoDAO.findByDiscente(discente.getProntuario())) {
-            if (atendimento.getUsuarioLinhaAcao().getAcao().equals(acao)) {
+            if (atendimento.getUsuarioLinhaAcao().getAcao().getId().equals(acao.getId())) {
                 if (atendimento.getStatus().equals(Status.AGUARDANDO))
                     atendimentos.add(atendimento);
             }

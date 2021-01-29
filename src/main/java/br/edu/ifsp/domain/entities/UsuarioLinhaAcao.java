@@ -61,4 +61,6 @@ public class UsuarioLinhaAcao {
     public String toString() {
         return usuario + "-" + acao;
     }
+
+
 }

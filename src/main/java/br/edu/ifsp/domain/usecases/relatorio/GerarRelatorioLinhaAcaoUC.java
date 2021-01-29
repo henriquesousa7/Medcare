@@ -29,9 +29,7 @@ public class GerarRelatorioLinhaAcaoUC {
             throw new IllegalArgumentException(notification.errorMessage());
 
         for (Atendimento atendimento : atendimentoDAO.findByDiscente(discente.getProntuario())) {
-            if (atendimento.getStatus().equals(Status.ANDAMENTO) ||
-                    atendimento.getStatus().equals(Status.FINALIZADO) ||
-                    atendimento.getStatus().equals(Status.CANCELADO)) {
+            if (atendimento.getStatus().equals(Status.FINALIZADO)) {
                 if (atendimento.getUsuarioLinhaAcao().getAcao().getId().equals(acao.getId())) {
                     atendimentos.add(atendimento);
                 }

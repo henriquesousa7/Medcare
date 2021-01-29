@@ -27,7 +27,8 @@ public class ConsultarAgendamentoUC {
             throw new IllegalArgumentException(notification.errorMessage());
 
         for (Atendimento atendimento : atendimentoDAO.findByDiscente(discente.getProntuario())) {
-            if (atendimento.getStatus().equals(Status.ANDAMENTO)) {
+            if (atendimento.getStatus().equals(Status.ANDAMENTO) ||
+                    atendimento.getStatus().equals(Status.AGUARDANDO)) {
                 atendimentos.add(atendimento);
             }
         }

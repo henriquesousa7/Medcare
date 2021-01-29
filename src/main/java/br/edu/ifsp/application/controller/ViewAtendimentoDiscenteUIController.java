@@ -95,6 +95,7 @@ public class ViewAtendimentoDiscenteUIController {
         this.discente = discente;
         this.mode = mode;
         this.acao = acao;
+
         loadDataAndShow();
     }
 }
