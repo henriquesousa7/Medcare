@@ -19,20 +19,38 @@ public class SolicitarInterConsultaUC {
         this.buscarDocenteUC = buscarDocenteUC;
     }
 
-    public Integer solicitaInterConsulta(Integer idInterConsulta, Integer idAtendimento, String cpfUsuario, Integer prontDocente){
-        if(idInterConsulta == null || idAtendimento == null || cpfUsuario == null || prontDocente == null)
-            throw new IllegalArgumentException("Valores para interconsulta nao podem ser nulos");
+//    public Integer solicitaInterConsulta(Integer idInterConsulta, Integer idAtendimento, String cpfUsuario, Integer prontDocente){
+//        if(idInterConsulta == null || idAtendimento == null || cpfUsuario == null || prontDocente == null)
+//            throw new IllegalArgumentException("Valores para interconsulta nao podem ser nulos");
+//
+//        Atendimento atendimento = buscarAtendimentoUC.findOne(idAtendimento).
+//                orElseThrow(() -> new EntityNotFoundException("Atendimento nao existe"));
+//
+//        Usuario usuario = buscarUsuarioUC.findOne(cpfUsuario).
+//                orElseThrow(() -> new EntityNotFoundException("Usuario nao existe"));
+//
+//        Docente docente = buscarDocenteUC.findOne(prontDocente).
+//                orElseThrow(() -> new EntityNotFoundException("Docente nao existe"));
+//
+//        InterConsulta interConsulta = new InterConsulta(idInterConsulta, atendimento, usuario, docente, Status.AGUARDANDO);
+//
+//        return interConsultaDAO.create(interConsulta);
+//    }
 
-        Atendimento atendimento = buscarAtendimentoUC.findOne(idAtendimento).
-                orElseThrow(() -> new EntityNotFoundException("Atendimento nao existe"));
-
-        Usuario usuario = buscarUsuarioUC.findOne(cpfUsuario).
-                orElseThrow(() -> new EntityNotFoundException("Usuario nao existe"));
-
-        Docente docente = buscarDocenteUC.findOne(prontDocente).
-                orElseThrow(() -> new EntityNotFoundException("Docente nao existe"));
-
-        InterConsulta interConsulta = new InterConsulta(idInterConsulta, atendimento, usuario, docente, Status.AGUARDANDO);
+    public Integer solicitaInterConsulta(InterConsulta interConsulta){
+//        if(idInterConsulta == null || idAtendimento == null || cpfUsuario == null || prontDocente == null)
+//            throw new IllegalArgumentException("Valores para interconsulta nao podem ser nulos");
+//
+//        Atendimento atendimento = buscarAtendimentoUC.findOne(idAtendimento).
+//                orElseThrow(() -> new EntityNotFoundException("Atendimento nao existe"));
+//
+//        Usuario usuario = buscarUsuarioUC.findOne(cpfUsuario).
+//                orElseThrow(() -> new EntityNotFoundException("Usuario nao existe"));
+//
+//        Docente docente = buscarDocenteUC.findOne(prontDocente).
+//                orElseThrow(() -> new EntityNotFoundException("Docente nao existe"));
+//
+//        InterConsulta interConsulta = new InterConsulta(idInterConsulta, atendimento, usuario, docente, Status.AGUARDANDO);
 
         return interConsultaDAO.create(interConsulta);
     }

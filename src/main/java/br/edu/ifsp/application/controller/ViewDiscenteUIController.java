@@ -4,6 +4,7 @@ import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Discente;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.Acao;
+import br.edu.ifsp.domain.entities.Mantenedor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -33,6 +34,7 @@ public class ViewDiscenteUIController {
     private TableColumn<Discente, Acao> cAcao;
 
     private ObservableList<Discente> tableData;
+    private Mantenedor mantenedor;
 
     @FXML
     private void initialize() {
@@ -62,6 +64,8 @@ public class ViewDiscenteUIController {
 
     public void cadastrarDiscente(ActionEvent actionEvent) throws IOException {
         App.setRoot("CadastroDiscenteUI");
+        CadastroDiscenteUIController controller = (CadastroDiscenteUIController) App.getController();
+        controller.setDiscenteMantenedor(null, mantenedor);
     }
 
     public void alterarDiscente(ActionEvent actionEvent) throws IOException {
@@ -70,11 +74,17 @@ public class ViewDiscenteUIController {
         if(discente != null){
             App.setRoot("CadastroDiscenteUI");
             CadastroDiscenteUIController controller = (CadastroDiscenteUIController) App.getController();
-            controller.setDiscente(discente);
+            controller.setDiscenteMantenedor(discente, mantenedor);
         }
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("MantenedorUI");
+        MantenedorUIController controller = (MantenedorUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
+    }
+
+    public void setSessionMantenedor(Mantenedor mantenedor) {
+        this.mantenedor = mantenedor;
     }
 }

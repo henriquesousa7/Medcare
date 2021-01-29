@@ -4,6 +4,7 @@ import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.LinhaCuidado;
+import br.edu.ifsp.domain.entities.Mantenedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +30,7 @@ public class CadastroLinhaCuidadoUIController {
     private Button btnSalvar;
 
     private LinhaCuidado linhaCuidado;
+    private Mantenedor mantenedor;
 
     @FXML
     private void initialize(){
@@ -44,6 +46,8 @@ public class CadastroLinhaCuidadoUIController {
             alterarLinhaCuidadoUC.alteraLinhaCuidado(linhaCuidado);
         }
         App.setRoot("ViewLinhaCuidadoUI");
+        ViewLinhaCuidadoUIController controller = (ViewLinhaCuidadoUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
     }
 
     private void getEntityFromView() {
@@ -57,14 +61,16 @@ public class CadastroLinhaCuidadoUIController {
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("ViewLinhaCuidadoUI");
+        ViewLinhaCuidadoUIController controller = (ViewLinhaCuidadoUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
     }
 
-    public void setLinhaCuidado(LinhaCuidado linhaCuidado) {
-        if (linhaCuidado == null)
-            throw new IllegalArgumentException("Linha cuidado can not be null.");
-
-        this.linhaCuidado = linhaCuidado;
-        setEntityIntoView();
+    public void setLinhaCuidadoMantenedor(LinhaCuidado linhaCuidado, Mantenedor mantenedor) {
+        if (linhaCuidado != null) {
+            this.linhaCuidado = linhaCuidado;
+            setEntityIntoView();
+        }
+        this.mantenedor = mantenedor;
     }
 
     private void setEntityIntoView() {

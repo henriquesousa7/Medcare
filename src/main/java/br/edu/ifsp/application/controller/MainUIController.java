@@ -9,7 +9,7 @@ import java.io.IOException;
 public class MainUIController {
 
     public void openMantenedor(ActionEvent actionEvent) throws IOException {
-        App.setRoot("MantenedorUI");
+        App.setRoot("MantenedorLoginUI");
     }
 
     public void openDiscente(ActionEvent actionEvent) throws IOException {

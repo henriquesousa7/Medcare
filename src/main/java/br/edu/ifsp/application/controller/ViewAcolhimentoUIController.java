@@ -2,6 +2,7 @@ package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Acolhimento;
+import br.edu.ifsp.domain.entities.Mantenedor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,6 +32,7 @@ public class ViewAcolhimentoUIController {
     private TableColumn<Acolhimento, String> cCPF;
 
     private ObservableList<Acolhimento> tableData;
+    private Mantenedor mantenedor;
 
     @FXML
     private void initialize() {
@@ -60,10 +62,14 @@ public class ViewAcolhimentoUIController {
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("MantenedorUI");
+        MantenedorUIController controller = (MantenedorUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
     }
 
     public void cadastrarAcolhimento(ActionEvent actionEvent) throws IOException {
         App.setRoot("CadastroAcolhimentoUI");
+        CadastroAcolhimentoUIController controller = (CadastroAcolhimentoUIController) App.getController();
+        controller.setAcolhimentoMantenedor(null, mantenedor);
     }
 
     public void alterarAcolhimento(ActionEvent actionEvent) throws IOException {
@@ -72,7 +78,11 @@ public class ViewAcolhimentoUIController {
         if(acolhimento != null){
             App.setRoot("CadastroAcolhimentoUI");
             CadastroAcolhimentoUIController controller = (CadastroAcolhimentoUIController) App.getController();
-            controller.setAcolhimento(acolhimento);
+            controller.setAcolhimentoMantenedor(acolhimento, mantenedor);
         }
+    }
+
+    public void setSessionMantenedor(Mantenedor mantenedor) {
+        this.mantenedor = mantenedor;
     }
 }

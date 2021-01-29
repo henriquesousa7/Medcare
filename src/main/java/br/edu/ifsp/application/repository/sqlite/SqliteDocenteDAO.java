@@ -108,12 +108,22 @@ public class SqliteDocenteDAO implements DocenteDAO {
 
     @Override
     public boolean deleteByKey(Integer key) {
+        String sql = "DELETE FROM Docente WHERE prontuario = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1, key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public boolean delete(Docente docente) {
-        return false;
+        if (docente == null || docente == null)
+            throw new IllegalArgumentException("Docente and Docente prontuario must not be null.");
+        return deleteByKey(docente.getProntuario());
     }
 
     @Override

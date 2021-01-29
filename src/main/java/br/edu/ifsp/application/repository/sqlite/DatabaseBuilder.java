@@ -33,6 +33,8 @@ public class DatabaseBuilder {
         String sql11 = "INSERT INTO Usuario(cpf, cartaoSus, nome, sexo, telefone, endereco, historicoMedico) VALUES ('47847847878', 1234, 'Gabriel Ramos', 'M', '16923145678', 'Rua Sete', 'Perna quebrada');";
         String sql12 = "INSERT INTO Usuario(cpf, cartaoSus, nome, sexo, telefone, endereco, historicoMedico) VALUES ('98798798798', 5678, 'Luiza Ramos', 'F', '16923121678', 'Rua Oito', 'Neurologia cronica');";
 
+        String sql13 = "INSERT INTO Mantenedor(prontuario, email) VALUES (1515, 'admin@hotmail.com');";
+
         try (Statement statement = ConnectionFactory.createStatement()) {
             statement.addBatch(sql1);
             statement.addBatch(sql2);
@@ -46,6 +48,7 @@ public class DatabaseBuilder {
             statement.addBatch(sql10);
             statement.addBatch(sql11);
             statement.addBatch(sql12);
+            statement.addBatch(sql13);
             statement.executeBatch();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -67,6 +70,7 @@ public class DatabaseBuilder {
             statement.addBatch(createUsuarioAcaoTable());
             statement.addBatch(createAtendimentoTable());
             statement.addBatch(createinterconsultaTable());
+            statement.addBatch(createMantenedorTable());
             statement.executeBatch();
 
             System.out.println("Database successfully created.");
@@ -207,13 +211,25 @@ public class DatabaseBuilder {
 
         builder.append("CREATE TABLE Interconsulta (\n");
         builder.append("id INTEGER PRIMARY KEY AUTOINCREMENT, \n");
-        builder.append("id_atendimento INTEGER NOT NULL, \n");
+        builder.append("id_acao INTEGER NOT NULL, \n");
         builder.append("cpf_usuario TEXT NOT NULL, \n");
         builder.append("status TEXT NOT NULL, \n");
         builder.append("pront_responsavel INTEGER NOT NULL, \n");
-        builder.append("FOREIGN KEY(id_atendimento) REFERENCES Atendimento(id), \n");
+        builder.append("FOREIGN KEY(id_acao) REFERENCES Acao(id), \n");
         builder.append("FOREIGN KEY(cpf_usuario) REFERENCES Usuario(cpf), \n");
         builder.append("FOREIGN KEY(pront_responsavel) REFERENCES Docente(prontuario) \n");
+        builder.append("); \n");
+
+        System.out.println(builder.toString());
+        return builder.toString();
+    }
+
+    private String createMantenedorTable() {
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("CREATE TABLE Mantenedor (\n");
+        builder.append("prontuario INTEGER PRIMARY KEY, \n");
+        builder.append("email TEXT NOT NULL \n");
         builder.append("); \n");
 
         System.out.println(builder.toString());

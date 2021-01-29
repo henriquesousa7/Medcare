@@ -28,7 +28,6 @@ public class CadastroAtendimentoUIController {
 
     @FXML
     private void initialize(){
-
         cbDiscente.setItems(FXCollections.observableArrayList(buscarDiscenteUC.findAll()));
         cbStatus.setItems(FXCollections.observableArrayList(Status.values()));
     }

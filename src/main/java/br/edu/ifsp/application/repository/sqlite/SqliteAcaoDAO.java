@@ -101,11 +101,21 @@ public class SqliteAcaoDAO implements AcaoDAO {
 
     @Override
     public boolean deleteByKey(Integer key) {
+        String sql = "DELETE FROM Acao WHERE id = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1, key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
-    public boolean delete(Acao type) {
-        return false;
+    public boolean delete(Acao acao) {
+        if (acao == null || acao.getId() == null)
+            throw new IllegalArgumentException("Acao and Acao ID must not be null.");
+        return deleteByKey(acao.getId());
     }
 }

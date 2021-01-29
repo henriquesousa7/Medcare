@@ -115,11 +115,21 @@ public class SqliteLinhaCuidadoDAO implements LinhaCuidadoDAO {
 
     @Override
     public boolean deleteByKey(Integer key) {
+        String sql = "DELETE FROM Linhacuidado WHERE id = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1, key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public boolean delete(LinhaCuidado linhaCuidado) {
-        return false;
+        if (linhaCuidado == null || linhaCuidado.getId() == null)
+            throw new IllegalArgumentException("Linha cuidado and linha cuidado ID must not be null.");
+        return deleteByKey(linhaCuidado.getId());
     }
 }

@@ -106,13 +106,39 @@ public class SqliteUsuarioAcaoDAO implements UsuarioLinhaAcaoDAO {
     }
 
     @Override
+    public boolean updateByUsuario(Integer idAcao, String cpf) {
+        String sql = "UPDATE UsuarioAcao SET id_acao = ? WHERE cpf_usuario = ?";
+
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)){
+            stmt.setInt(1, idAcao);
+            stmt.setString(2, cpf);
+            stmt.execute();
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
     public boolean deleteByKey(Integer key) {
+        String sql = "DELETE FROM UsuarioAcao WHERE id = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1, key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public boolean delete(UsuarioLinhaAcao usuarioLinhaAcao) {
-        return false;
+        if (usuarioLinhaAcao == null || usuarioLinhaAcao.getId() == null)
+            throw new IllegalArgumentException("UsuarioAcao and UsuarioAcao ID must not be null.");
+        return deleteByKey(usuarioLinhaAcao.getId());
     }
 
     @Override

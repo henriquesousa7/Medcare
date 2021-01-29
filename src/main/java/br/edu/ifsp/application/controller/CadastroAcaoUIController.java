@@ -4,6 +4,7 @@ import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.entities.LinhaCuidado;
+import br.edu.ifsp.domain.entities.Mantenedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,6 +31,7 @@ public class CadastroAcaoUIController {
     private Button btnSalvar;
 
     private Acao acao;
+    private Mantenedor mantenedor;
 
     @FXML
     private void initialize(){
@@ -58,14 +60,16 @@ public class CadastroAcaoUIController {
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("ViewAcaoUI");
+        ViewAcaoUIController controller = (ViewAcaoUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
     }
 
-    public void setAcao(Acao acao) {
-        if (acao == null)
-            throw new IllegalArgumentException("Acao can not be null.");
-
-        this.acao = acao;
-        setEntityIntoView();
+    public void setAcaoMantenedor(Acao acao, Mantenedor mantenedor) {
+        if (acao != null) {
+            this.acao = acao;
+            setEntityIntoView();
+        }
+        this.mantenedor = mantenedor;
     }
 
     private void setEntityIntoView() {

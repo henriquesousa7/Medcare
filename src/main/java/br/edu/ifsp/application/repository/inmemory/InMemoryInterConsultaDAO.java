@@ -49,4 +49,9 @@ public class InMemoryInterConsultaDAO implements InterConsultaDAO {
     public boolean delete(InterConsulta interConsulta) {
         return deleteByKey(interConsulta.getId());
     }
+
+    @Override
+    public List<InterConsulta> findByDocente(Integer key) {
+        return null;
+    }
 }

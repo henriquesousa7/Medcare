@@ -3,29 +3,43 @@ package br.edu.ifsp.domain.entities;
 public class InterConsulta {
 
     private Integer id;
-    private Atendimento atendimento;
+    private Acao acao;
     private Usuario usuario;
     private Status status;
     private Docente docenteResponsavel;
 
-    public InterConsulta(Integer id, Atendimento atendimento, Usuario usuario, Docente docenteResponsavel, Status status) {
+    public InterConsulta(Integer id, Acao acao, Usuario usuario, Docente docenteResponsavel, Status status) {
         this.id = id;
-        this.atendimento = atendimento;
+        this.acao = acao;
         this.usuario = usuario;
         this.status = status;
         this.docenteResponsavel = docenteResponsavel;
+    }
+
+    public InterConsulta(){}
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setAcao(Acao acao) {
+        this.acao = acao;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public Atendimento getAtendimento() {
-        return atendimento;
+    public Acao getAcao() {
+        return acao;
     }
 
-    public void setAtendimento(Atendimento atendimento) {
-        this.atendimento = atendimento;
+    public void setAcao(Atendimento atendimento) {
+        this.acao = acao;
     }
 
     public Usuario getUsuario() {
@@ -52,7 +66,7 @@ public class InterConsulta {
     public String toString() {
         return "InterConsulta{" +
                 "id=" + id +
-                ", atendimento=" + atendimento +
+                ", acao=" + acao +
                 ", usuario=" + usuario +
                 ", status=" + status +
                 ", docenteResponsavel=" + docenteResponsavel +

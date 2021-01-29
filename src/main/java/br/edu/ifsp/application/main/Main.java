@@ -3,6 +3,8 @@ package br.edu.ifsp.application.main;
 import br.edu.ifsp.application.repository.inmemory.*;
 import br.edu.ifsp.application.repository.sqlite.*;
 import br.edu.ifsp.application.view.App;
+import br.edu.ifsp.domain.usecases.Mantenedor.BuscarMantenedorUC;
+import br.edu.ifsp.domain.usecases.Mantenedor.MantenedorDAO;
 import br.edu.ifsp.domain.usecases.acolhimento.AcolhimentoDAO;
 import br.edu.ifsp.domain.usecases.acolhimento.AlterarServidorAcolhimentoUC;
 import br.edu.ifsp.domain.usecases.acolhimento.BuscarAcolhimentoUC;
@@ -20,6 +22,7 @@ import br.edu.ifsp.domain.usecases.docente.AlterarDadosDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.BuscarDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.CadastrarNovoDocenteUC;
 import br.edu.ifsp.domain.usecases.docente.DocenteDAO;
+import br.edu.ifsp.domain.usecases.interconsulta.BuscarInterconsultaUC;
 import br.edu.ifsp.domain.usecases.interconsulta.GerenciarInterConsultaUC;
 import br.edu.ifsp.domain.usecases.interconsulta.InterConsultaDAO;
 import br.edu.ifsp.domain.usecases.interconsulta.SolicitarInterConsultaUC;
@@ -44,6 +47,8 @@ import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.GerenciarUsuarioLinhaAcaoUC;
 import br.edu.ifsp.domain.usecases.usuarioLinhaAcao.UsuarioLinhaAcaoDAO;
 
 public class Main {
+
+    public static BuscarMantenedorUC buscarMantenedorUC;
 
     public static CadastrarServidorAcolhimentoUC cadastrarServidorAcolhimentoUC;
     public static AlterarServidorAcolhimentoUC alterarServidorAcolhimentoUC;
@@ -79,6 +84,7 @@ public class Main {
 
     public static SolicitarInterConsultaUC solicitarInterConsultaUC;
     public static GerenciarInterConsultaUC gerenciarInterConsultaUC;
+    public static BuscarInterconsultaUC buscarInterconsultaUC;
 
     public static ConsultarAgendamentoUC consultarAgendamentoUC;
 
@@ -148,9 +154,10 @@ public class Main {
         buscarAtendimentoUC = new BuscarAtendimentoUC(atendimentoDAO);
 
         // Interconsulta
-        InterConsultaDAO interConsultaDAO = new InMemoryInterConsultaDAO();
+        InterConsultaDAO interConsultaDAO = new SqliteInterconsulta();
         solicitarInterConsultaUC = new SolicitarInterConsultaUC(interConsultaDAO, buscarAtendimentoUC, buscarUsuarioUC, buscarDocenteUC);
-        gerenciarInterConsultaUC = new GerenciarInterConsultaUC(interConsultaDAO);
+        gerenciarInterConsultaUC = new GerenciarInterConsultaUC(interConsultaDAO, usuarioLinhaAcaoDAO);
+        buscarInterconsultaUC = new BuscarInterconsultaUC(interConsultaDAO);
 
         // Consultar agendamento
         consultarAgendamentoUC = new ConsultarAgendamentoUC(atendimentoDAO);
@@ -161,5 +168,9 @@ public class Main {
 
         // Visualizar usuarios na lista de Espera
         visualizarListaEsperaLinhaAcaoUC = new VisualizarListaEsperaLinhaAcaoUC(atendimentoDAO);
+
+        // Mantenedor
+        MantenedorDAO mantenedorDAO = new SqliteMantenedorDAO();
+        buscarMantenedorUC = new BuscarMantenedorUC(mantenedorDAO);
     }
 }

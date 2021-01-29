@@ -2,23 +2,31 @@ package br.edu.ifsp.domain.entities;
 
 public class Mantenedor {
 
+    private String email;
     private Integer prontuario;
-    private String nome;
 
-    public Mantenedor(Integer prontuario, String nome) {
+    public Mantenedor(Integer prontuario, String email) {
         this.prontuario = prontuario;
-        this.nome = nome;
+        this.email = email;
     }
 
-    public int getProntuario() {
+    public Integer getProntuario() {
         return prontuario;
     }
 
-    public String getNome() {
-        return nome;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Mantenedor{" +
+                "email='" + email + '\'' +
+                ", prontuario=" + prontuario +
+                '}';
     }
 }

@@ -2,6 +2,7 @@ package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Acolhimento;
+import br.edu.ifsp.domain.entities.Mantenedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -31,6 +32,7 @@ public class CadastroAcolhimentoUIController {
     private Button btnSalvar;
 
     private Acolhimento acolhimento;
+    private Mantenedor mantenedor;
 
     public void salvarOuAtualizar(ActionEvent actionEvent) throws IOException {
         getEntityFromView();
@@ -42,18 +44,20 @@ public class CadastroAcolhimentoUIController {
             alterarServidorAcolhimentoUC.alteraServidor(acolhimento);
         }
         App.setRoot("ViewAcolhimentoUI");
+        ViewAcolhimentoUIController controller = (ViewAcolhimentoUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
     }
 
-    public void setAcolhimento(Acolhimento acolhimento) {
-        if (acolhimento == null)
-            throw new IllegalArgumentException("Acolhimento can not be null.");
+    public void setAcolhimentoMantenedor(Acolhimento acolhimento, Mantenedor mantenedor) {
+        if (acolhimento != null) {
+            this.acolhimento = acolhimento;
+            setEntityIntoView();
 
-        this.acolhimento = acolhimento;
-        setEntityIntoView();
-
-        txtProntuario.setDisable(true);
-        txtNome.setDisable(true);
-        txtCPF.setDisable(true);
+            txtProntuario.setDisable(true);
+            txtNome.setDisable(true);
+            txtCPF.setDisable(true);
+        }
+        this.mantenedor = mantenedor;
     }
 
     private void getEntityFromView() {
@@ -77,5 +81,7 @@ public class CadastroAcolhimentoUIController {
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("ViewAcolhimentoUI");
+        ViewAcolhimentoUIController controller = (ViewAcolhimentoUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
     }
 }

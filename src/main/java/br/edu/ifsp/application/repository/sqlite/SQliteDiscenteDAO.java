@@ -117,12 +117,22 @@ public class SQliteDiscenteDAO implements DiscenteDAO {
 
     @Override
     public boolean deleteByKey(Integer key) {
+        String sql = "DELETE FROM Discente WHERE prontuario = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1, key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
-    public boolean delete(Discente type) {
-        return false;
+    public boolean delete(Discente discente) {
+        if (discente == null || discente.getProntuario() == null)
+            throw new IllegalArgumentException("Discente and discente prontuario must not be null.");
+        return deleteByKey(discente.getProntuario());
     }
 
     @Override

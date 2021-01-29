@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface UsuarioLinhaAcaoDAO extends DAO<UsuarioLinhaAcao, Integer> {
     List<UsuarioLinhaAcao> findByAcolhimento(Integer Key);
     List<UsuarioLinhaAcao> findByDocente(Integer Key);
+    boolean updateByUsuario(Integer acaoId, String cpf);
 }

@@ -3,6 +3,7 @@ package br.edu.ifsp.domain.usecases.docente;
 import br.edu.ifsp.domain.entities.Acolhimento;
 import br.edu.ifsp.domain.entities.Docente;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,5 +29,15 @@ public class BuscarDocenteUC {
             throw new IllegalArgumentException("Prontuario or email can not be null.");
 
         return docenteDAO.checkLogin(email, prontuario);
+    }
+
+    public List<Docente> findDiffFrom(Docente docente) {
+        List<Docente> docentes = new ArrayList<>();
+        for (Docente docente1 : docenteDAO.findAll()) {
+            if(docente1.getProntuario() != docente.getProntuario()) {
+                docentes.add(docente1);
+            }
+        }
+        return docentes;
     }
 }

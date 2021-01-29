@@ -60,4 +60,9 @@ public class InMemoryUsuarioLinhaAcaoDAO implements UsuarioLinhaAcaoDAO {
     public List<UsuarioLinhaAcao> findByDocente(Integer Key) {
         return null;
     }
+
+    @Override
+    public boolean updateByUsuario(Integer acaoId, String cpf) {
+        return false;
+    }
 }

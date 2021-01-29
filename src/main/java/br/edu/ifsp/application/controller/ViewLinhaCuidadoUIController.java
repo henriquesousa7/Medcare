@@ -4,6 +4,7 @@ import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Acao;
 import br.edu.ifsp.domain.entities.Docente;
 import br.edu.ifsp.domain.entities.LinhaCuidado;
+import br.edu.ifsp.domain.entities.Mantenedor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,6 +32,7 @@ public class ViewLinhaCuidadoUIController {
     private TableColumn<LinhaCuidado, Acao> cAcao;
 
     private ObservableList<LinhaCuidado> tableData;
+    private Mantenedor mantenedor;
 
     @FXML
     private void initialize() {
@@ -59,6 +61,8 @@ public class ViewLinhaCuidadoUIController {
 
     public void cadastrarLinhaCuidado(ActionEvent actionEvent) throws IOException {
         App.setRoot("CadastroLinhaCuidadoUI");
+        CadastroLinhaCuidadoUIController controller = (CadastroLinhaCuidadoUIController) App.getController();
+        controller.setLinhaCuidadoMantenedor(null, mantenedor);
     }
 
     public void alterarLinhaCuidado(ActionEvent actionEvent) throws IOException {
@@ -67,11 +71,17 @@ public class ViewLinhaCuidadoUIController {
         if(linhaCuidado != null){
             App.setRoot("CadastroLinhaCuidadoUI");
             CadastroLinhaCuidadoUIController controller = (CadastroLinhaCuidadoUIController) App.getController();
-            controller.setLinhaCuidado(linhaCuidado);
+            controller.setLinhaCuidadoMantenedor(linhaCuidado, mantenedor);
         }
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("MantenedorUI");
+        MantenedorUIController controller = (MantenedorUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
+    }
+
+    public void setSessionMantenedor(Mantenedor mantenedor) {
+        this.mantenedor = mantenedor;
     }
 }

@@ -99,11 +99,21 @@ public class SqliteUsuarioDAO implements UsuarioDAO {
 
     @Override
     public boolean deleteByKey(String key) {
+        String sql = "DELETE FROM Usuario WHERE cpf = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1, key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
-    public boolean delete(Usuario type) {
-        return false;
+    public boolean delete(Usuario usuario) {
+        if (usuario == null || usuario.getCpf() == null)
+            throw new IllegalArgumentException("Usuario and usuario CPF must not be null.");
+        return deleteByKey(usuario.getCpf());
     }
 }

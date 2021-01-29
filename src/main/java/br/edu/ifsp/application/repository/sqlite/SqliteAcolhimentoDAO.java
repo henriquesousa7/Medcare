@@ -109,12 +109,22 @@ public class SqliteAcolhimentoDAO implements AcolhimentoDAO {
 
     @Override
     public boolean deleteByKey(Integer key) {
+        String sql = "DELETE FROM Acolhimento WHERE prontuario = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1, key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
-    public boolean delete(Acolhimento type) {
-        return false;
+    public boolean delete(Acolhimento acolhimento) {
+        if (acolhimento == null || acolhimento.getProntuario() == null)
+            throw new IllegalArgumentException("Acolhimento and acolhimento prontuario must not be null.");
+        return deleteByKey(acolhimento.getProntuario());
     }
 
     @Override

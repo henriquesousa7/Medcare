@@ -3,6 +3,7 @@ package br.edu.ifsp.application.controller;
 import br.edu.ifsp.application.view.App;
 import br.edu.ifsp.domain.entities.Discente;
 import br.edu.ifsp.domain.entities.Acao;
+import br.edu.ifsp.domain.entities.Mantenedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,6 +32,7 @@ public class CadastroDiscenteUIController {
     private Button btnSalvar;
 
     private Discente discente;
+    private Mantenedor mantenedor;
 
     @FXML
     private void initialize(){
@@ -47,6 +49,8 @@ public class CadastroDiscenteUIController {
             alterarDadosDiscenteUC.alterarDiscente(discente, discente.getAcao().getId());
         }
         App.setRoot("ViewDiscenteUI");
+        ViewDiscenteUIController controller = (ViewDiscenteUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
     }
 
     private void getEntityFromView() {
@@ -62,17 +66,19 @@ public class CadastroDiscenteUIController {
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
         App.setRoot("ViewDiscenteUI");
+        ViewDiscenteUIController controller = (ViewDiscenteUIController) App.getController();
+        controller.setSessionMantenedor(mantenedor);
     }
 
-    public void setDiscente(Discente discente) {
-        if (discente == null)
-            throw new IllegalArgumentException("Discente can not be null.");
+    public void setDiscenteMantenedor(Discente discente, Mantenedor mantenedor) {
+        if (discente != null) {
+            this.discente = discente;
+            setEntityIntoView();
 
-        this.discente = discente;
-        setEntityIntoView();
-
-        txtProntuario.setDisable(true);
-        txtNome.setDisable(true);
+            txtProntuario.setDisable(true);
+            txtNome.setDisable(true);
+        }
+        this.mantenedor = mantenedor;
     }
 
     private void setEntityIntoView() {

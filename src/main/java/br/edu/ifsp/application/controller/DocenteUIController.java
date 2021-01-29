@@ -21,7 +21,10 @@ public class DocenteUIController {
         controller.setSessionDocente(docente);
     }
 
-    public void cadastrarInterconsulta(ActionEvent actionEvent) {
+    public void cadastrarInterconsulta(ActionEvent actionEvent) throws IOException {
+        App.setRoot("ViewInterconsultaUI");
+        ViewInterconsultaUIController controller = (ViewInterconsultaUIController) App.getController();
+        controller.setSessionDocente(docente);
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
