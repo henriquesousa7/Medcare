@@ -24,16 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6da81967-2df9-40da-aa47-7074ecc0b652" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewAtendimentoDiscenteUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewAtendimentoDiscenteUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/agendamento/ConsultarAgendamentoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/agendamento/ConsultarAgendamentoUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/listaEspera/VisualizarListaEsperaLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/listaEspera/VisualizarListaEsperaLinhaAcaoUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioGeralUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioGeralUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioLinhaAcaoUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioLinhaAcaoUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/MantenedorLoginUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/MantenedorLoginUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/ViewAtendimentoDiscenteUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/ViewAtendimentoDiscenteUIController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/agendamento/ConsultarAgendamentoUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/agendamento/ConsultarAgendamentoUC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioGeralUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioGeralUC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioLinhaAcaoUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/relatorio/GerarRelatorioLinhaAcaoUC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewInterconsultaUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/ViewInterconsultaUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/ViewInterconsultaUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/ViewInterconsultaUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/listaEspera/VisualizarListaEsperaLinhaAcaoUC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/listaEspera/VisualizarListaEsperaLinhaAcaoUC.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +123,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -174,6 +167,9 @@
       <workItem from="1611706995086" duration="319000" />
       <workItem from="1611707348755" duration="101000" />
       <workItem from="1611832340217" duration="17065000" />
+      <workItem from="1612039913610" duration="260000" />
+      <workItem from="1612112109654" duration="5630000" />
+      <workItem from="1612138538265" duration="364000" />
     </task>
     <servers />
   </component>
@@ -191,5 +187,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/sqlite/SqliteDocenteDAO.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -70,6 +70,7 @@ public class ViewInterconsultaUIController {
         if(interConsulta != null){
             gerenciarInterConsultaUC.gerenciaInterConsulta(interConsulta, "aceito");
         }
+        loadDataAndShow();
     }
 
     public void recusarInterconsulta(ActionEvent actionEvent) {
@@ -78,6 +79,7 @@ public class ViewInterconsultaUIController {
         if(interConsulta != null){
             gerenciarInterConsultaUC.gerenciaInterConsulta(interConsulta, "recusado");
         }
+        loadDataAndShow();
     }
 
     public void backToPreviousScene(ActionEvent actionEvent) throws IOException {
